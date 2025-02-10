@@ -15,7 +15,7 @@ const Layout = () => {
         <Portfolio/>
       </main>
 
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
