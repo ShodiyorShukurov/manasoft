@@ -2,61 +2,44 @@ import user1 from '../assets/logo/Ellipse 2.svg';
 import user2 from '../assets/logo/Ellipse 3.svg';
 import user3 from '../assets/logo/Ellipse 5.svg';
 import bgImage from '../assets/image/bg.png';
-import { useEffect, useRef, useState } from 'react';
-
-const logos = ['foodies', '☀️ globetrot', 'FunHub', 'healthify', '⭕ Chatter'];
 
 const About = () => {
-  const [items, setItems] = useState([...logos]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setItems((prevItems) => {
-        // Birinchi elementni olib tashlab, oxiriga qo‘shamiz
-        const firstItem = prevItems[0];
-        return [...prevItems.slice(1), firstItem];
-      });
-    }, 2000); // Har 2 soniyada almashsin
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="w-full sm:px-0 pt-[84px]">
       <div className="container">
-        <div className="flex flex-wrap items-center justify-center gap-2">
-          <div className="flex flex-wrap items-center gap-2 sm:space-x-[-15px] sm:group-hover:space-x-3 transition-all duration-500 ease-in-out">
-          <img
-            src={user1}
-            alt="User 1"
-            width={24}
-            height={24}
-            className="rounded-full border-2 transition-transform duration-500 ease-in-out group-hover:scale-110"
-          />
-          <img
-            src={user2}
-            alt="User 2"
-            width={24}
-            height={24}
-            className="rounded-full border-2 transition-transform duration-500 ease-in-out group-hover:scale-110"
-          />
-          <img
-            src={user3}
-            alt="User 3"
-            width={24}
-            height={24}
-            className="rounded-full border-2 transition-transform duration-500 ease-in-out group-hover:scale-110"
-          />
-          <img
-            src={user3}
-            alt="User 3"
-            width={24}
-            height={24}
-            className="rounded-full border-2 transition-transform duration-500 ease-in-out group-hover:scale-110"
-          />
-        </div>
+        <div className="flex justify-center items-center group cursor-pointer">
+          <div className="flex  transition-all duration-1000 ease-in-out">
+            <img
+              src={user1}
+              alt="User 1"
+              width={24}
+              height={24}
+              className="rounded-full transition-all duration-1000 ease-in-out group-hover:ml-1 -ml-4"
+            />
+            <img
+              src={user2}
+              alt="User 2"
+              width={24}
+              height={24}
+              className="rounded-full transition-all duration-1000 ease-in-out group-hover:ml-1 -ml-4"
+            />
+            <img
+              src={user3}
+              alt="User 3"
+              width={24}
+              height={24}
+              className="rounded-full transition-all duration-1000 ease-in-out group-hover:ml-1 -ml-4"
+            />
+            <img
+              src={user2}
+              alt="User 4"
+              width={24}
+              height={24}
+              className="rounded-full transition-all duration-1000 ease-in-out group-hover:ml-1 -ml-4"
+            />
+          </div>
 
-          <span className="text-white text-[16px] font-normal">
+          <span className="text-white text-[16px] font-normal ml-3">
             +100 ortiq loyihalar
           </span>
         </div>
@@ -80,13 +63,12 @@ const About = () => {
 
       {/* Video */}
       <div
-        className="flex justify-center items-center flex-col pt-[144px] pb-[64px] gap-[64px]"
+        className="flex justify-center items-center flex-col pt-[144px] pb-[64px] gap-[64px] 
+        bg-no-repeat bg-bottom md:bg-auto"
         style={{
           backgroundImage: `url(${bgImage})`,
+          backdropFilter: 'blur(30px)',
           backgroundSize: '100%',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'bottom bottom',
-          backdropFilter: blur('30px'),
         }}
       >
         <div className="border border-[rgba(66,102,177,0.5)] w-full max-w-[920px] rounded-[32px]">
@@ -102,18 +84,6 @@ const About = () => {
         </div>
 
         {/* Agency */}
-        {/* <div className="w-full overflow-hidden bg-gray-900 py-6">
-          <div className="flex space-x-8 transition-all duration-500 ease-linear">
-            {items.map((item, index) => (
-              <div
-                key={index}
-                className="bg-gray-700 text-white px-6 py-2 rounded-full text-lg min-w-[120px] text-center"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
-        </div> */}
       </div>
     </section>
   );

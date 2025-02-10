@@ -6,19 +6,30 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
-    <header>
+    <header
+      className={`w-full bg-transparent sticky top-0 z-50 ${
+        menuOpen ? '' : 'backdrop-blur-[30px]'
+      } shadow-md`}
+    >
       <div className="container">
-        <div className="flex pt-[23px] justify-between items-center">
-          <a className="flex " href="/">
+        <div className="flex py-[20px] justify-between items-center">
+          {/* LOGO */}
+          <a className="flex items-center" href="/">
             <img src={logo} alt="Manasoft" width={28} height={28} />
-            <span className="font-bold text-[#4266B1] text-[28px] leading-[100%] ml-[4px] tracking-[-1.12px]">
+            <span className="font-bold text-[#4266B1] text-[24px] sm:text-[28px] leading-[100%] ml-[4px] tracking-[-1.12px] font-[Sen]">
               Manasoft
             </span>
           </a>
 
-          {/* Navbar */}
-          <nav className="hidden lg:flex bg-white/10 px-12 py-4 rounded-[32px]">
-            <ul className="flex space-x-12 text-[#E4DAD7]">
+          {/* DESKTOP NAVBAR */}
+          <nav
+          // className="hidden lg:flex
+
+          // bg-white/10
+          // px-8 py-3 lg:px-12 lg:py-4 rounded-[32px]
+          // "
+          >
+            <ul className="hidden lg:flex space-x-6 lg:space-x-12 text-[#E4DAD7]">
               {['Home', 'Services', 'Portfolio', 'Contact'].map(
                 (item, index) => (
                   <li key={index}>
@@ -38,64 +49,90 @@ const Header = () => {
             </ul>
           </nav>
 
-          {/* Button */}
-          <button className="hidden lg:block bg-[#4266B1] text-[#050100] text-[16px] rounded-[24px] px-6 py-3">
+          {/* <button className="hidden lg:block bg-[#4266B1] text-[#050100] text-[16px] rounded-[24px] px-6 py-3">
             Button
-          </button>
+          </button> */}
 
-          {/* Mobile Menu Button */}
+          {/* MOBILE MENU BUTTON */}
           <button
             className="lg:hidden text-gray-700 text-[24px]"
             onClick={() => setMenuOpen(true)}
           >
-            ☰
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="#4266B1"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+              />
+            </svg>
           </button>
         </div>
       </div>
 
-      {/* MOBILE MODAL MENU */}
-      {menuOpen && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex justify-end">
-          {/* Sidebar Menu */}
-          <div className="bg-gray-900 text-white w-[280px] h-full shadow-lg transform transition-transform duration-300 ease-in-out">
-            <div className="flex justify-between items-center px-6 py-4 border-b border-gray-700">
-              <a href="/" className=" cursor-pointer">
-                <img src={logo} alt="Manasoft" width={28} height={28} />
-              </a>
-              <button
-                onClick={() => setMenuOpen(false)}
-                className="text-2xl font-bold"
-              >
-                &times;
-              </button>
-            </div>
-
-            <ul className="px-6 py-4 space-y-4 pl-6">
-              {['Home', 'Services', 'Portfolio', 'Contact'].map(
-                (item, index) => (
-                  <li key={index}>
-                    <NavLink
-                      to={`/${item.toLowerCase()}`}
-                      className={({ isActive }) =>
-                        isActive
-                          ? 'text-blue-400 font-semibold'
-                          : 'hover:text-gray-400'
-                      }
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      {item}
-                    </NavLink>
-                  </li>
-                )
-              )}
-            </ul>
-
-            <button className="lg:block bg-[#4266B1] text-[#050100] text-[16px] rounded-[24px] px-6 py-3 ml-6">
-              Button
-            </button>
-          </div>
+      {/* FULLSCREEN MOBILE MENU */}
+      <div
+        className={`fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex flex-col items-center justify-center transition-all duration-500 ${
+          menuOpen
+            ? 'opacity-100 visible translate-y-0'
+            : 'opacity-0 invisible translate-y-[-100%]'
+        }`}
+      >
+        <div className="absolute top-6 left-6 text-white text-2xl">
+          <a className="flex items-center" href="/">
+            <img src={logo} alt="Manasoft" width={28} height={28} />
+            <span className="font-bold text-[#4266B1] text-[24px] sm:text-[28px] leading-[100%] ml-[4px] tracking-[-1.12px] font-[Sen]">
+              Manasoft
+            </span>
+          </a>
         </div>
-      )}
+        <button
+          onClick={() => setMenuOpen(false)}
+          className="absolute top-6 right-6 text-white text-2xl"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="white"
+            className="w-8 h-8"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+        </button>
+
+        <ul className="space-y-6 text-white text-xl font-semibold">
+          {['Home', 'Services', 'Portfolio', 'Contact'].map((item, index) => (
+            <li
+              key={index}
+              className="border-b border-gray-700 w-[200px] text-center pb-2"
+            >
+              <NavLink
+                to={`/${item.toLowerCase()}`}
+                className={({ isActive }) =>
+                  isActive
+                    ? 'text-blue-400 font-semibold'
+                    : 'hover:text-gray-300 transition'
+                }
+                onClick={() => setMenuOpen(false)}
+              >
+                {item}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
     </header>
   );
 };
