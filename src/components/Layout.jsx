@@ -9,13 +9,13 @@ const Layout = () => {
     <>
       <Header />
 
-      {/* <main>
+      <main>
         <About />
-        <Services />
-        <Portfolio/>
+        {/* <Services />
+        <Portfolio/> */}
       </main>
 
-      <Footer /> */}
+      {/* <Footer /> */}
     </>
   );
 };
