@@ -11,8 +11,8 @@ const Layout = () => {
 
       <main>
         <About />
-        {/* <Services />
-        <Portfolio/> */}
+        {/* <Services /> */}
+        <Portfolio/>
       </main>
 
       {/* <Footer /> */}
