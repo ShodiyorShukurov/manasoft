@@ -22,13 +22,7 @@ const Header = () => {
           </a>
 
           {/* DESKTOP NAVBAR */}
-          <nav
-          // className="hidden lg:flex
-
-          // bg-white/10
-          // px-8 py-3 lg:px-12 lg:py-4 rounded-[32px]
-          // "
-          >
+          <nav className="hidden lg:flex bg-white/10 px-8 py-3 lg:px-12 lg:py-4 rounded-[32px]">
             <ul className="hidden lg:flex space-x-6 lg:space-x-12 text-[#E4DAD7]">
               {['Home', 'Services', 'Portfolio', 'Contact'].map(
                 (item, index) => (
@@ -49,9 +43,9 @@ const Header = () => {
             </ul>
           </nav>
 
-          {/* <button className="hidden lg:block bg-[#4266B1] text-[#050100] text-[16px] rounded-[24px] px-6 py-3">
-            Button
-          </button> */}
+          <button className="hidden lg:block bg-[#4266B1] text-[#050100] text-[16px] rounded-[24px] px-6 py-3">
+            Bog'lanish
+          </button>
 
           {/* MOBILE MENU BUTTON */}
           <button
@@ -132,6 +126,11 @@ const Header = () => {
             </li>
           ))}
         </ul>
+        <div className="absolute bottom-8 flex space-x-4">
+          <button className="text-white text-sm border border-white px-4 py-2 rounded-[48px] cursor-pointer">
+            Bog'lanish
+          </button>
+        </div>
       </div>
     </header>
   );

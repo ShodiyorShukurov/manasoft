@@ -75,16 +75,20 @@ const About = () => {
         </div>
       </div>
 
-      <InfiniteCarousel>
+      {/* <InfiniteCarousel>
         <div className="gap-25 flex">
           {bannerOneImages.map((img, index) => (
             <p key={index} className="text-[#fff] text-[20px] font-black">
               {img}
             </p>
           ))}
-          <div className="w-10"></div> {/* Oxiriga ham bo'sh joy qo'shildi */}
+          <div className="w-10"></div>
         </div>
-      </InfiniteCarousel>
+      </InfiniteCarousel> */}
+
+      <div className="overflow-x-hidden w-full container mx-auto">
+        <InfiniteCarousel />
+      </div>
     </section>
   );
 };
