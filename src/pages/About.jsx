@@ -4,25 +4,56 @@ import user3 from '../assets/logo/Ellipse 5.svg';
 import bgImage from '../assets/image/bg.png';
 import InfiniteCarousel from '../components/InfiniteCarousel';
 
-const bannerOneImages = [
-  'Foodies',
-  'globetrot',
-  'FunHub',
-  'healthify',
-  'chatter',
-];
-
 const About = () => {
+  const items = ['foodies', 'globetrot', 'FunHub', 'Healthify', 'Chatter'];
+  // const FAST_DURATION = 25;
+  // const SLOW_DURATION = 75;
+
+  // const [duration, setDuration] = useState(FAST_DURATION);
+  // let [ref, { width }] = useMeasure();
+
+  // const xTranslation = useMotionValue(0);
+  // const [mustFinish, setMustFinish] = useState(false);
+  // const [rerender, setRerender] = useState(false);
+
+  // useEffect(() => {
+  //   // if (width <= 0) return; // Kichik yoki noto‘g‘ri qiymatlar bo‘lsa, ishlamasin
+
+  //   let controls;
+  //   let finalPosition = -width; // Final positionni aniqroq hisoblash
+
+  //   if (mustFinish) {
+  //     controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
+  //       duration: duration * (1 - xTranslation.get() / finalPosition),
+  //       ease: "linear",
+  //       onComplete: () => {
+  //         setMustFinish(false);
+  //         setRerender((prev) => !prev); // Componentni qayta yuklash
+  //       },
+  //     });
+  //   } else {
+  //     controls = animate(xTranslation, [0, finalPosition], {
+  //       ease: 'linear',
+  //       duration: duration,
+  //       repeat: Infinity,
+  //       repeatType: 'loop',
+  //       repeatDelay: 0,
+  //     });
+  //   }
+
+  //   return () => controls?.stop(); // Cleanup qilish
+  // }, [xTranslation, width, duration, rerender]);
+
   return (
     <section
-      className="w-full sm:px-0 pt-[84px] bg-no-repeat bg-cover bg-bottom"
+      className="w-full sm:px-0 pt-[140px] bg-no-repeat bg-cover bg-bottom"
       style={{
         backgroundImage: `url(${bgImage})`,
         backdropFilter: 'blur(20px)',
         backgroundSize: 'cover',
       }}
     >
-      <div className="container px-4 sm:px-6 lg:px-8">
+      <div className="container">
         {/* User group */}
         <div className="flex justify-center items-center group cursor-pointer">
           <div className="flex transition-all duration-1000 ease-in-out">
@@ -52,7 +83,7 @@ const About = () => {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-center items-center flex-wrap gap-4 sm:gap-[32px] mt-[32px] sm:mt-[48px]">
-          <button className="bg-[#4266B1] text-[#050100] text-[16px] rounded-[24px] px-6 py-3 font-medium cursor-pointer w-full sm:w-auto">
+          <button className="bg-[#4266B1] text-[#fff] text-[16px] rounded-[24px] px-6 py-3 font-medium cursor-pointer w-full sm:w-auto">
             Bog&apos;lanish
           </button>
           <button className="text-[#4266B1] text-[16px] border-2 border-[#4266B1] rounded-[24px] px-6 py-3 font-medium cursor-pointer w-full sm:w-auto">
@@ -75,20 +106,16 @@ const About = () => {
         </div>
       </div>
 
-      {/* <InfiniteCarousel>
-        <div className="gap-25 flex">
-          {bannerOneImages.map((img, index) => (
-            <p key={index} className="text-[#fff] text-[20px] font-black">
-              {img}
-            </p>
-          ))}
-          <div className="w-10"></div>
-        </div>
-      </InfiniteCarousel> */}
+      {/* Infinite carousel */}
 
-      <div className="overflow-x-hidden w-full container mx-auto">
-        <InfiniteCarousel />
-      </div>
+      <InfiniteCarousel>
+        {[...items, ...items].map((image, index) => (
+          <p className="h-40 w-56 pr-20 text-white" key={index}>
+            {image}
+          </p>
+        ))}
+      </InfiniteCarousel>
+
     </section>
   );
 };

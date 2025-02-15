@@ -48,7 +48,6 @@ const WorkPage = () => {
                 optimallashtirishga qaratilgan.
               </p>
             </div>
-
             <img src={workImg} alt="Img" width={600} />
           </li>
           <li

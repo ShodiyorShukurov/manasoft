@@ -9,7 +9,7 @@ const Question = () => {
   };
 
   return (
-    <section className='pt-[120px]'>
+    <section className="pt-[120px]">
       <div className="container">
         <button
           style={{
@@ -36,17 +36,17 @@ const Question = () => {
           {/* Left Side */}
           <div>
             <div
-              className="backdrop-blur-[5px] rounded-[24px] p-[24px] border border-white cursor-pointer"
+              className="backdrop-blur-[5px] rounded-[24px] p-[24px] cursor-pointer question border border-transparent"
               style={{
                 background:
                   'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(0, 0, 255, 0.08) 1.5%, rgba(0, 0, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
               }}
+              onClick={() => toggleAccordion(1)}
             >
               <h2>
                 <button
                   type="button"
-                  className="flex items-center justify-between w-full text-white"
-                  onClick={() => toggleAccordion(1)}
+                  className="flex items-center justify-between w-full text-white cursor-pointer"
                 >
                   <span className="text-2xl">Marketing strategiyalar</span>
                   <svg
@@ -91,17 +91,17 @@ const Question = () => {
             </div>
 
             <div
-              className="backdrop-blur-[5px] rounded-[24px] p-[24px] border border-white my-4 cursor-pointer"
+              className="backdrop-blur-[5px] rounded-[24px] p-[24px] cursor-pointer question border border-transparent my-4"
               style={{
                 background:
                   'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(0, 0, 255, 0.08) 1.5%, rgba(0, 0, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
               }}
+              onClick={() => toggleAccordion(2)}
             >
               <h2>
                 <button
                   type="button"
-                  className="flex items-center justify-between w-full text-white"
-                  onClick={() => toggleAccordion(2)}
+                  className="flex items-center justify-between w-full text-white cursor-pointer"
                 >
                   <span className="text-2xl">Marketing strategiyalar</span>
                   <svg
@@ -146,17 +146,17 @@ const Question = () => {
             </div>
 
             <div
-              className="backdrop-blur-[5px] rounded-[24px] p-[24px] border border-white cursor-pointer"
+              className="backdrop-blur-[5px] rounded-[24px] p-[24px] cursor-pointer question border border-transparent"
               style={{
                 background:
                   'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(0, 0, 255, 0.08) 1.5%, rgba(0, 0, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
               }}
+              onClick={() => toggleAccordion(3)}
             >
               <h2>
                 <button
                   type="button"
-                  className="flex items-center justify-between w-full text-white"
-                  onClick={() => toggleAccordion(3)}
+                  className="flex items-center justify-between w-full text-white cursor-pointer"
                 >
                   <span className="text-2xl">Marketing strategiyalar</span>
                   <svg
@@ -203,18 +203,19 @@ const Question = () => {
 
           {/* Right Side */}
           <div>
+
             <div
-              className="backdrop-blur-[5px] rounded-[24px] p-[24px] border border-white cursor-pointer"
+              className="backdrop-blur-[5px] rounded-[24px] p-[24px] cursor-pointer question border border-transparent"
               style={{
                 background:
                   'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(0, 0, 255, 0.08) 1.5%, rgba(0, 0, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
               }}
+              onClick={() => toggleAccordion(4)}
             >
               <h2>
                 <button
                   type="button"
-                  className="flex items-center justify-between w-full text-white"
-                  onClick={() => toggleAccordion(4)}
+                  className="flex items-center justify-between w-full text-white cursor-pointer"
                 >
                   <span className="text-2xl">Marketing strategiyalar</span>
                   <svg
@@ -259,17 +260,17 @@ const Question = () => {
             </div>
 
             <div
-              className="backdrop-blur-[5px] rounded-[24px] p-[24px] border border-white my-4 cursor-pointer"
+              className="backdrop-blur-[5px] rounded-[24px] p-[24px] cursor-pointer question border border-transparent my-4"
               style={{
                 background:
                   'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(0, 0, 255, 0.08) 1.5%, rgba(0, 0, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
               }}
+              onClick={() => toggleAccordion(5)}
             >
               <h2>
                 <button
                   type="button"
-                  className="flex items-center justify-between w-full text-white"
-                  onClick={() => toggleAccordion(5)}
+                  className="flex items-center justify-between w-full text-white cursor-pointer"
                 >
                   <span className="text-2xl">Marketing strategiyalar</span>
                   <svg
@@ -314,17 +315,17 @@ const Question = () => {
             </div>
 
             <div
-              className="backdrop-blur-[5px] rounded-[24px] p-[24px] border border-white"
+              className="backdrop-blur-[5px] rounded-[24px] p-[24px] cursor-pointer question border border-transparent"
               style={{
                 background:
                   'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(0, 0, 255, 0.08) 1.5%, rgba(0, 0, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
               }}
+              onClick={() => toggleAccordion(6)}
             >
               <h2>
                 <button
                   type="button"
-                  className="flex items-center justify-between w-full text-white"
-                  onClick={() => toggleAccordion(6)}
+                  className="flex items-center justify-between w-full text-white cursor-pointer"
                 >
                   <span className="text-2xl">Marketing strategiyalar</span>
                   <svg

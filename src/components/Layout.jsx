@@ -9,24 +9,21 @@ import WorkPage from '../pages/WorkPage';
 import Projects from '../pages/Projects';
 import Customers from '../pages/Customers';
 
+
 const Layout = () => {
+
+
   return (
-    <>
-      <Header />
-
-      <main>
-        <About />
-        {/* <Services /> */}
-        <Portfolio />
-        {/* <WorkPage /> */}
-        {/* <Projects /> */}
-        <Customers />
-        <Question />
-        <ContactForm />
-      </main>
-
-      <Footer />
-    </>
+    <main>
+      <About />
+      <Services />
+      <Portfolio />
+      <WorkPage />
+      <Projects />
+      <Customers />
+      <Question />
+      <ContactForm />
+    </main>
   );
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Projects = () => {
   return (
@@ -18,11 +19,21 @@ const Projects = () => {
         <h2 className="text-[48px] font-medium leading-[120%] tracking-[0.48px] bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent mt-[24px]">
           Bizning loyihalarimiz
         </h2>
-        <p className="text-[20px] text-[#ffffffcc] leading-[140%] tracking-[0.2px] mt-[16px] w-full max-w-[750px]">
-          Biznesingizni samarali rivojlantirish uchun ishonchli IT hamkor
-          kerakmi? Manasoft sizga zamonaviy, tezkor va ishonchli yechimlar
-          taqdim etadi!
-        </p>
+
+        <div className="flex justify-between items-center">
+          <p className="text-[20px] text-[#ffffffcc] leading-[140%] tracking-[0.2px] mt-[16px] w-full max-w-[750px]">
+            Biznesingizni samarali rivojlantirish uchun ishonchli IT hamkor
+            kerakmi? Manasoft sizga zamonaviy, tezkor va ishonchli yechimlar
+            taqdim etadi!
+          </p>
+
+          <NavLink
+            to={'/'}
+            className="bg-[transparent] text-[#4266B1] text-[16px] rounded-[48px] px-[24px] py-[12px] border cursor-pointer"
+          >
+            Hamma loyihalar
+          </NavLink>
+        </div>
       </div>
     </section>
   );
