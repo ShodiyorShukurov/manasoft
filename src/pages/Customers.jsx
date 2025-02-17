@@ -14,7 +14,7 @@ const Customers = () => {
             boxShadow: '0px 4px 24px 0px rgba(255, 255, 255, 0.08)',
             backdropFilter: 'blur(30px)',
           }}
-          className="text-[#FFFFFF] text-[16px] md:text-[18px] rounded-[48px] px-[24px] md:px-[32px] py-[10px] md:py-[12px] leading-[100%] mx-auto cursor-pointer block"
+          className="text-[#FFFFFF] text-[16px] md:text-[18px] rounded-[48px] px-[24px] md:px-[32px] py-[10px] md:py-[12px] leading-[100%] mx-auto block"
         >
           Mijozlar fikrlari
         </button>

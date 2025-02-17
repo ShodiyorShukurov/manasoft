@@ -30,8 +30,11 @@ const WorkPage = () => {
                   boxShadow:
                     '3px 5px 8px 0px rgba(255, 255, 255, 0.16) inset, 0px 4px 16px 0px rgba(255, 255, 255, 0.08)',
                   backdropFilter: 'blur(30px)',
+                  border: '1.5px solid',
+                  borderImageSource:
+                    'linear-gradient(360deg, rgba(0, 0, 240, 0.12) -13.08%, rgba(255, 255, 255, 0.12) 119.23%)',
                 }}
-                className="text-[16px] rounded-[24px] px-[24px] py-[12px]  leading-[100%] mx-auto md:mx-0 cursor-pointer"
+                className="text-[16px] rounded-[24px] px-[24px] py-[12px] leading-[100%] mx-auto md:mx-0"
               >
                 01
               </button>
@@ -65,10 +68,13 @@ const WorkPage = () => {
                   boxShadow:
                     '3px 5px 8px 0px rgba(255, 255, 255, 0.16) inset, 0px 4px 16px 0px rgba(255, 255, 255, 0.08)',
                   backdropFilter: 'blur(30px)',
+                  border: '1.5px solid',
+                  borderImageSource:
+                    'linear-gradient(360deg, rgba(0, 0, 240, 0.12) -13.08%, rgba(255, 255, 255, 0.12) 119.23%)',
                 }}
-                className="text-[16px] rounded-[24px] px-[24px] py-[12px]  leading-[100%] mx-auto md:mx-0 cursor-pointer"
+                className="text-[16px] rounded-[24px] px-[24px] py-[12px] leading-[100%] mx-auto md:mx-0"
               >
-                02
+                01
               </button>
               <h3 className="text-[32px] font-font-semibold leading-[120%] mt-[24px]">
                 UX tadqiqotlar
@@ -83,7 +89,6 @@ const WorkPage = () => {
                 optimallashtirishga qaratilgan.
               </p>
             </div>
-
             <img src={workImg} alt="Img" width={600} />
           </li>
           <li
@@ -101,10 +106,13 @@ const WorkPage = () => {
                   boxShadow:
                     '3px 5px 8px 0px rgba(255, 255, 255, 0.16) inset, 0px 4px 16px 0px rgba(255, 255, 255, 0.08)',
                   backdropFilter: 'blur(30px)',
+                  border: '1.5px solid',
+                  borderImageSource:
+                    'linear-gradient(360deg, rgba(0, 0, 240, 0.12) -13.08%, rgba(255, 255, 255, 0.12) 119.23%)',
                 }}
-                className="text-[16px] rounded-[24px] px-[24px] py-[12px]  leading-[100%] mx-auto md:mx-0 cursor-pointer"
+                className="text-[16px] rounded-[24px] px-[24px] py-[12px] leading-[100%] mx-auto md:mx-0"
               >
-                03
+                01
               </button>
               <h3 className="text-[32px] font-font-semibold leading-[120%] mt-[24px]">
                 UX tadqiqotlar
@@ -119,9 +127,10 @@ const WorkPage = () => {
                 optimallashtirishga qaratilgan.
               </p>
             </div>
-
             <img src={workImg} alt="Img" width={600} />
           </li>
+
+
         </ul>
       </div>
     </section>

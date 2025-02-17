@@ -6,43 +6,6 @@ import InfiniteCarousel from '../components/InfiniteCarousel';
 
 const About = () => {
   const items = ['foodies', 'globetrot', 'FunHub', 'Healthify', 'Chatter'];
-  // const FAST_DURATION = 25;
-  // const SLOW_DURATION = 75;
-
-  // const [duration, setDuration] = useState(FAST_DURATION);
-  // let [ref, { width }] = useMeasure();
-
-  // const xTranslation = useMotionValue(0);
-  // const [mustFinish, setMustFinish] = useState(false);
-  // const [rerender, setRerender] = useState(false);
-
-  // useEffect(() => {
-  //   // if (width <= 0) return; // Kichik yoki noto‘g‘ri qiymatlar bo‘lsa, ishlamasin
-
-  //   let controls;
-  //   let finalPosition = -width; // Final positionni aniqroq hisoblash
-
-  //   if (mustFinish) {
-  //     controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
-  //       duration: duration * (1 - xTranslation.get() / finalPosition),
-  //       ease: "linear",
-  //       onComplete: () => {
-  //         setMustFinish(false);
-  //         setRerender((prev) => !prev); // Componentni qayta yuklash
-  //       },
-  //     });
-  //   } else {
-  //     controls = animate(xTranslation, [0, finalPosition], {
-  //       ease: 'linear',
-  //       duration: duration,
-  //       repeat: Infinity,
-  //       repeatType: 'loop',
-  //       repeatDelay: 0,
-  //     });
-  //   }
-
-  //   return () => controls?.stop(); // Cleanup qilish
-  // }, [xTranslation, width, duration, rerender]);
 
   return (
     <section

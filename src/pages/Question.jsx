@@ -18,7 +18,7 @@ const Question = () => {
             boxShadow: '0px 4px 24px 0px rgba(255, 255, 255, 0.08)',
             backdropFilter: 'blur(30px)',
           }}
-          className="text-[#FFFFFF] text-[16px] sm:text-[20px] rounded-[48px] px-[24px] sm:px-[32px] py-[12px] sm:py-[16px] leading-[100%] mx-auto cursor-pointer w-full sm:w-auto block"
+          className="text-[#FFFFFF] text-[18px] rounded-[48px] px-[24px] py-[12px] leading-[100%] mx-auto w-full sm:w-auto block"
         >
           Qiziqarli savollar
         </button>

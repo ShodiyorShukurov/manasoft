@@ -5,6 +5,8 @@ import ContactForm from './pages/ContactForm';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Portfolio from './pages/Portfolio';
+import Projects from './pages/Projects';
+import ProjectDetail from './pages/ProjectDetail';
 
 const App = () => {
   return (
@@ -15,6 +17,8 @@ const App = () => {
         <Route path="/home" element={<Layout />} />
         <Route path="/contact" element={<ContactForm />} />
         <Route path="/services" element={<Portfolio />} />
+        <Route path="/portfolio" element={<Projects />} />
+        <Route path="/portfolio/details/:id" element={<ProjectDetail />} />
       </Routes>
       <Footer />
     </>
