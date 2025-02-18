@@ -7,5 +7,8 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   optimizeDeps: {
     include: ['@motionone/utils']
-  }
+  },
+  json: {
+    stringify: true, 
+  },
 })

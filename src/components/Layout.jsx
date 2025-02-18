@@ -1,8 +1,6 @@
-import Header from './Header';
+import Hero from '../pages/Hero';
 import About from '../pages/About';
 import Services from '../pages/Services';
-import Footer from './Footer';
-import Portfolio from '../pages/Portfolio';
 import ContactForm from '../pages/ContactForm';
 import Question from '../pages/Question';
 import WorkPage from '../pages/WorkPage';
@@ -15,9 +13,9 @@ const Layout = () => {
 
   return (
     <main>
+      <Hero />
       <About />
       <Services />
-      <Portfolio />
       <WorkPage />
       <Projects />
       <Customers />

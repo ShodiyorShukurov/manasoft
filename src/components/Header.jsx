@@ -1,10 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/logo/logomark.svg';
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
   const [showLangMenu, setShowLangMenu] = React.useState(false);
   const [selectedLang, setSelectedLang] = React.useState('Uz');
+  const { t, i18n } = useTranslation();
+
+  const changeValues = (lng) => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
     <header>
@@ -21,22 +27,54 @@ const Header = () => {
           {/* DESKTOP NAVBAR */}
           <nav className="lg:flex bg-white/10 px-8 py-3 lg:px-12 lg:py-4 rounded-[32px]">
             <ul className="lg:flex space-x-6 lg:space-x-12 text-[#E4DAD7]">
-              {['Home', 'Services', 'Portfolio', 'Contact'].map(
-                (item, index) => (
-                  <li key={index}>
-                    <NavLink
-                      to={`/${item.toLowerCase()}`}
-                      className={({ isActive }) =>
-                        isActive
-                          ? 'text-blue-500 font-semibold'
-                          : 'hover:text-gray-400 transition'
-                      }
-                    >
-                      {item}
-                    </NavLink>
-                  </li>
-                )
-              )}
+              <li>
+                <NavLink
+                  to={`/home`}
+                  className={({ isActive }) =>
+                    isActive
+                      ? 'text-blue-500 font-semibold'
+                      : 'hover:text-gray-400 transition'
+                  }
+                >
+                  {t('navbar.home')}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to={`/services`}
+                  className={({ isActive }) =>
+                    isActive
+                      ? 'text-blue-500 font-semibold'
+                      : 'hover:text-gray-400 transition'
+                  }
+                >
+                  {t('navbar.services')}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to={`/portfolio`}
+                  className={({ isActive }) =>
+                    isActive
+                      ? 'text-blue-500 font-semibold'
+                      : 'hover:text-gray-400 transition'
+                  }
+                >
+                  {t('navbar.portfolio')}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to={`/contact`}
+                  className={({ isActive }) =>
+                    isActive
+                      ? 'text-blue-500 font-semibold'
+                      : 'hover:text-gray-400 transition'
+                  }
+                >
+                  {t('navbar.contact')}
+                </NavLink>
+              </li>
             </ul>
           </nav>
 
@@ -71,6 +109,7 @@ const Header = () => {
                       onClick={() => {
                         setSelectedLang(lang);
                         setShowLangMenu(false);
+                        changeValues(lang.toLocaleLowerCase());
                       }}
                       className={`flex items-center justify-between w-full px-4 py-2 ${
                         lang == 'En'
@@ -101,8 +140,8 @@ const Header = () => {
               )}
             </div>
 
-            <button className="hidden lg:block bg-[#4266B1] text-[#fff] text-[16px] rounded-[24px] px-6 py-3">
-              Bog'lanish
+            <button className="hidden lg:block bg-[#4266B1] text-[#fff] text-[16px] rounded-[24px] px-6 py-3 cursor-pointer">
+              {t('navbar.contact_button')}
             </button>
           </div>
         </div>

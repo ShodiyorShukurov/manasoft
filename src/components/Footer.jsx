@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className="text-white border-t-[2px] border-[#9191b633] py-[30px]">
       <div className="container px-4 sm:px-8">
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 text-[15px] text-[#d1d1eb9e] font-medium text-center md:text-left">
-          <li>
+          <li className="flex flex-col justify-between">
             <a className="flex justify-center md:justify-start items-center" href="/">
               <img src={logo} alt="Manasoft" width={28} height={28} />
               <span className="font-bold text-[#4266B1] text-[28px] leading-[100%] ml-[4px] tracking-[-1.12px]">

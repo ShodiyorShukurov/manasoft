@@ -3,8 +3,15 @@ import workImg from '../assets/image/workImg.png';
 import WorkPage from './WorkPage';
 import Projects from './Projects';
 import macImg from '../assets/image/Mac Studio.png';
+import { useParams } from 'react-router-dom';
 
 const ProjectDetail = () => {
+  const {id}= useParams()
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   return (
     <main className="py-[120px]">
       <section>
@@ -48,7 +55,7 @@ const ProjectDetail = () => {
             Loyihaning xususiyatlari
           </h2>
 
-          <ul className='space-y-10'>
+          <ul className="space-y-10">
             <li className="text-white flex items-center justify-between">
               <div>
                 <h4 className="text-[24px] font-font-semibold leading-[28.8px] mt-[32px]">

@@ -1,17 +1,18 @@
 import React from 'react';
 import workImg from '../assets/image/workImg.png';
+import { useTranslation } from 'react-i18next';
 
 const WorkPage = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="pt-[140px]">
       <div className="container">
         <h2 className="text-[48px] font-medium leading-[120%] tracking-[0.48px] bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent">
-          Bizning ishlash jarayonimiz
+        {t('workpage.workpage_title')}
         </h2>
         <p className="text-[20px] text-[#ffffffcc] leading-[140%] tracking-[0.2px] mt-[16px] w-full max-w-[750px]">
-          Biznesingizni samarali rivojlantirish uchun ishonchli IT hamkor
-          kerakmi? Manasoft sizga zamonaviy, tezkor va ishonchli yechimlar
-          taqdim etadi!
+        {t('workpage.workpage_subtitle')}
         </p>
 
         <ul className="mt-[46px] space-y-[48px]">
@@ -129,8 +130,6 @@ const WorkPage = () => {
             </div>
             <img src={workImg} alt="Img" width={600} />
           </li>
-
-
         </ul>
       </div>
     </section>

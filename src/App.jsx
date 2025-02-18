@@ -4,7 +4,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import ContactForm from './pages/ContactForm';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Portfolio from './pages/Portfolio';
+import Services from './pages/Services';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 
@@ -16,7 +16,7 @@ const App = () => {
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Layout />} />
         <Route path="/contact" element={<ContactForm />} />
-        <Route path="/services" element={<Portfolio />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/portfolio" element={<Projects />} />
         <Route path="/portfolio/details/:id" element={<ProjectDetail />} />
       </Routes>
