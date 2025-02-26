@@ -1,14 +1,21 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   optimizeDeps: {
-    include: ['@motionone/utils']
+    include: ['@motionone/utils'],
   },
   json: {
-    stringify: true, 
+    stringify: true,
   },
-})
+  server: {
+    port: 3000,
+  },
+  build: {
+    outDir: 'dist',
+  },
+  base: '/',
+});
