@@ -47,11 +47,11 @@ const Hero = () => {
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row justify-center items-center flex-wrap gap-4 sm:gap-[32px] mt-[32px] sm:mt-[48px]">
-          <button className="bg-[#4266B1] text-[#fff] text-[16px] rounded-[24px] px-6 py-3 font-medium cursor-pointer w-full sm:w-auto">
+        <div style={{fontFamily:"Public Sans"}} className="flex flex-col sm:flex-row justify-center items-center flex-wrap gap-4 sm:gap-[32px] mt-[32px] sm:mt-[48px]">
+          <button className="bg-[#61A6FF] text-[#fff] text-[16px] rounded-[24px] px-6 py-3 font-medium cursor-pointer w-full sm:w-auto">
           {t('hero.hero_button1')}
           </button>
-          <button className="text-[#4266B1] text-[16px] border-2 border-[#4266B1] rounded-[24px] px-6 py-3 font-medium cursor-pointer w-full sm:w-auto">
+          <button className="text-[#61A6FF] text-[16px] border-2 border-[#61A6FF] rounded-[24px] px-6 py-3 font-medium cursor-pointer w-full sm:w-auto">
           {t('hero.hero_button2')}
           </button>
         </div>
