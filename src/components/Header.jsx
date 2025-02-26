@@ -1,38 +1,83 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../assets/logo/logomark.svg';
+import logo from '../assets/logo/manasoft.svg';
+import global from '../assets/logo/global.svg';
+import burgerMenu from '../assets/logo/menu.svg';
+import facebookIcon from '../assets/logo/facebook.svg';
+import instagramIcon from '../assets/logo/instagram.svg';
 import { useTranslation } from 'react-i18next';
 
 const Header = () => {
-  const [showLangMenu, setShowLangMenu] = React.useState(false);
-  const [selectedLang, setSelectedLang] = React.useState('Uz');
+  const [showLangMenu, setShowLangMenu] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [selectedLang, setSelectedLang] = useState('Uz');
   const { t, i18n } = useTranslation();
+  const menuRef = useRef(null);
+  const mobileMenuRef = useRef(null);
 
   const changeValues = (lng) => {
     i18n.changeLanguage(lng);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setShowLangMenu(false);
+      }
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
+        setShowMobileMenu(false);
+      }
+    };
+
+    if (showLangMenu || showMobileMenu) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showLangMenu, showMobileMenu]);
+
   return (
-    <header>
-      <div className="container">
-        <div className="flex py-[20px] justify-between items-center">
+    <header className="w-full bg-transparent">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex pt-4 sm:pt-6 lg:pt-9 justify-between items-center">
+          {/* MOBILE BURGER BUTTON */}
+          <button
+            className="block xl:hidden p-2 sm:p-3 rounded-3xl bg-[#FFFFFF1A] cursor-pointer"
+            onClick={() => setShowMobileMenu((prev) => !prev)}
+          >
+            <img
+              className="w-5 sm:w-6 h-5 sm:h-6"
+              src={burgerMenu}
+              alt="Burger Menu"
+            />
+          </button>
+
           {/* LOGO */}
           <a className="flex items-center" href="/">
-            <img src={logo} alt="Manasoft" width={28} height={28} />
-            <span className="font-bold text-[#4266B1] text-[24px] sm:text-[28px] leading-[100%] ml-[4px] tracking-[-1.12px] font-[Sen]">
+            <img
+              src={logo}
+              alt="Manasoft"
+              className="w-6 sm:w-7 lg:w-8 h-6 sm:h-7 lg:h-8"
+            />
+            <span className="font-bold text-[#61A6FF] text-sm sm:text-xl lg:text-2xl leading-tight ml-1 sm:ml-2 tracking-tight font-[Sen]">
               Manasoft
             </span>
           </a>
 
           {/* DESKTOP NAVBAR */}
-          <nav className="lg:flex bg-white/10 px-8 py-3 lg:px-12 lg:py-4 rounded-[32px]">
-            <ul className="lg:flex space-x-6 lg:space-x-12 text-[#E4DAD7]">
+          <nav className="hidden xl:flex bg-white/10 px-6 lg:px-12 py-2 lg:py-4 rounded-3xl">
+            <ul
+              style={{ fontFamily: 'Public Sans' }}
+              className="flex space-x-6 lg:space-x-12 text-[#FFFFFFCC] text-sm lg:text-base"
+            >
               <li>
                 <NavLink
-                  to={`/home`}
+                  to="/home"
                   className={({ isActive }) =>
                     isActive
-                      ? 'text-blue-500 font-semibold'
+                      ? 'text-white font-semibold'
                       : 'hover:text-gray-400 transition'
                   }
                 >
@@ -41,10 +86,10 @@ const Header = () => {
               </li>
               <li>
                 <NavLink
-                  to={`/services`}
+                  to="/services"
                   className={({ isActive }) =>
                     isActive
-                      ? 'text-blue-500 font-semibold'
+                      ? 'text-white font-semibold'
                       : 'hover:text-gray-400 transition'
                   }
                 >
@@ -53,10 +98,10 @@ const Header = () => {
               </li>
               <li>
                 <NavLink
-                  to={`/portfolio`}
+                  to="/portfolio"
                   className={({ isActive }) =>
                     isActive
-                      ? 'text-blue-500 font-semibold'
+                      ? 'text-white font-semibold'
                       : 'hover:text-gray-400 transition'
                   }
                 >
@@ -65,10 +110,10 @@ const Header = () => {
               </li>
               <li>
                 <NavLink
-                  to={`/contact`}
+                  to="/contact"
                   className={({ isActive }) =>
                     isActive
-                      ? 'text-blue-500 font-semibold'
+                      ? 'text-white font-semibold'
                       : 'hover:text-gray-400 transition'
                   }
                 >
@@ -78,45 +123,33 @@ const Header = () => {
             </ul>
           </nav>
 
-          <div className="flex gap-[16px]">
-            {/* Language & Button */}
-            <div
-              className="relative"
-              onMouseEnter={() => setShowLangMenu(true)}
-              onMouseLeave={() => setShowLangMenu(false)}
-            >
-              <button className="flex items-center gap-2 bg-white/10 p-[12px] rounded-full text-[#fff] cursor-pointer">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 16 16"
-                  fill="currentColor"
-                  className="size-4"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M3.757 4.5c.18.217.376.42.586.608.153-.61.354-1.175.596-1.678A5.53 5.53 0 0 0 3.757 4.5ZM8 1a6.994 6.994 0 0 0-7 7 7 7 0 1 0 7-7Zm0 1.5c-.476 0-1.091.386-1.633 1.427-.293.564-.531 1.267-.683 2.063A5.48 5.48 0 0 0 8 6.5a5.48 5.48 0 0 0 2.316-.51c-.152-.796-.39-1.499-.683-2.063C9.09 2.886 8.476 2.5 8 2.5Zm3.657 2.608a8.823 8.823 0 0 0-.596-1.678c.444.298.842.659 1.182 1.07-.18.217-.376.42-.586.608Zm-1.166 2.436A6.983 6.983 0 0 1 8 8a6.983 6.983 0 0 1-2.49-.456 10.703 10.703 0 0 0 .202 2.6c.72.231 1.49.356 2.288.356.798 0 1.568-.125 2.29-.356a10.705 10.705 0 0 0 .2-2.6Zm1.433 1.85a12.652 12.652 0 0 0 .018-2.609c.405-.276.78-.594 1.117-.947a5.48 5.48 0 0 1 .44 2.262 7.536 7.536 0 0 1-1.575 1.293Zm-2.172 2.435a9.046 9.046 0 0 1-3.504 0c.039.084.078.166.12.244C6.907 13.114 7.523 13.5 8 13.5s1.091-.386 1.633-1.427c.04-.078.08-.16.12-.244Zm1.31.74a8.5 8.5 0 0 0 .492-1.298c.457-.197.893-.43 1.307-.696a5.526 5.526 0 0 1-1.8 1.995Zm-6.123 0a8.507 8.507 0 0 1-.493-1.298 8.985 8.985 0 0 1-1.307-.696 5.526 5.526 0 0 0 1.8 1.995ZM2.5 8.1c.463.5.993.935 1.575 1.293a12.652 12.652 0 0 1-.018-2.608 7.037 7.037 0 0 1-1.117-.947 5.48 5.48 0 0 0-.44 2.262Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>{selectedLang}</span>
+          {/* LANGUAGE AND CONTACT */}
+          <div className="flex gap-2 sm:gap-4" ref={menuRef}>
+            <div className="relative">
+              <button
+                className="flex items-center gap-1 sm:gap-2 bg-white/10 p-2 sm:p-3 rounded-full text-white cursor-pointer"
+                onClick={() => setShowLangMenu((prev) => !prev)}
+              >
+                <img
+                  src={global}
+                  alt="global"
+                  className="w-5 sm:w-6 h-5 sm:h-6"
+                />
+                <span className="text-xs sm:text-sm lg:text-base">{selectedLang}</span>
               </button>
 
               {showLangMenu && (
-                <div className="absolute right-0 w-24 bg-white/10 text-white rounded-lg shadow-md z-50">
+                <div className="absolute right-0 w-20 sm:w-24 bg-white/10 text-white rounded-lg shadow-md z-50">
                   {['En', 'Uz', 'Ру'].map((lang) => (
                     <button
                       key={lang}
                       onClick={() => {
                         setSelectedLang(lang);
+                        changeValues(lang.toLowerCase());
                         setShowLangMenu(false);
-                        changeValues(lang.toLocaleLowerCase());
                       }}
-                      className={`flex items-center justify-between w-full px-4 py-2 ${
-                        lang == 'En'
-                          ? 'rounded-t-lg'
-                          : lang == 'Ру'
-                          ? 'rounded-b-lg'
-                          : ''
+                      className={`flex items-center justify-between w-full px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm ${
+                        lang === 'En' ? 'rounded-t-lg' : lang === 'Ру' ? 'rounded-b-lg' : ''
                       } hover:bg-gray-700 cursor-pointer`}
                     >
                       {lang}
@@ -125,7 +158,7 @@ const Header = () => {
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 16 16"
                           fill="currentColor"
-                          className="w-4 h-4"
+                          className="w-3 sm:w-4 h-3 sm:h-4"
                         >
                           <path
                             fillRule="evenodd"
@@ -140,11 +173,132 @@ const Header = () => {
               )}
             </div>
 
-            <button className="hidden lg:block bg-[#4266B1] text-[#fff] text-[16px] rounded-[24px] px-6 py-3 cursor-pointer">
+            <button
+              style={{ fontFamily: 'Public Sans' }}
+              className="hidden xl:block bg-[#61A6FF] text-white text-sm lg:text-base rounded-3xl px-4 lg:px-6 py-2 lg:py-3 cursor-pointer"
+            >
               {t('navbar.contact_button')}
             </button>
           </div>
         </div>
+
+        {showMobileMenu && (
+          <nav
+            ref={mobileMenuRef}
+            className="fixed top-0 left-0 block xl:hidden bg-black w-full h-screen z-50 px-4 sm:px-6"
+          >
+            <button
+              className="absolute top-4 left-4 p-2 sm:p-3 rounded-3xl bg-[#FFFFFF1A] cursor-pointer"
+              onClick={() => setShowMobileMenu(false)}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="white"
+                className="w-5 sm:w-6 h-5 sm:h-6"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </button>
+
+            <ul
+              style={{ fontFamily: 'Public Sans' }}
+              className="flex flex-col items-center justify-center space-y-6 text-white mt-20 sm:mt-24"
+            >
+              <li className="w-full text-center">
+                <NavLink
+                  to="/home"
+                  className={({ isActive }) =>
+                    isActive
+                      ? 'text-white font-semibold text-sm sm:text-base'
+                      : 'hover:text-gray-400 transition text-sm sm:text-base'
+                  }
+                  onClick={() => setShowMobileMenu(false)}
+                >
+                  {t('navbar.home')}
+                </NavLink>
+              </li>
+              <li className="w-full text-center">
+                <NavLink
+                  to="/services"
+                  className={({ isActive }) =>
+                    isActive
+                      ? 'text-white font-semibold text-sm sm:text-base'
+                      : 'hover:text-gray-400 transition text-sm sm:text-base'
+                  }
+                  onClick={() => setShowMobileMenu(false)}
+                >
+                  {t('navbar.services')}
+                </NavLink>
+              </li>
+              <li className="w-full text-center">
+                <NavLink
+                  to="/portfolio"
+                  className={({ isActive }) =>
+                    isActive
+                      ? 'text-white font-semibold text-sm sm:text-base'
+                      : 'hover:text-gray-400 transition text-sm sm:text-base'
+                  }
+                  onClick={() => setShowMobileMenu(false)}
+                >
+                  {t('navbar.portfolio')}
+                </NavLink>
+              </li>
+              <li className="w-fulltext-center">
+                <NavLink
+                  to="/contact"
+                  className={({ isActive }) =>
+                    isActive
+                      ? 'text-white font-semibold text-sm sm:text-base'
+                      : 'hover:text-gray-400 transition text-sm sm:text-base'
+                  }
+                  onClick={() => setShowMobileMenu(false)}
+                >
+                  {t('navbar.contact')}
+                </NavLink>
+              </li>
+            </ul>
+
+            <a
+              href="tel:+998912345678"
+              style={{ fontFamily: 'Public Sans' }}
+              className="absolute bottom-16 sm:bottom-20 left-1/2 transform -translate-x-1/2 text-white bg-[#61A6FF] text-sm sm:text-base rounded-3xl px-4 sm:px-6 py-2 sm:py-3 cursor-pointer"
+            >
+              {t('navbar.contact_button')}
+            </a>
+
+            <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 sm:gap-4">
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-1 sm:p-2 bg-[#FFFFFF1A] rounded-full hover:bg-gray-700 transition"
+              >
+                <img
+                  src={facebookIcon}
+                  alt="Facebook"
+                  className="w-5 sm:w-6 h-5 sm:h-6"
+                />
+              </a>
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-1 sm:p-2 bg-[#FFFFFF1A] rounded-full hover:bg-gray-700 transition"
+              >
+                <img
+                  src={instagramIcon}
+                  alt="Instagram"
+                  className="w-5 sm:w-6 h-5 sm:h-6"
+                />
+              </a>
+            </div>
+          </nav>
+        )}
       </div>
     </header>
   );

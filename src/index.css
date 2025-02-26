@@ -50,11 +50,11 @@ img {
 
 .container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 90%;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 16px; /* Mobil uchun kichik padding */
-  padding-left: 16px;
+  /* padding-right: 16px; */
+  /* padding-left: 16px; */
 }
 
 /* Tablet (≥ 640px) */
@@ -83,9 +83,6 @@ img {
 
 ol,
 ul {
-  /* margin-top: 0;
-  margin-bottom: 0; */
-  /* padding-left: 0; */
   list-style: none;
 }
 

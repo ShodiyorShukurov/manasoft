@@ -13,14 +13,14 @@ const Layout = () => {
 
   return (
     <main>
-      <Hero />
+      {/* <Hero />
       <About />
       <Services />
       <WorkPage />
       <Projects />
       <Customers />
       <Question />
-      <ContactForm />
+      <ContactForm /> */}
     </main>
   );
 };
