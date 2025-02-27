@@ -11,11 +11,11 @@ const Hero = () => {
 
   return (
     <section
-      className="w-full sm:px-0 pt-[140px] bg-no-repeat bg-cover bg-bottom"
+      className="pt-[180px] sm:pt-[140px] bg-no-repeat bg-cover bg-bottom"
       style={{
         backgroundImage: `url(${bgImage})`,
         backdropFilter: 'blur(20px)',
-        backgroundSize: 'cover',
+        // backgroundSize: 'cover',
       }}
     >
       <div className="container">
@@ -39,15 +39,15 @@ const Hero = () => {
         </div>
 
         {/* Title */}
-        <h1 className="text-white text-[32px] sm:text-[72px] font-bold mx-auto text-center mt-4 sm:mt-[24px] tracking-[0.72px] leading-[100%] font-[Outfit] max-w-[876px]">
+        <h1 className="text-white text-[36px] sm:text-[72px] font-semibold sm:font-bold mx-auto text-center mt-4 sm:mt-[24px] tracking-[0.72px] leading-[100%] font-[Outfit] max-w-[876px]">
         {t('hero.hero_title')}
         </h1>
-        <p className="text-white text-[16px] sm:text-[20px] mx-auto text-center mt-6 sm:mt-[32px] tracking-[0.2px] leading-[140%] font-[Outfit]">
+        <p className="text-white text-[16px] sm:text-[20px] mx-auto text-center mt-[16px] sm:mt-[32px] tracking-[0.2px] leading-[140%] font-[Outfit]">
         {t('hero.hero_subtitle')}
         </p>
 
         {/* Buttons */}
-        <div style={{fontFamily:"Public Sans"}} className="flex flex-col sm:flex-row justify-center items-center flex-wrap gap-4 sm:gap-[32px] mt-[32px] sm:mt-[48px]">
+        <div style={{fontFamily:"Public Sans"}} className="flex flex-col-reverse sm:flex-row justify-center items-center flex-wrap gap-4 sm:gap-[32px] mt-[32px] sm:mt-[48px]">
           <button className="bg-[#61A6FF] text-[#fff] text-[16px] rounded-full px-[32px] py-[16px] font-medium leading-[100%] cursor-pointer w-full sm:w-auto">
           {t('hero.hero_button1')}
           </button>
@@ -61,7 +61,7 @@ const Hero = () => {
             <iframe
               width="100%"
               height="300"
-              className="rounded-[24px] sm:rounded-[32px] h-[200px] sm:h-[520px] max-w-full"
+              className="rounded-[24px] sm:rounded-[32px] sm:h-[520px] max-w-full"
               src="https://www.youtube.com/embed/kqaMIFEz15s?si=sOorMhwuz3jr6CuC"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

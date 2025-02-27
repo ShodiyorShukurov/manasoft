@@ -61,7 +61,7 @@ const Header = () => {
               alt="Manasoft"
               className="w-6 sm:w-7 lg:w-8 h-6 sm:h-7 lg:h-8"
             />
-            <span className="font-bold text-[#61A6FF] text-[20px] sm:text-xl lg:text-2xl leading-tight ml-1 sm:ml-2 tracking-tight font-[Sen]">
+            <span className="font-bold text-[#61A6FF] text-[20px] lg:text-2xl leading-tight ml-1 sm:ml-2 tracking-tight font-[Sen]">
               Manasoft
             </span>
           </a>
@@ -135,7 +135,7 @@ const Header = () => {
                   alt="global"
                   className="w-5 sm:w-6 h-5 sm:h-6"
                 />
-                <span className="text-xs sm:text-sm lg:text-base">{selectedLang}</span>
+                <span className="text-base">{selectedLang}</span>
               </button>
 
               {showLangMenu && (
@@ -148,7 +148,7 @@ const Header = () => {
                         changeValues(lang.toLowerCase());
                         setShowLangMenu(false);
                       }}
-                      className={`flex items-center justify-between w-full px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm ${
+                      className={`flex items-center justify-between w-full px-2 sm:px-4 py-1 sm:py-2 text-sm ${
                         lang === 'En' ? 'rounded-t-lg' : lang === 'Ру' ? 'rounded-b-lg' : ''
                       } hover:bg-gray-700 cursor-pointer`}
                     >
@@ -158,7 +158,7 @@ const Header = () => {
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 16 16"
                           fill="currentColor"
-                          className="w-3 sm:w-4 h-3 sm:h-4"
+                          className="w-4 h-4"
                         >
                           <path
                             fillRule="evenodd"
@@ -214,8 +214,8 @@ const Header = () => {
                   to="/home"
                   className={({ isActive }) =>
                     isActive
-                      ? 'text-white font-semibold text-sm sm:text-base'
-                      : 'hover:text-gray-400 transition text-sm sm:text-base'
+                      ? 'text-white font-semibold text-base'
+                      : 'hover:text-gray-400 transition text-base'
                   }
                   onClick={() => setShowMobileMenu(false)}
                 >
@@ -227,8 +227,8 @@ const Header = () => {
                   to="/services"
                   className={({ isActive }) =>
                     isActive
-                      ? 'text-white font-semibold text-sm sm:text-base'
-                      : 'hover:text-gray-400 transition text-sm sm:text-base'
+                      ? 'text-white font-semibold text-base'
+                      : 'hover:text-gray-400 transition text-base'
                   }
                   onClick={() => setShowMobileMenu(false)}
                 >
@@ -240,8 +240,8 @@ const Header = () => {
                   to="/portfolio"
                   className={({ isActive }) =>
                     isActive
-                      ? 'text-white font-semibold text-sm sm:text-base'
-                      : 'hover:text-gray-400 transition text-sm sm:text-base'
+                      ? 'text-white font-semibold text-base'
+                      : 'hover:text-gray-400 transition text-base'
                   }
                   onClick={() => setShowMobileMenu(false)}
                 >
@@ -253,8 +253,8 @@ const Header = () => {
                   to="/contact"
                   className={({ isActive }) =>
                     isActive
-                      ? 'text-white font-semibold text-sm sm:text-base'
-                      : 'hover:text-gray-400 transition text-sm sm:text-base'
+                      ? 'text-white font-semibold text-base'
+                      : 'hover:text-gray-400 transition text-base'
                   }
                   onClick={() => setShowMobileMenu(false)}
                 >
@@ -266,7 +266,7 @@ const Header = () => {
             <a
               href="tel:+998912345678"
               style={{ fontFamily: 'Public Sans' }}
-              className="absolute bottom-16 sm:bottom-20 left-1/2 transform -translate-x-1/2 text-white bg-[#61A6FF] text-sm sm:text-base rounded-3xl px-4 sm:px-6 py-2 sm:py-3 cursor-pointer"
+              className="absolute bottom-16 sm:bottom-20 left-1/2 transform -translate-x-1/2 text-white bg-[#61A6FF] text-base rounded-3xl px-4 sm:px-6 py-2 sm:py-3 cursor-pointer"
             >
               {t('navbar.contact_button')}
             </a>
@@ -276,7 +276,7 @@ const Header = () => {
                 href="https://www.facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-1 sm:p-2 bg-[#FFFFFF1A] rounded-full hover:bg-gray-700 transition"
+                className="p-2 bg-[#FFFFFF1A] rounded-full hover:bg-gray-700 transition"
               >
                 <img
                   src={facebookIcon}
@@ -288,7 +288,7 @@ const Header = () => {
                 href="https://www.instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-1 sm:p-2 bg-[#FFFFFF1A] rounded-full hover:bg-gray-700 transition"
+                className="p-2 bg-[#FFFFFF1A] rounded-full hover:bg-gray-700 transition"
               >
                 <img
                   src={instagramIcon}
