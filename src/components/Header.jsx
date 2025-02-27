@@ -40,7 +40,7 @@ const Header = () => {
 
   return (
     <header className="w-full bg-transparent">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container">
         <div className="flex pt-4 sm:pt-6 lg:pt-9 justify-between items-center">
           {/* MOBILE BURGER BUTTON */}
           <button
@@ -61,13 +61,13 @@ const Header = () => {
               alt="Manasoft"
               className="w-6 sm:w-7 lg:w-8 h-6 sm:h-7 lg:h-8"
             />
-            <span className="font-bold text-[#61A6FF] text-sm sm:text-xl lg:text-2xl leading-tight ml-1 sm:ml-2 tracking-tight font-[Sen]">
+            <span className="font-bold text-[#61A6FF] text-[20px] sm:text-xl lg:text-2xl leading-tight ml-1 sm:ml-2 tracking-tight font-[Sen]">
               Manasoft
             </span>
           </a>
 
           {/* DESKTOP NAVBAR */}
-          <nav className="hidden xl:flex bg-white/10 px-6 lg:px-12 py-2 lg:py-4 rounded-3xl">
+          <nav className="hidden xl:flex bg-white/10 px-6 lg:px-12 py-2 lg:py-4 rounded-full">
             <ul
               style={{ fontFamily: 'Public Sans' }}
               className="flex space-x-6 lg:space-x-12 text-[#FFFFFFCC] text-sm lg:text-base"
@@ -175,7 +175,7 @@ const Header = () => {
 
             <button
               style={{ fontFamily: 'Public Sans' }}
-              className="hidden xl:block bg-[#61A6FF] text-white text-sm lg:text-base rounded-3xl px-4 lg:px-6 py-2 lg:py-3 cursor-pointer"
+              className="hidden xl:block bg-[#61A6FF] text-white text-[16px] lg:text-base rounded-3xl px-4 lg:px-6 py-2 lg:py-3 cursor-pointer"
             >
               {t('navbar.contact_button')}
             </button>

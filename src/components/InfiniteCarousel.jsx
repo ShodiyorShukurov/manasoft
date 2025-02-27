@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 
 const InfiniteCarousel = ({ children }) => {
   return (
-    <div className="container flex my-gradient mx-auto">
+    <div className="container flex my-gradient mx-auto overflow-x-hidden">
       <motion.div
         initial={{ x: "0" }}
         animate={{ x: '-100%' }}
-        transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
+        transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
         className="flex flex-shrink-0"
       >
         {children}
@@ -16,7 +16,7 @@ const InfiniteCarousel = ({ children }) => {
       <motion.div
         initial={{ x: '0' }}
         animate={{ x: '-100%' }}
-        transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
+        transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
         className="flex flex-shrink-0"
       >
         {children}

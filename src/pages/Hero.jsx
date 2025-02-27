@@ -33,35 +33,35 @@ const Hero = () => {
               />
             ))}
           </div>
-          <span className="text-white text-[16px] font-normal ml-3">
+          <span className="text-white text-[16px] leading-[16px] font-semibold ml-3">
             {t('hero.hero_text')}
           </span>
         </div>
 
         {/* Title */}
-        <h1 className="text-white text-[32px] sm:text-[72px] font-semibold mx-auto text-center mt-4 sm:mt-[16px] tracking-[0.72px] leading-[110%] font-[Outfit] max-w-[876px]">
+        <h1 className="text-white text-[32px] sm:text-[72px] font-bold mx-auto text-center mt-4 sm:mt-[24px] tracking-[0.72px] leading-[100%] font-[Outfit] max-w-[876px]">
         {t('hero.hero_title')}
         </h1>
-        <p className="text-white text-[16px] sm:text-[24px] mx-auto text-center mt-6 sm:mt-[32px] tracking-[0.24px] leading-[130%] font-[Outfit] max-w-[600px]">
+        <p className="text-white text-[16px] sm:text-[20px] mx-auto text-center mt-6 sm:mt-[32px] tracking-[0.2px] leading-[140%] font-[Outfit]">
         {t('hero.hero_subtitle')}
         </p>
 
         {/* Buttons */}
         <div style={{fontFamily:"Public Sans"}} className="flex flex-col sm:flex-row justify-center items-center flex-wrap gap-4 sm:gap-[32px] mt-[32px] sm:mt-[48px]">
-          <button className="bg-[#61A6FF] text-[#fff] text-[16px] rounded-[24px] px-6 py-3 font-medium cursor-pointer w-full sm:w-auto">
+          <button className="bg-[#61A6FF] text-[#fff] text-[16px] rounded-full px-[32px] py-[16px] font-medium leading-[100%] cursor-pointer w-full sm:w-auto">
           {t('hero.hero_button1')}
           </button>
-          <button className="text-[#61A6FF] text-[16px] border-2 border-[#61A6FF] rounded-[24px] px-6 py-3 font-medium cursor-pointer w-full sm:w-auto">
+          <button className="text-[#61A6FF] text-[16px] border-2 border-[#61A6FF] rounded-full px-[32px] py-[16px] font-medium leading-[100%] cursor-pointer w-full sm:w-auto">
           {t('hero.hero_button2')}
           </button>
         </div>
 
-        <div className="flex justify-center items-center flex-col pt-[84px] sm:pt-[144px] pb-[64px] gap-[40px] sm:gap-[64px] ">
-          <div className="w-full max-w-[920px] rounded-[32px] px-4 sm:px-0">
+        <div className="flex justify-center items-center flex-col pt-[84px] sm:pt-[96px] pb-[64px]">
+          <div className="w-full max-w-[930px] rounded-[48px]">
             <iframe
               width="100%"
               height="300"
-              className="rounded-[24px] sm:rounded-[32px] sm:h-[520px] max-w-full"
+              className="rounded-[24px] sm:rounded-[32px] h-[200px] sm:h-[520px] max-w-full"
               src="https://www.youtube.com/embed/kqaMIFEz15s?si=sOorMhwuz3jr6CuC"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
