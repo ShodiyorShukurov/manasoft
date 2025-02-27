@@ -15,10 +15,10 @@ const Layout = () => {
     <main>
       <Hero />
       <About />
+      <Customers />
       {/* <Services />
       <WorkPage />
       <Projects />
-      <Customers />
       <Question />
       <ContactForm /> */}
     </main>
