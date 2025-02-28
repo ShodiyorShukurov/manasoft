@@ -1,134 +1,320 @@
 import React from 'react';
-import workImg from '../assets/image/workImg.png';
 import { useTranslation } from 'react-i18next';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const WorkPage = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="pt-[140px]">
+    <section className="pt-[80px] md:pt-[120px]">
       <div className="container">
-        <h2 className="text-[48px] font-medium leading-[120%] tracking-[0.48px] bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent">
-        {t('workpage.workpage_title')}
+        <h2 className="text-[32px] md:text-[48px] font-medium leading-[120%] text-[#fff] md:text-center">
+          Bizning ishlash jarayonimiz
         </h2>
-        <p className="text-[20px] text-[#ffffffcc] leading-[140%] tracking-[0.2px] mt-[16px] w-full max-w-[750px]">
-        {t('workpage.workpage_subtitle')}
+        <p className="text-[16px] md:text-[20px] text-[#ffffffcc] leading-[140%] tracking-[0.2px] mt-[12px] md:mt-[16px] w-full max-w-[750px] mx-auto md:text-center">
+          Manasoft jamoasi har bir loyihani aniqlik va sifat bilan amalga
+          oshiradi. Bizning yondashuv samaradorlik va innovatsiyani ta’minlaydi!
         </p>
 
-        <ul className="mt-[46px] space-y-[48px]">
+        <h3 className="text-[24px] md:text-[32px] text-[#ffffff] leading-[140%] tracking-[0.2px] mt-[32px] md:mt-[48px] font-medium w-full max-w-[750px]  md:text-center">
+          Ishlab chiqilishidan oldin
+        </h3>
+
+        <div className="md:hidden block mt-[16px] relative">
+          <Swiper
+            spaceBetween={50}
+            loop={true}
+            pagination={{
+              el: '.custom-pagination',
+              clickable: true,
+            }}
+            modules={[Pagination]}
+            className="md:h-[280px] sm:h-[200px] mySwiper"
+          >
+            <SwiperSlide>
+              <li
+                style={{
+                  background:
+                    'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 1.5%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
+                  backdropFilter: 'blur(2px)',
+                  border: '1px solid #6F727C',
+                  borderRadius: '24px',
+                }}
+                className="p-[24px] text-white "
+              >
+                <h4 className="text-[20px] md:text-[24px] font-semibold md:leading-[120%]">
+                  Ma'lumotlarni yig'ish
+                </h4>
+                <p className="text-[16px] md:text-[18px] leading-[150%] mt-[16px] text-[#ffffffcc]">
+                  Muvaffaqiyatli loyiha yaratish uchun eng avvalo
+                  ehtiyojlaringiz va biznes maqsadlaringizni chuqur o‘rganamiz.
+                  Bu bosqichda biz ma’lumot to‘playmiz va strategik yo‘nalishni
+                  aniqlaymiz.
+                </p>
+              </li>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <li
+                style={{
+                  background:
+                    'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 1.5%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
+                  backdropFilter: 'blur(2px)',
+                  border: '1px solid #6F727C',
+                  borderRadius: '24px',
+                }}
+                className="p-[24px] text-white"
+              >
+                <h4 className="text-[20px] md:text-[24px] font-semibold md:leading-[120%]">
+                  Loyihaning TZ
+                </h4>
+                <p className="text-[16px] md:text-[18px] leading-[150%] mt-[16px] text-[#ffffffcc]">
+                  Loyiha muvaffaqiyatining kaliti – aniq va puxta ishlab
+                  chiqilgan texnik topshiriq (TZ). Biz barcha talablarni
+                  hujjatlashtiramiz va loyiha yo‘nalishini belgilaymiz.
+                </p>
+              </li>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <li
+                style={{
+                  background:
+                    'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 1.5%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
+                  backdropFilter: 'blur(2px)',
+                  border: '1px solid #6F727C',
+                  borderRadius: '24px',
+                }}
+                className="p-[24px] text-white"
+              >
+                <h4 className="text-[20px] md:text-[24px] font-semibold md:leading-[120%]">
+                  Integratsiya va Tadqiqot
+                </h4>
+                <p className="text-[16px] md:text-[18px] leading-[150%] mt-[16px] text-[#ffffffcc]">
+                  Loyiha uchun eng mos texnologiyalarni tanlash, imkoniyatlarni
+                  tahlil qilish va kerakli integratsiyalarni ishlab chiqish
+                  bosqichi. Biz biznesingiz uchun eng optimal yechimni topamiz!
+                </p>
+              </li>
+            </SwiperSlide>
+          </Swiper>
+
+          <div className="mt-[20px] md:mt-0 flex justify-center">
+            <div className="custom-pagination custom"></div>
+          </div>
+        </div>
+
+        <ul className="hidden md:grid grid-cols-3 gap-[24px] mt-[24px]">
           <li
             style={{
               background:
-                'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(0, 0, 255, 0.08) 1.5%, rgba(0, 0, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
+                'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 1.5%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
+              backdropFilter: 'blur(2px)',
+              border: '1px solid #6F727C',
+              borderRadius: '24px',
             }}
-            className="flex gap-[24px] border border-[#ffffff33] rounded-[32px] p-[48px] backdrop-blur-[2px] text-white"
+            className="p-[32px] text-white"
           >
-            <div>
-              <button
-                style={{
-                  background:
-                    'linear-gradient(120deg, rgba(255, 255, 255, 0.08) 8.66%, rgba(255, 255, 255, 0.05) 105.37%)',
-                  boxShadow:
-                    '3px 5px 8px 0px rgba(255, 255, 255, 0.16) inset, 0px 4px 16px 0px rgba(255, 255, 255, 0.08)',
-                  backdropFilter: 'blur(30px)',
-                  border: '1.5px solid',
-                  borderImageSource:
-                    'linear-gradient(360deg, rgba(0, 0, 240, 0.12) -13.08%, rgba(255, 255, 255, 0.12) 119.23%)',
-                }}
-                className="text-[16px] rounded-[24px] px-[24px] py-[12px] leading-[100%] mx-auto md:mx-0"
-              >
-                01
-              </button>
-              <h3 className="text-[32px] font-font-semibold leading-[120%] mt-[24px]">
-                UX tadqiqotlar
-              </h3>
-              <p className="text-[18px] leading-[150%] mt-[24px]">
-                Manasoft Telegram botlar, mobil ilovalar, veb-saytlar hamda CRM
-                va ERP tizimlari orqali biznesingizni avtomatlashtirib, uni
-                keyingi bosqichga olib chiqishga yordam beradi. Bizning
-                ishonchli va tezkor IT yechimlarimiz iOS va Android
-                platformalari uchun sifatli ilovalar yaratish, zamonaviy
-                veb-saytlar ishlab chiqish hamda biznes jarayonlarini
-                optimallashtirishga qaratilgan.
-              </p>
-            </div>
-            <img src={workImg} alt="Img" width={600} />
+            <h4 className="text-[24px] font-semibold leading-[120%]">
+              Ma'lumotlarni yig'ish
+            </h4>
+            <p className="text-[18px] leading-[150%] mt-[16px] text-[#ffffffcc]">
+              Muvaffaqiyatli loyiha yaratish uchun eng avvalo ehtiyojlaringiz va
+              biznes maqsadlaringizni chuqur o‘rganamiz. Bu bosqichda biz
+              ma’lumot to‘playmiz va strategik yo‘nalishni aniqlaymiz.
+            </p>
           </li>
+
           <li
             style={{
               background:
-                'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(0, 0, 255, 0.08) 1.5%, rgba(0, 0, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
+                'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 1.5%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
+              backdropFilter: 'blur(2px)',
+              border: '1px solid #6F727C',
+              borderRadius: '24px',
             }}
-            className="flex gap-[24px] border border-[#ffffff33] rounded-[32px] p-[48px] backdrop-blur-[2px] text-white"
+            className="p-[32px] text-white"
           >
-            <div>
-              <button
-                style={{
-                  background:
-                    'linear-gradient(120deg, rgba(255, 255, 255, 0.08) 8.66%, rgba(255, 255, 255, 0.05) 105.37%)',
-                  boxShadow:
-                    '3px 5px 8px 0px rgba(255, 255, 255, 0.16) inset, 0px 4px 16px 0px rgba(255, 255, 255, 0.08)',
-                  backdropFilter: 'blur(30px)',
-                  border: '1.5px solid',
-                  borderImageSource:
-                    'linear-gradient(360deg, rgba(0, 0, 240, 0.12) -13.08%, rgba(255, 255, 255, 0.12) 119.23%)',
-                }}
-                className="text-[16px] rounded-[24px] px-[24px] py-[12px] leading-[100%] mx-auto md:mx-0"
-              >
-                01
-              </button>
-              <h3 className="text-[32px] font-font-semibold leading-[120%] mt-[24px]">
-                UX tadqiqotlar
-              </h3>
-              <p className="text-[18px] leading-[150%] mt-[24px]">
-                Manasoft Telegram botlar, mobil ilovalar, veb-saytlar hamda CRM
-                va ERP tizimlari orqali biznesingizni avtomatlashtirib, uni
-                keyingi bosqichga olib chiqishga yordam beradi. Bizning
-                ishonchli va tezkor IT yechimlarimiz iOS va Android
-                platformalari uchun sifatli ilovalar yaratish, zamonaviy
-                veb-saytlar ishlab chiqish hamda biznes jarayonlarini
-                optimallashtirishga qaratilgan.
-              </p>
-            </div>
-            <img src={workImg} alt="Img" width={600} />
+            <h4 className="text-[24px] font-semibold leading-[120%]">
+              Loyihaning TZ
+            </h4>
+            <p className="text-[18px] leading-[150%] mt-[16px] text-[#ffffffcc]">
+              Loyiha muvaffaqiyatining kaliti – aniq va puxta ishlab chiqilgan
+              texnik topshiriq (TZ). Biz barcha talablarni hujjatlashtiramiz va
+              loyiha yo‘nalishini belgilaymiz.
+            </p>
           </li>
+
           <li
             style={{
               background:
-                'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(0, 0, 255, 0.08) 1.5%, rgba(0, 0, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
+                'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 1.5%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
+              backdropFilter: 'blur(2px)',
+              border: '1px solid #6F727C',
+              borderRadius: '24px',
             }}
-            className="flex gap-[24px] border border-[#ffffff33] rounded-[32px] p-[48px] backdrop-blur-[2px] text-white"
+            className="p-[32px] text-white"
           >
-            <div>
-              <button
+            <h4 className="text-[24px] font-semibold leading-[120%]">
+              Integratsiya va Tadqiqot
+            </h4>
+            <p className="text-[18px] leading-[150%] mt-[16px] text-[#ffffffcc]">
+              Loyiha uchun eng mos texnologiyalarni tanlash, imkoniyatlarni
+              tahlil qilish va kerakli integratsiyalarni ishlab chiqish
+              bosqichi. Biz biznesingiz uchun eng optimal yechimni topamiz!
+            </p>
+          </li>
+        </ul>
+
+        <h3 className="text-[24px] md:text-[32px] text-[#ffffff] leading-[140%] tracking-[0.2px] mt-[32px] md:mt-[48px] font-medium w-full max-w-[750px]  md:text-center">
+          Ishlab chiqilishidan oldin
+        </h3>
+
+        <div className="md:hidden block mt-[16px] relative">
+          <Swiper
+            spaceBetween={30}
+            loop={true}
+            pagination={{
+              el: '.custom-pagination1',
+              clickable: true,
+            }}
+            modules={[Pagination]}
+            className="md:h-[280px] sm:h-[200px] mySwiper"
+          >
+            <SwiperSlide>
+              <li
                 style={{
                   background:
-                    'linear-gradient(120deg, rgba(255, 255, 255, 0.08) 8.66%, rgba(255, 255, 255, 0.05) 105.37%)',
-                  boxShadow:
-                    '3px 5px 8px 0px rgba(255, 255, 255, 0.16) inset, 0px 4px 16px 0px rgba(255, 255, 255, 0.08)',
-                  backdropFilter: 'blur(30px)',
-                  border: '1.5px solid',
-                  borderImageSource:
-                    'linear-gradient(360deg, rgba(0, 0, 240, 0.12) -13.08%, rgba(255, 255, 255, 0.12) 119.23%)',
+                    'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 1.5%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
+                  backdropFilter: 'blur(2px)',
+                  border: '1px solid #6F727C',
+                  borderRadius: '24px',
                 }}
-                className="text-[16px] rounded-[24px] px-[24px] py-[12px] leading-[100%] mx-auto md:mx-0"
+                className="p-[24px] text-white"
               >
-                01
-              </button>
-              <h3 className="text-[32px] font-font-semibold leading-[120%] mt-[24px]">
-                UX tadqiqotlar
-              </h3>
-              <p className="text-[18px] leading-[150%] mt-[24px]">
-                Manasoft Telegram botlar, mobil ilovalar, veb-saytlar hamda CRM
-                va ERP tizimlari orqali biznesingizni avtomatlashtirib, uni
-                keyingi bosqichga olib chiqishga yordam beradi. Bizning
-                ishonchli va tezkor IT yechimlarimiz iOS va Android
-                platformalari uchun sifatli ilovalar yaratish, zamonaviy
-                veb-saytlar ishlab chiqish hamda biznes jarayonlarini
-                optimallashtirishga qaratilgan.
-              </p>
-            </div>
-            <img src={workImg} alt="Img" width={600} />
+                <h4 className="text-[20px] md:text-[24px] font-semibold md:leading-[120%]">
+                  Dizayn loyihasi
+                </h4>
+                <p className="text-[16px] md:text-[18px] leading-[150%] mt-[16px] text-[#ffffffcc]">
+                  UX/UI dizayni – foydalanuvchilar bilan o‘zaro aloqani
+                  yengillashtirish uchun asosiy omil. Biz loyihangizga mos
+                  keladigan jozibali va funksional dizayn yaratamiz.
+                </p>
+              </li>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <li
+                style={{
+                  background:
+                    'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 1.5%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
+                  backdropFilter: 'blur(2px)',
+                  border: '1px solid #6F727C',
+                  borderRadius: '24px',
+                }}
+                className="p-[32px] text-white"
+              >
+                <h4 className="text-[20px] md:text-[24px] font-semibold md:leading-[120%]">
+                  Rivojlanish prototipi
+                </h4>
+                <p className="text-[16px] md:text-[18px] leading-[150%] mt-[16px] text-[#ffffffcc]">
+                  Dastlabki prototip orqali loyiha qanday ishlashini sinovdan
+                  o‘tkazamiz. Bu bosqichda asosiy funksiyalar shakllantiriladi
+                  va dastlabki testlar o‘tkaziladi.
+                </p>
+              </li>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <li
+                style={{
+                  background:
+                    'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 1.5%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
+                  backdropFilter: 'blur(2px)',
+                  border: '1px solid #6F727C',
+                  borderRadius: '24px',
+                }}
+                className="p-[32px] text-white"
+              >
+                <h4 className="text-[20px] md:text-[24px] font-semibold md:leading-[120%]">
+                  Rivojlanish yakuniy
+                </h4>
+                <p className="text-[16px] md:text-[18px] leading-[150%] mt-[16px] text-[#ffffffcc]">
+                  Loyiha to‘liq yakunlanadi, barcha funksiyalar sinovdan
+                  o‘tkaziladi va optimallashtiriladi. Biz mijozlarimizga tayyor
+                  mahsulotni yuqori sifat bilan taqdim etamiz!
+                </p>
+              </li>
+            </SwiperSlide>
+          </Swiper>
+          <div className="mt-[20px] md:mt-0 flex justify-center">
+            <div className="custom-pagination1 custom"></div>
+          </div>
+          
+        </div>
+
+        <ul className="hidden md:grid grid-cols-3 gap-[24px] mt-[24px]">
+          <li
+            style={{
+              background:
+                'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 1.5%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
+              backdropFilter: 'blur(2px)',
+              border: '1px solid #6F727C',
+              borderRadius: '24px',
+            }}
+            className="p-[32px] text-white"
+          >
+            <h4 className="text-[24px] font-semibold leading-[120%]">
+              Dizayn loyihasi
+            </h4>
+            <p className="text-[18px] leading-[150%] mt-[16px] text-[#ffffffcc]">
+              UX/UI dizayni – foydalanuvchilar bilan o‘zaro aloqani
+              yengillashtirish uchun asosiy omil. Biz loyihangizga mos keladigan
+              jozibali va funksional dizayn yaratamiz.
+            </p>
+          </li>
+
+          <li
+            style={{
+              background:
+                'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 1.5%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
+              backdropFilter: 'blur(2px)',
+              border: '1px solid #6F727C',
+              borderRadius: '24px',
+            }}
+            className="p-[32px] text-white"
+          >
+            <h4 className="text-[24px] font-semibold leading-[120%]">
+              Rivojlanish prototipi
+            </h4>
+            <p className="text-[18px] leading-[150%] mt-[16px] text-[#ffffffcc]">
+              Dastlabki prototip orqali loyiha qanday ishlashini sinovdan
+              o‘tkazamiz. Bu bosqichda asosiy funksiyalar shakllantiriladi va
+              dastlabki testlar o‘tkaziladi.
+            </p>
+          </li>
+
+          <li
+            style={{
+              background:
+                'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 1.5%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
+              backdropFilter: 'blur(2px)',
+              border: '1px solid #6F727C',
+              borderRadius: '24px',
+            }}
+            className="p-[32px] text-white"
+          >
+            <h4 className="text-[24px] font-semibold leading-[120%]">
+              Rivojlanish yakuniy
+            </h4>
+            <p className="text-[18px] leading-[150%] mt-[16px] text-[#ffffffcc]">
+              Loyiha to‘liq yakunlanadi, barcha funksiyalar sinovdan o‘tkaziladi
+              va optimallashtiriladi. Biz mijozlarimizga tayyor mahsulotni
+              yuqori sifat bilan taqdim etamiz!
+            </p>
           </li>
         </ul>
       </div>

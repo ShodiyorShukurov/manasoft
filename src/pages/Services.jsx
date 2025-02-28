@@ -118,7 +118,7 @@ const Services = () => {
     );
   } else {
     return (
-      <section className="py-[60px] md:py-[80px] sm:py-[120px]">
+      <section className="pt-[60px] md:pt-[80px] sm:pt-[120px]">
         <div className="container px-4 md:px-8">
           {location.pathname === '/services' ? (
             ''

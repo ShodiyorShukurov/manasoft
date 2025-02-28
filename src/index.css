@@ -144,7 +144,7 @@ input:-webkit-autofill:active {
   -webkit-text-fill-color: white !important;
 }
 
-/* Pagination tugmalarini kattalashtirish */
+
 .swiper-pagination-bullet {
   width: 24px !important; 
   height: 6px !important;
@@ -152,15 +152,16 @@ input:-webkit-autofill:active {
   background-color: rgba(97, 146, 208, 0.40) !important;
 }
 
-/* Aktiv tugmani yanada kattalashtirish */
+
 .swiper-pagination-bullet-active {
-  background-color: #6192D0 !important; /* Aktiv rang */
+  background-color: #6192D0 !important; 
 }
 
-/* Pagination tugmalarini pastga tushirish */
-.swiper-pagination {
-  position: absolute !important;
-  bottom: 25px !important; /* Pastga tushirish */
-}
 
-/* Agar masofa yetarli bo‘lmasa, qiymatini kattalashtiring */
+.custom {
+  display: flex;
+  justify-content: center; /* Markazga joylash */
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}

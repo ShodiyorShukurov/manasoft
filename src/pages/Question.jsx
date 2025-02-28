@@ -9,7 +9,7 @@ const Question = () => {
   };
 
   return (
-    <section className="pt-[120px]">
+    <section className="pt-[80px] md:pt-[120px]">
       <div className="container">
         <button
           style={{
@@ -18,7 +18,7 @@ const Question = () => {
             boxShadow: '0px 4px 24px 0px rgba(255, 255, 255, 0.08)',
             backdropFilter: 'blur(30px)',
           }}
-          className="text-[#FFFFFF] text-[18px] rounded-[48px] px-[24px] py-[12px] leading-[100%] mx-auto w-full sm:w-auto block"
+          className="text-[#FFFFFF] text-[18px] rounded-[48px] px-[32px] py-[12px] leading-[100%] mx-auto block"
         >
           Qiziqarli savollar
         </button>
@@ -36,10 +36,10 @@ const Question = () => {
           {/* Left Side */}
           <div>
             <div
-              className="backdrop-blur-[5px] rounded-[24px] p-[24px] cursor-pointer question border border-transparent"
+              className="backdrop-blur-[5px] rounded-[24px] p-[48px] cursor-pointer question border border-transparent"
               style={{
                 background:
-                  'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(0, 0, 255, 0.08) 1.5%, rgba(0, 0, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
+                  'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 1.5%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
               }}
               onClick={() => toggleAccordion(1)}
             >
@@ -48,10 +48,12 @@ const Question = () => {
                   type="button"
                   className="flex items-center justify-between w-full text-white cursor-pointer"
                 >
-                  <span className="text-2xl">Marketing strategiyalar</span>
+                  <span className="text-[32px] leading-[120%] font-medium w-full max-w-[490px] text-left">
+                    IT loyihani ishlab chiqish qancha vaqt oladi?
+                  </span>
                   <svg
                     className={`w-4 h-4 transform ${
-                      openIndex === 1 ? 'rotate-180' : ''
+                      openIndex === 1 ? '' : 'rotate-180'
                     }`}
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -203,7 +205,6 @@ const Question = () => {
 
           {/* Right Side */}
           <div>
-
             <div
               className="backdrop-blur-[5px] rounded-[24px] p-[24px] cursor-pointer question border border-transparent"
               style={{

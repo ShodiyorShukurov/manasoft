@@ -7,19 +7,16 @@ import WorkPage from '../pages/WorkPage';
 import Projects from '../pages/Projects';
 import Customers from '../pages/Customers';
 
-
 const Layout = () => {
-
-
   return (
     <main>
       <Hero />
       <About />
       <Customers />
       <Services />
-        {/* <WorkPage />
-        <Projects />
-        <Question /> */}
+      <WorkPage />
+      {/* <Projects /> */}
+        {/* <Question /> */}
       {/* <ContactForm /> */}
     </main>
   );
