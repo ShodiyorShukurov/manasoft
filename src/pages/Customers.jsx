@@ -73,7 +73,7 @@ const Customers = () => {
             boxShadow: '0px 4px 24px 0px rgba(255, 255, 255, 0.08)',
             backdropFilter: 'blur(30px)',
           }}
-          className="text-white text-sm sm:text-[18px] rounded-3xl px-[32px] py-3 leading-tight mx-auto block"
+          className="text-white text-[12px] sm:text-[18px] rounded-[48px] px-[32px] py-3 leading-tight mx-auto block"
         >
           Mijozlar fikrlari
         </button>
