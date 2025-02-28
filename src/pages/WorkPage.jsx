@@ -19,7 +19,7 @@ const WorkPage = () => {
           oshiradi. Bizning yondashuv samaradorlik va innovatsiyani ta’minlaydi!
         </p>
 
-        <h3 className="text-[24px] md:text-[32px] text-[#ffffff] leading-[140%] tracking-[0.2px] mt-[32px] md:mt-[48px] font-medium w-full max-w-[750px]  md:text-center">
+        <h3 className="text-[24px] md:text-[32px] text-[#ffffff] leading-[140%] tracking-[0.2px] mt-[32px] md:mt-[48px] font-medium md:text-center">
           Ishlab chiqilishidan oldin
         </h3>
 
@@ -169,7 +169,7 @@ const WorkPage = () => {
           </li>
         </ul>
 
-        <h3 className="text-[24px] md:text-[32px] text-[#ffffff] leading-[140%] tracking-[0.2px] mt-[32px] md:mt-[48px] font-medium w-full max-w-[750px]  md:text-center">
+        <h3 className="text-[24px] md:text-[32px] text-[#ffffff] leading-[140%] tracking-[0.2px] mt-[32px] md:mt-[48px] font-medium  md:text-center">
           Ishlab chiqilishidan oldin
         </h3>
 

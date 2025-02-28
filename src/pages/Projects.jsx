@@ -180,24 +180,19 @@ const Projects = () => {
                   boxShadow: '0px 4px 24px 0px rgba(255, 255, 255, 0.08)',
                   backdropFilter: 'blur(30px)',
                 }}
-                className="text-[#FFFFFF] text-[18px] rounded-[48px] px-[32px] py-[16px] leading-[100%] cursor-pointer"
+                className="text-[#FFFFFF] text-[18px] rounded-[48px] px-[32px] py-[12px] leading-[100%] cursor-pointer"
               >
                 Bizning loyihalar
               </button>
-              <h2 className="text-[48px] font-medium leading-[120%] tracking-[0.48px] bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent mt-[24px]">
-                Bizning loyihalarimiz
-              </h2>
 
               <div className="flex justify-between items-center">
-                <p className="text-[20px] text-[#ffffffcc] leading-[140%] tracking-[0.2px] mt-[16px] w-full max-w-[750px]">
-                  Biznesingizni samarali rivojlantirish uchun ishonchli IT
-                  hamkor kerakmi? Manasoft sizga zamonaviy, tezkor va ishonchli
-                  yechimlar taqdim etadi!
-                </p>
+                <h2 className="text-[48px] font-medium leading-[120%] text-[#fff] mt-[24px]">
+                  Bizning loyihalarimiz bilan tanishing
+                </h2>
 
                 <NavLink
                   to={'/portfolio'}
-                  className="bg-[transparent] text-[#4266B1] text-[16px] rounded-[48px] px-[24px] py-[12px] border cursor-pointer"
+                  className="bg-[transparent] text-[#61A6FF] text-[16px] rounded-[48px] px-[24px] py-[12px] border cursor-pointer"
                 >
                   Hamma loyihalar
                 </NavLink>
@@ -205,7 +200,7 @@ const Projects = () => {
             </>
           )}
 
-          <div className="mt-[64px] mb-[80px] grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="mt-[48px] mb-[80px] grid grid-cols-1 md:grid-cols-3 gap-6">
             {projects.map((project) => (
               <div
                 key={project.id}
