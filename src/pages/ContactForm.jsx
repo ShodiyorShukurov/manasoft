@@ -1,47 +1,47 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import bgBottom from '../assets/image/contact-bg-right.png';
+import bgTop from '../assets/image/contact-bg-left.png';
 
 const ContactForm = () => {
   const location = useLocation();
 
   const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    message: "",
+    fullName: '',
+    phone: '',
+    message: '',
   });
 
   const [errors, setErrors] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    message: "",
+    fullName: '',
+    phone: '',
+    message: '',
   });
 
   const validateInput = (name, value) => {
-    let error = "";
+    let error = '';
 
     if (!value) {
-      error = "Bu maydon to‘ldirilishi shart!";
+      error = 'Bu maydon to‘ldirilishi shart!';
     } else {
-      if (name === "fullName") {
-        if (value.length < 5) error = "Kamida 5 ta belgi kiritish kerak.";
-        else if (!/[A-Z]/.test(value)) error = "Kamida bitta KATTA harf bo‘lishi kerak.";
-        else if (!/[a-z]/.test(value)) error = "Kamida bitta kichik harf bo‘lishi kerak.";
+      if (name === 'fullName') {
+        if (value.length < 5) error = 'Kamida 5 ta belgi kiritish kerak.';
+        else if (!/[A-Z]/.test(value))
+          error = 'Kamida bitta KATTA harf bo‘lishi kerak.';
+        else if (!/[a-z]/.test(value))
+          error = 'Kamida bitta kichik harf bo‘lishi kerak.';
       }
 
-      if (name === "email") {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(value)) error = "Email noto‘g‘ri formatda.";
-      }
-
-      if (name === "phone") {
+      if (name === 'phone') {
         const phoneRegex = /^\+998\d{9}$/;
-        if (!phoneRegex.test(value)) error = "Telefon raqam +998 bilan boshlanishi va 12 ta raqam bo‘lishi kerak.";
+        if (!phoneRegex.test(value))
+          error =
+            'Telefon raqam +998 bilan boshlanishi va 12 ta raqam bo‘lishi kerak.';
       }
 
-      if (name === "message") {
-        if (value.length < 10) error = "Xabar kamida 10 ta belgi bo‘lishi kerak.";
+      if (name === 'message') {
+        if (value.length < 10)
+          error = 'Xabar kamida 10 ta belgi bo‘lishi kerak.';
       }
     }
 
@@ -58,15 +58,15 @@ const ContactForm = () => {
     e.preventDefault();
     let newErrors = {};
 
-    Object.keys(formData).forEach((key) => {
-      validateInput(key, formData[key]); // Real vaqt tekshirish
-      if (!formData[key]) newErrors[key] = "Bu maydon to‘ldirilishi shart!";
+    Object.keysacs(formData).forEach((key) => {
+      validateInput(key, formData[key]);
+      if (!formData[key]) newErrors[key] = 'Bu maydon to‘ldirilishi shart!';
     });
 
     setErrors(newErrors);
 
     if (!Object.values(newErrors).some((error) => error)) {
-      console.log("Form jo‘natildi:", formData);
+      console.log('Form jo‘natildi:', formData);
     }
   };
   return (
@@ -74,10 +74,10 @@ const ContactForm = () => {
       <div className="container">
         {location.pathname == '/contact' ? (
           <>
-            <h3 className="font-medium text-center text-[#fff] text-[48px] leading-[57.6px] tracking-[1%]">
+            <h3 className="font-medium text-center text-[#fff] text-[48px] leading-[120%]">
               Biz bilan bog&apos;lanish
             </h3>
-            <p className="text-center text-[#fff] text-[20px] leading-[28px] tracking-[1%] mt-[16px] w-full max-w-[760px] mx-auto mb-[120px]">
+            <p className="text-center text-[#fff] text-[20px] leading-[140%] mt-[16px] w-full max-w-[760px] mx-auto mb-[48px]">
               Biznesingizni samarali rivojlantish uchun ishonchli IT hamkor
               kerakmi? Manasoft sizga zamonaviy, tezkor va ishonchli yechimlar
               taqdim etadi!
@@ -87,28 +87,32 @@ const ContactForm = () => {
           ''
         )}
 
-        <div className="flex border border-white rounded-[24px] bg-[#ffffff0a]">
+        <div className="flex border rounded-[24px] bg-[#ffffff0a]">
           <div
-            className="p-[48px] rounded-[24px] border border-r-white"
+            className="p-[48px] rounded-[24px] border border-r-[#61A6FF]"
             style={{
               background:
-                'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(0, 0, 255, 0.08) 1.5%, rgba(0, 0, 255, 0.02) 100%)',
+                'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 1.5%, rgba(97, 166, 255, 0.02) 100%)',
               backdropFilter: 'blur(2px)',
               borderRight: ' 1px solid',
-              borderImageSource:
-                'linear-gradient(180deg, rgba(255, 255, 255, 0.4) 2.5%, rgba(153, 153, 153, 0.4) 103%)',
+              backgroundImage: `url(${bgBottom}), url(${bgTop})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'bottom right, top left',
             }}
           >
             <h2 className="text-white text-[48px] font-medium leading-[120%] tracking-[0.48px] max-[420px]">
               Biznesingizni birga rivojlantiramiz!
             </h2>
-            <p className="text-[#ffffffcc] text-opacity-80 text-lg mt-6 max-w-[420px]">
-              Manasoft – bu innovatsion IT kompaniya, biznesingiz uchun Telegram
-              botlar, mobil ilovalar va web-saytlar yaratish bo‘yicha eng
-              ishonchli hamkoringiz!
+            <p className="text-[#ffffffcc]  text-lg mt-[16px] max-w-[420px]">
+              Manasoft jamoasi har doim siz bilan bog‘lanishga tayyor! Biz bilan
+              bog‘laning va biznesingiz uchun eng yaxshi yechimni tanlang.
+              Tezkor va professional javob kafolatlangan!
             </p>
-            <div className="mt-10 space-y-4 text-white">
-              <a href="mailto:manasoft@gmail.com" className="flex gap-2">
+            <div className="mt-[48px] space-y-4 text-white">
+              <a
+                href="mailto:manasoft@gmail.com"
+                className="flex items-center gap-2 text-[20px] leading-[140%]"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -135,7 +139,10 @@ const ContactForm = () => {
                 </svg>
                 manasoft@gmail.com
               </a>
-              <a href="tel:+998901112233" className="flex gap-2">
+              <a
+                href="tel:+998901112233"
+                className="flex items-center gap-2 text-[20px] leading-[140%]"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -152,7 +159,7 @@ const ContactForm = () => {
                 </svg>
                 +998 90 111 22 33
               </a>
-              <p className="flex gap-2">
+              <p className="flex items-center gap-2 text-[20px] leading-[140%]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -178,78 +185,63 @@ const ContactForm = () => {
 
           {/* O'ng qism */}
           <div className="p-[48px] w-[100%]">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Full Name */}
-              <div>
-                <input
-                  type="text"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  className={`w-full bg-transparent border-b py-3 text-white placeholder:text-white focus:border-blue-400 transition-all outline-none ${
-                    errors.fullName ? 'border-red-500' : 'border-white'
-                  }`}
-                  placeholder="Full Name"
-                />
-                {errors.fullName && (
-                  <p className="text-red-400 text-sm mt-1">{errors.fullName}</p>
-                )}
-              </div>
+            <form onSubmit={handleSubmit} className="flex flex-col">
+              <div className='space-y-6'>
+                <div>
+                  <input
+                    type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    className={`w-full bg-transparent border-b py-3 text-white placeholder:text-white focus:border-blue-400 transition-all outline-none ${
+                      errors.fullName ? 'border-red-500' : 'border-white'
+                    }`}
+                    placeholder="Full Name"
+                  />
+                  {errors.fullName && (
+                    <p className="text-red-400 text-sm mt-1">
+                      {errors.fullName}
+                    </p>
+                  )}
+                </div>
 
-              {/* Email */}
-              <div>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className={`w-full bg-transparent border-b py-3 text-white placeholder:text-white focus:border-blue-400 transition-all outline-none ${
-                    errors.email ? 'border-red-500' : 'border-white'
-                  }`}
-                  placeholder="Email"
-                />
-                {errors.email && (
-                  <p className="text-red-400 text-sm mt-1">{errors.email}</p>
-                )}
-              </div>
+                <div>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className={`w-full bg-transparent border-b py-3 text-white placeholder:text-white focus:border-blue-400 transition-all outline-none ${
+                      errors.phone ? 'border-red-500' : 'border-white'
+                    }`}
+                    placeholder="Phone"
+                  />
+                  {errors.phone && (
+                    <p className="text-red-400 text-sm mt-1">{errors.phone}</p>
+                  )}
+                </div>
 
-              {/* Phone */}
-              <div>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className={`w-full bg-transparent border-b py-3 text-white placeholder:text-white focus:border-blue-400 transition-all outline-none ${
-                    errors.phone ? 'border-red-500' : 'border-white'
-                  }`}
-                  placeholder="Phone"
-                />
-                {errors.phone && (
-                  <p className="text-red-400 text-sm mt-1">{errors.phone}</p>
-                )}
+                <div>
+                  <input
+                    type="text"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className={`w-full bg-transparent border-b py-3 text-white placeholder:text-white focus:border-blue-400 transition-all outline-none ${
+                      errors.message ? 'border-red-500' : 'border-white'
+                    }`}
+                    placeholder="Message"
+                  />
+                  {errors.message && (
+                    <p className="text-red-400 text-sm mt-1">
+                      {errors.message}
+                    </p>
+                  )}
+                </div>
               </div>
-
-              {/* Message */}
-              <div>
-                <input
-                  type="text"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  className={`w-full bg-transparent border-b py-3 text-white placeholder:text-white focus:border-blue-400 transition-all outline-none ${
-                    errors.message ? 'border-red-500' : 'border-white'
-                  }`}
-                  placeholder="Message"
-                />
-                {errors.message && (
-                  <p className="text-red-400 text-sm mt-1">{errors.message}</p>
-                )}
-              </div>
-
               <button
                 type="submit"
-                className="bg-[#4266B1] hover:bg-[#3659A4] text-white py-3 px-6 rounded-[32px] mt-6 cursor-pointer transition-all"
+                className="bg-[#61A6FF] text-white py-3 px-6 rounded-[32px] mt-6 cursor-pointer w-fit"
               >
                 Xabarni yuborish
               </button>

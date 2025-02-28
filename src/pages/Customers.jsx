@@ -62,10 +62,9 @@ const Customers = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  console.log(isTwoSlides);
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24">
+    <section className="pt-16 sm:pt-20 lg:pt-[120px]">
       <div className="container">
         <button
           style={{
