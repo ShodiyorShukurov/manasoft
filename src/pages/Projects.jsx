@@ -199,46 +199,6 @@ const Projects = () => {
               </div>
             </>
           )}
-
-          <div className="mt-[48px] mb-[80px] grid grid-cols-1 md:grid-cols-3 gap-6">
-            {projects.map((project) => (
-              <div
-                key={project.id}
-                className="group p-[32px] rounded-2xl border border-gray-700 cursor-pointer transition-all duration-300 hover:scale-[0.98]"
-                onClick={() => navigate('/portfolio/details/' + project.id)}
-                style={{
-                  background:
-                    'linear-gradient(0deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02)), radial-gradient(54.75% 109.5% at 19.8% -3.5%, rgba(0, 0, 255, 0.08) 1.5%, rgba(0, 0, 255, 0.016) 100%)',
-                  transition: 'all 0.3s ease-in-out',
-                  boxShadow:
-                    'inset 0 0 0 rgba(255, 255, 255, 0), inset 0 0 0 rgba(0, 0, 255, 0), inset 0 0 0 rgba(0, 0, 255, 0)', // Default holat
-                }}
-              >
-                <h3 className="text-white text-[32px] font-medium leading-[32px]">
-                  {project.title}
-                </h3>
-                <div className="mt-4 rounded-lg flex justify-between overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="object-cover"
-                    width={160}
-                    height={350}
-                  />
-                  <img
-                    src={project.image1}
-                    alt={project.title}
-                    className="object-cover"
-                    width={160}
-                    height={350}
-                  />
-                </div>
-                <p className="text-white mt-2 text-[24px] leading-[28px]">
-                  {project.description}
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
     );

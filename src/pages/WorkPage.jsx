@@ -32,7 +32,7 @@ const WorkPage = () => {
               clickable: true,
             }}
             modules={[Pagination]}
-            className="md:h-[280px] sm:h-[200px] mySwiper"
+            className=" sm:h-[220px]  md:h-[280px] mySwiper"
           >
             <SwiperSlide>
               <li
@@ -43,7 +43,7 @@ const WorkPage = () => {
                   border: '1px solid #6F727C',
                   borderRadius: '24px',
                 }}
-                className="p-[24px] text-white "
+                className="p-[24px] text-white min-h-[170px] md:h-full flex flex-col"
               >
                 <h4 className="text-[20px] md:text-[24px] font-semibold md:leading-[120%]">
                   Ma'lumotlarni yig'ish
@@ -66,7 +66,7 @@ const WorkPage = () => {
                   border: '1px solid #6F727C',
                   borderRadius: '24px',
                 }}
-                className="p-[24px] text-white"
+                className="p-[24px] text-white min-h-[170px] md:h-full flex flex-col"
               >
                 <h4 className="text-[20px] md:text-[24px] font-semibold md:leading-[120%]">
                   Loyihaning TZ
@@ -88,7 +88,7 @@ const WorkPage = () => {
                   border: '1px solid #6F727C',
                   borderRadius: '24px',
                 }}
-                className="p-[24px] text-white"
+                className="p-[24px] text-white min-h-[170px] md:h-full flex flex-col"
               >
                 <h4 className="text-[20px] md:text-[24px] font-semibold md:leading-[120%]">
                   Integratsiya va Tadqiqot
@@ -182,7 +182,7 @@ const WorkPage = () => {
               clickable: true,
             }}
             modules={[Pagination]}
-            className="md:h-[280px] sm:h-[200px] mySwiper"
+            className="sm:h-[220px] md:h-[280px]  mySwiper"
           >
             <SwiperSlide>
               <li
@@ -193,7 +193,7 @@ const WorkPage = () => {
                   border: '1px solid #6F727C',
                   borderRadius: '24px',
                 }}
-                className="p-[24px] text-white"
+                className="p-[24px] text-white min-h-[170px] md:h-full flex flex-col"
               >
                 <h4 className="text-[20px] md:text-[24px] font-semibold md:leading-[120%]">
                   Dizayn loyihasi
@@ -215,7 +215,7 @@ const WorkPage = () => {
                   border: '1px solid #6F727C',
                   borderRadius: '24px',
                 }}
-                className="p-[32px] text-white"
+                className="p-[24px] text-white min-h-[170px] md:h-full flex flex-col"
               >
                 <h4 className="text-[20px] md:text-[24px] font-semibold md:leading-[120%]">
                   Rivojlanish prototipi
@@ -237,7 +237,7 @@ const WorkPage = () => {
                   border: '1px solid #6F727C',
                   borderRadius: '24px',
                 }}
-                className="p-[32px] text-white"
+                className="p-[24px] text-white min-h-[170px] md:h-full flex flex-col"
               >
                 <h4 className="text-[20px] md:text-[24px] font-semibold md:leading-[120%]">
                   Rivojlanish yakuniy
