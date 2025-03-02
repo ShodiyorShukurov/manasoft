@@ -25,7 +25,7 @@ const Call = () => {
   return (
     isVisible && (
       <a
-        className="fixed bottom-4 right-4  z-50 transition-opacity duration-300"
+        className="fixed bottom-4 right-4  z-40 transition-opacity duration-300"
         href="tel:+998975597666"
       >
         <img src={call} alt="Call"  />
