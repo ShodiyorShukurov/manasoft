@@ -253,15 +253,16 @@ const Services = () => {
             </li>
           </ul>
 
-          <div className="md:hidden block mt-[32px]">
+          <div className="md:hidden block mt-[32px] relative">
             <Swiper
               spaceBetween={30}
               loop={true}
               pagination={{
+                el: '.custom-pagination3',
                 clickable: true,
               }}
               modules={[Pagination]}
-              className="h-[480px] sm:h-[580px]"
+              className="h-[420px] sm:h-[540px] mySwiper"
             >
               <SwiperSlide>
                 <li
@@ -269,7 +270,7 @@ const Services = () => {
                     background:
                       'radial-gradient(70.49% 86.46% at 50.08% 100%, rgba(97, 166, 255, 0.20) 15%, rgba(97, 166, 255, 0.00) 100%), rgba(255, 255, 255, 0.04)',
                   }}
-                  className="p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55] h-[350px] sm:h-[450px]  flex flex-col gap-3 sm:gap-6"
+                  className="p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55] max-h-[350px] sm:min-h-[450px] h-full flex flex-col gap-3 sm:gap-6"
                 >
                   <h4 className="text-[24px] sm:text-[28px] leading-[120%] font-medium">
                     CRM/ERP Tizimlari
@@ -294,7 +295,7 @@ const Services = () => {
                     background:
                       'radial-gradient(70.49% 86.46% at 50.08% 100%, rgba(97, 166, 255, 0.20) 15%, rgba(97, 166, 255, 0.00) 100%), rgba(255, 255, 255, 0.04)',
                   }}
-                  className="p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55] h-[350px] sm:h-[450px]   flex flex-col gap-3 sm:gap-6"
+                  className="p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55] max-h-[350px] sm:min-h-[450px] h-full flex flex-col gap-3 sm:gap-6"
                 >
                   <h4 className="text-[24px] sm:text-[28px] leading-[120%] font-medium">
                     Mobil ilovalar
@@ -318,7 +319,7 @@ const Services = () => {
                     background:
                       'radial-gradient(70.49% 86.46% at 50.08% 100%, rgba(97, 166, 255, 0.20) 15%, rgba(97, 166, 255, 0.00) 100%), rgba(255, 255, 255, 0.04)',
                   }}
-                  className="p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55] h-[350px] sm:h-[450px]  flex flex-col gap-3 sm:gap-6"
+                  className="p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55] max-h-[350px] sm:min-h-[450px] h-full flex flex-col gap-3 sm:gap-6"
                 >
                   <h4 className="text-[24px] sm:text-[28px] leading-[120%] font-medium">
                     Telegram botlar
@@ -349,7 +350,7 @@ const Services = () => {
                     background:
                       'radial-gradient(70.49% 86.46% at 50.08% 100%, rgba(97, 166, 255, 0.20) 15%, rgba(97, 166, 255, 0.00) 100%), rgba(255, 255, 255, 0.04)',
                   }}
-                  className="p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55] h-[350px] sm:h-[450px]  flex flex-col gap-3 sm:gap-6"
+                  className="p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55] max-h-[350px] sm:min-h-[450px] h-full flex flex-col gap-3 sm:gap-6"
                 >
                   <h4 className="text-[24px] sm:text-[28px] leading-[120%] font-medium">
                     Veb saytlar
@@ -370,6 +371,10 @@ const Services = () => {
                 </li>
               </SwiperSlide>
             </Swiper>
+
+            <div className="md:mt-0 flex justify-center">
+              <div className="custom-pagination3 custom"></div>
+            </div>
           </div>
         </div>
       </section>
