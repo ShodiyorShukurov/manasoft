@@ -16,7 +16,7 @@ const Layout = () => {
       <Projects />
       <Services />
       <WorkPage />
-        {/* <Question /> */}
+        <Question />
       {/* <ContactForm /> */}
     </main>
   );

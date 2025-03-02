@@ -1,12 +1,76 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const Question = () => {
   const [openIndex, setOpenIndex] = useState(null);
+  const [show, setShow] = useState(null);
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+  const questions = [
+    {
+      id: 1,
+      title: 'IT loyihani ishlab chiqish qancha vaqt oladi?',
+      answer: `Manasoft – bu innovatsion IT kompaniya, biznesingiz uchun
+                  Telegram botlar, mobil ilovalar va veb-saytlar yaratish
+                  bo‘yicha eng ishonchli hamkoringiz! Bizning jamoamiz
+                  texnologiyalarni biznesga joriy etish orqali mijozlarga
+                  samarali yechimlar taqdim etadi. Sifat va tezkor xizmat –
+                  bizning ustuvor maqsadimiz!`,
+    },
+    {
+      id: 2,
+      title: 'IT loyihani ishlab chiqish qancha vaqt oladi?',
+      answer: `Manasoft – bu innovatsion IT kompaniya, biznesingiz uchun
+                  Telegram botlar, mobil ilovalar va veb-saytlar yaratish
+                  bo‘yicha eng ishonchli hamkoringiz! Bizning jamoamiz
+                  texnologiyalarni biznesga joriy etish orqali mijozlarga
+                  samarali yechimlar taqdim etadi. Sifat va tezkor xizmat –
+                  bizning ustuvor maqsadimiz!`,
+    },
+    {
+      id: 3,
+      title: 'IT loyihani ishlab chiqish qancha vaqt oladi?',
+      answer: `Manasoft – bu innovatsion IT kompaniya, biznesingiz uchun
+                  Telegram botlar, mobil ilovalar va veb-saytlar yaratish
+                  bo‘yicha eng ishonchli hamkoringiz! Bizning jamoamiz
+                  texnologiyalarni biznesga joriy etish orqali mijozlarga
+                  samarali yechimlar taqdim etadi. Sifat va tezkor xizmat –
+                  bizning ustuvor maqsadimiz!`,
+    },
+    {
+      id: 4,
+      title: 'IT loyihani ishlab chiqish qancha vaqt oladi?',
+      answer: `Manasoft – bu innovatsion IT kompaniya, biznesingiz uchun
+                  Telegram botlar, mobil ilovalar va veb-saytlar yaratish
+                  bo‘yicha eng ishonchli hamkoringiz! Bizning jamoamiz
+                  texnologiyalarni biznesga joriy etish orqali mijozlarga
+                  samarali yechimlar taqdim etadi. Sifat va tezkor xizmat –
+                  bizning ustuvor maqsadimiz!`,
+    },
+    {
+      id: 5,
+      title: 'IT loyihani ishlab chiqish qancha vaqt oladi?',
+      answer: `Manasoft – bu innovatsion IT kompaniya, biznesingiz uchun
+                  Telegram botlar, mobil ilovalar va veb-saytlar yaratish
+                  bo‘yicha eng ishonchli hamkoringiz! Bizning jamoamiz
+                  texnologiyalarni biznesga joriy etish orqali mijozlarga
+                  samarali yechimlar taqdim etadi. Sifat va tezkor xizmat –
+                  bizning ustuvor maqsadimiz!`,
+    },
+    {
+      id: 6,
+      title: 'IT loyihani ishlab chiqish qancha vaqt oladi?',
+      answer: `Manasoft – bu innovatsion IT kompaniya, biznesingiz uchun
+                  Telegram botlar, mobil ilovalar va veb-saytlar yaratish
+                  bo‘yicha eng ishonchli hamkoringiz! Bizning jamoamiz
+                  texnologiyalarni biznesga joriy etish orqali mijozlarga
+                  samarali yechimlar taqdim etadi. Sifat va tezkor xizmat –
+                  bizning ustuvor maqsadimiz!`,
+    },
+  ];
 
   return (
     <section className="pt-[80px] md:pt-[120px]">
@@ -34,341 +98,139 @@ const Question = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-[48px]">
           {/* Left Side */}
-          <div>
-            <div
-              className="backdrop-blur-[5px] rounded-[24px] p-[48px] cursor-pointer question border border-transparent"
-              style={{
-                background:
-                  'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 1.5%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
-              }}
-              onClick={() => toggleAccordion(1)}
-            >
-              <h2>
-                <button
-                  type="button"
-                  className="flex items-center justify-between w-full text-white cursor-pointer"
-                >
-                  <span className="text-[32px] leading-[120%] font-medium w-full max-w-[490px] text-left">
-                    IT loyihani ishlab chiqish qancha vaqt oladi?
-                  </span>
-                  <svg
-                    className={`w-4 h-4 transform ${
-                      openIndex === 1 ? '' : 'rotate-180'
-                    }`}
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 10 6"
-                  >
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1"
-                      d="M9 5 5 1 1 5"
-                    />
-                  </svg>
-                </button>
-              </h2>
 
-              {/* Accordion Content with Animation */}
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={
-                  openIndex === 1
-                    ? { height: 'auto', opacity: 1 }
-                    : { height: 0, opacity: 0 }
-                }
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
-                className="overflow-hidden"
-              >
-                <div className="mt-[24px] text-gray-300">
-                  Manasoft – bu innovatsion IT kompaniya, biznesingiz uchun
-                  Telegram botlar, mobil ilovalar va veb-saytlar yaratish
-                  bo‘yicha eng ishonchli hamkoringiz! Bizning jamoamiz
-                  texnologiyalarni biznesga joriy etish orqali mijozlarga
-                  samarali yechimlar taqdim etadi. Sifat va tezkor xizmat –
-                  bizning ustuvor maqsadimiz!
-                </div>
-              </motion.div>
+            <div className="flex flex-col gap-6">
+          <AnimatePresence>
+              {questions?.slice(0, show ? questions.length : 3).map((item) => (
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5, ease: 'easeInOut' }}
+                  key={item.id}
+                  className="backdrop-blur-[2px] rounded-[24px] p-[24px] md:p-[36px] lg:p-[48px] cursor-pointer border border-[#464850] question"
+                  style={{
+                    background:
+                      'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 1.5%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
+                  }}
+                  onClick={() => toggleAccordion(item.id)}
+                >
+                  <h2>
+                    <button
+                      type="button"
+                      className="flex justify-between w-full text-white cursor-pointer"
+                    >
+                      <span className="text-[20px] md:text-[28px] lg:text-[32px] leading-[120%] font-medium w-full max-w-[490px] text-left">
+                        {item.title}
+                      </span>
+                      <svg
+                        className={`w-8 h-8 transform ${
+                          openIndex === item.id ? 'rotate-180' : ''
+                        }`}
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                      >
+                        <path
+                          d="M26.5604 11.9331L17.8671 20.6264C16.8404 21.6531 15.1604 21.6531 14.1338 20.6264L5.44043 11.9331"
+                          stroke="white"
+                          strokeWidth="1.5"
+                          strokeMiterlimit="10"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </h2>
+
+                  {/* Accordion Content with Animation */}
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={
+                      openIndex === item.id
+                        ? { height: 'auto', opacity: 1 }
+                        : { height: 0, opacity: 0 }
+                    }
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    className="overflow-hidden"
+                  >
+                    <div className="mt-[24px] text-gray-300 text-[18px] md:text-2xl">
+                      {item.answer}
+                    </div>
+                  </motion.div>
+                </motion.div>
+              ))}
+          </AnimatePresence>
             </div>
 
-            <div
-              className="backdrop-blur-[5px] rounded-[24px] p-[24px] cursor-pointer question border border-transparent my-4"
-              style={{
-                background:
-                  'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(0, 0, 255, 0.08) 1.5%, rgba(0, 0, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
-              }}
-              onClick={() => toggleAccordion(2)}
-            >
-              <h2>
-                <button
-                  type="button"
-                  className="flex items-center justify-between w-full text-white cursor-pointer"
-                >
-                  <span className="text-2xl">Marketing strategiyalar</span>
-                  <svg
-                    className={`w-4 h-4 transform ${
-                      openIndex === 2 ? 'rotate-180' : ''
-                    }`}
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 10 6"
-                  >
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1"
-                      d="M9 5 5 1 1 5"
-                    />
-                  </svg>
-                </button>
-              </h2>
-
-              {/* Accordion Content with Animation */}
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={
-                  openIndex === 2
-                    ? { height: 'auto', opacity: 1 }
-                    : { height: 0, opacity: 0 }
-                }
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
-                className="overflow-hidden"
-              >
-                <div className="mt-[24px] text-gray-300">
-                  Manasoft – bu innovatsion IT kompaniya, biznesingiz uchun
-                  Telegram botlar, mobil ilovalar va veb-saytlar yaratish
-                  bo‘yicha eng ishonchli hamkoringiz! Bizning jamoamiz
-                  texnologiyalarni biznesga joriy etish orqali mijozlarga
-                  samarali yechimlar taqdim etadi. Sifat va tezkor xizmat –
-                  bizning ustuvor maqsadimiz!
-                </div>
-              </motion.div>
-            </div>
-
-            <div
-              className="backdrop-blur-[5px] rounded-[24px] p-[24px] cursor-pointer question border border-transparent"
-              style={{
-                background:
-                  'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(0, 0, 255, 0.08) 1.5%, rgba(0, 0, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
-              }}
-              onClick={() => toggleAccordion(3)}
-            >
-              <h2>
-                <button
-                  type="button"
-                  className="flex items-center justify-between w-full text-white cursor-pointer"
-                >
-                  <span className="text-2xl">Marketing strategiyalar</span>
-                  <svg
-                    className={`w-4 h-4 transform ${
-                      openIndex === 3 ? 'rotate-180' : ''
-                    }`}
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 10 6"
-                  >
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1"
-                      d="M9 5 5 1 1 5"
-                    />
-                  </svg>
-                </button>
-              </h2>
-
-              {/* Accordion Content with Animation */}
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={
-                  openIndex === 3
-                    ? { height: 'auto', opacity: 1 }
-                    : { height: 0, opacity: 0 }
-                }
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
-                className="overflow-hidden"
-              >
-                <div className="mt-[24px] text-gray-300">
-                  Manasoft – bu innovatsion IT kompaniya, biznesingiz uchun
-                  Telegram botlar, mobil ilovalar va veb-saytlar yaratish
-                  bo‘yicha eng ishonchli hamkoringiz! Bizning jamoamiz
-                  texnologiyalarni biznesga joriy etish orqali mijozlarga
-                  samarali yechimlar taqdim etadi. Sifat va tezkor xizmat –
-                  bizning ustuvor maqsadimiz!
-                </div>
-              </motion.div>
-            </div>
-          </div>
+          <button
+            className="md:hidden px-[24px] py-[12px] bg-transparent border border-[#61A6FF] text-[#61A6FF] text-[16px] font-medium w-fit rounded-[24px] mx-auto"
+            onClick={() => setShow(!show)}
+          >
+            {show ? 'Kamroq' : "Ko'proq"}
+          </button>
 
           {/* Right Side */}
-          <div>
-            <div
-              className="backdrop-blur-[5px] rounded-[24px] p-[24px] cursor-pointer question border border-transparent"
-              style={{
-                background:
-                  'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(0, 0, 255, 0.08) 1.5%, rgba(0, 0, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
-              }}
-              onClick={() => toggleAccordion(4)}
-            >
-              <h2>
-                <button
-                  type="button"
-                  className="flex items-center justify-between w-full text-white cursor-pointer"
-                >
-                  <span className="text-2xl">Marketing strategiyalar</span>
-                  <svg
-                    className={`w-4 h-4 transform ${
-                      openIndex === 4 ? 'rotate-180' : ''
-                    }`}
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 10 6"
-                  >
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1"
-                      d="M9 5 5 1 1 5"
-                    />
-                  </svg>
-                </button>
-              </h2>
-
-              {/* Accordion Content with Animation */}
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={
-                  openIndex === 4
-                    ? { height: 'auto', opacity: 1 }
-                    : { height: 0, opacity: 0 }
-                }
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
-                className="overflow-hidden"
+          <div className="hidden md:flex flex-col gap-6">
+            {questions?.slice(3).map((item) => (
+              <div
+                key={item.id}
+                className="backdrop-blur-[2px] rounded-[24px] p-[24px] md:p-[36px] lg:p-[48px] cursor-pointer border border-[#464850] question"
+                style={{
+                  background:
+                    'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 1.5%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
+                }}
+                onClick={() => toggleAccordion(item.id)}
               >
-                <div className="mt-[24px] text-gray-300">
-                  Manasoft – bu innovatsion IT kompaniya, biznesingiz uchun
-                  Telegram botlar, mobil ilovalar va veb-saytlar yaratish
-                  bo‘yicha eng ishonchli hamkoringiz! Bizning jamoamiz
-                  texnologiyalarni biznesga joriy etish orqali mijozlarga
-                  samarali yechimlar taqdim etadi. Sifat va tezkor xizmat –
-                  bizning ustuvor maqsadimiz!
-                </div>
-              </motion.div>
-            </div>
-
-            <div
-              className="backdrop-blur-[5px] rounded-[24px] p-[24px] cursor-pointer question border border-transparent my-4"
-              style={{
-                background:
-                  'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(0, 0, 255, 0.08) 1.5%, rgba(0, 0, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
-              }}
-              onClick={() => toggleAccordion(5)}
-            >
-              <h2>
-                <button
-                  type="button"
-                  className="flex items-center justify-between w-full text-white cursor-pointer"
-                >
-                  <span className="text-2xl">Marketing strategiyalar</span>
-                  <svg
-                    className={`w-4 h-4 transform ${
-                      openIndex === 5 ? 'rotate-180' : ''
-                    }`}
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 10 6"
+                <h2>
+                  <button
+                    type="button"
+                    className="flex justify-between w-full text-white cursor-pointer"
                   >
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1"
-                      d="M9 5 5 1 1 5"
-                    />
-                  </svg>
-                </button>
-              </h2>
+                    <span className="text-[20px] md:text-[28px] lg:text-[32px] leading-[120%] font-medium w-full max-w-[490px] text-left">
+                      {item.title}
+                    </span>
+                    <svg
+                      className={`w-8 h-8 transform ${
+                        openIndex === item.id ? 'rotate-180' : ''
+                      }`}
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                    >
+                      <path
+                        d="M26.5604 11.9331L17.8671 20.6264C16.8404 21.6531 15.1604 21.6531 14.1338 20.6264L5.44043 11.9331"
+                        stroke="white"
+                        strokeWidth="1.5"
+                        strokeMiterlimit="10"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </h2>
 
-              {/* Accordion Content with Animation */}
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={
-                  openIndex === 5
-                    ? { height: 'auto', opacity: 1 }
-                    : { height: 0, opacity: 0 }
-                }
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
-                className="overflow-hidden"
-              >
-                <div className="mt-[24px] text-gray-300">
-                  Manasoft – bu innovatsion IT kompaniya, biznesingiz uchun
-                  Telegram botlar, mobil ilovalar va veb-saytlar yaratish
-                  bo‘yicha eng ishonchli hamkoringiz! Bizning jamoamiz
-                  texnologiyalarni biznesga joriy etish orqali mijozlarga
-                  samarali yechimlar taqdim etadi. Sifat va tezkor xizmat –
-                  bizning ustuvor maqsadimiz!
-                </div>
-              </motion.div>
-            </div>
-
-            <div
-              className="backdrop-blur-[5px] rounded-[24px] p-[24px] cursor-pointer question border border-transparent"
-              style={{
-                background:
-                  'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(0, 0, 255, 0.08) 1.5%, rgba(0, 0, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
-              }}
-              onClick={() => toggleAccordion(6)}
-            >
-              <h2>
-                <button
-                  type="button"
-                  className="flex items-center justify-between w-full text-white cursor-pointer"
+                {/* Accordion Content with Animation */}
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={
+                    openIndex === item.id
+                      ? { height: 'auto', opacity: 1 }
+                      : { height: 0, opacity: 0 }
+                  }
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  className="overflow-hidden"
                 >
-                  <span className="text-2xl">Marketing strategiyalar</span>
-                  <svg
-                    className={`w-4 h-4 transform ${
-                      openIndex === 6 ? 'rotate-180' : ''
-                    }`}
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 10 6"
-                  >
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1"
-                      d="M9 5 5 1 1 5"
-                    />
-                  </svg>
-                </button>
-              </h2>
-
-              {/* Accordion Content with Animation */}
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={
-                  openIndex === 6
-                    ? { height: 'auto', opacity: 1 }
-                    : { height: 0, opacity: 0 }
-                }
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
-                className="overflow-hidden"
-              >
-                <div className="mt-[24px] text-gray-300">
-                  Manasoft – bu innovatsion IT kompaniya, biznesingiz uchun
-                  Telegram botlar, mobil ilovalar va veb-saytlar yaratish
-                  bo‘yicha eng ishonchli hamkoringiz! Bizning jamoamiz
-                  texnologiyalarni biznesga joriy etish orqali mijozlarga
-                  samarali yechimlar taqdim etadi. Sifat va tezkor xizmat –
-                  bizning ustuvor maqsadimiz!
-                </div>
-              </motion.div>
-            </div>
+                  <div className="mt-[24px] text-gray-300 text-[18px] md:text-2xl">
+                    {item.answer}
+                  </div>
+                </motion.div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
