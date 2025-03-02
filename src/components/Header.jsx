@@ -45,24 +45,22 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        // Pastga scrol qilinganda sticky bo'lsin
-        setIsSticky(true);
-      } else {
-        // Tepaga scrol qilinganda sticky yo'qolsin
-        setIsSticky(false);
+      if (!showMobileMenu) {
+        setIsSticky(window.scrollY > lastScrollY);
+        setLastScrollY(window.scrollY);
       }
-      setLastScrollY(window.scrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, showMobileMenu]);
 
   return (
     <header
       className={`fixedtop-0 left-0 w-full bg-transparent transition-all duration-300 ${
-        isSticky ? 'sticky top-0 shadow-lg backdrop-blur-[10px] z-50 pb-[20px]' : ''
+        isSticky
+          ? 'sticky top-0 shadow-lg backdrop-blur-[10px] z-50 pb-[20px]'
+          : ''
       }`}
     >
       <div className="container">
@@ -295,12 +293,12 @@ const Header = () => {
             <a
               href="tel:+998912345678"
               style={{ fontFamily: 'Public Sans' }}
-              className="absolute bottom-16 sm:bottom-20 left-1/2 transform -translate-x-1/2 text-white bg-[#61A6FF] text-base rounded-3xl px-4 sm:px-6 py-2 sm:py-3 cursor-pointer"
+              className="absolute bottom-27 sm:bottom-30 left-1/2 transform -translate-x-1/2 text-white bg-[#61A6FF] text-base rounded-3xl px-4 sm:px-6 py-2 sm:py-3 cursor-pointer"
             >
               {t('navbar.contact_button')}
             </a>
 
-            <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 sm:gap-4">
+            <div className="absolute bottom-16 sm:bottom-20 left-1/2 transform -translate-x-1/2 flex gap-2 sm:gap-4">
               <a
                 href="https://www.facebook.com"
                 target="_blank"
