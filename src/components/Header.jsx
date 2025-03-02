@@ -14,6 +14,8 @@ const Header = () => {
   const { t, i18n } = useTranslation();
   const menuRef = useRef(null);
   const mobileMenuRef = useRef(null);
+  const [isSticky, setIsSticky] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const changeValues = (lng) => {
     i18n.changeLanguage(lng);
@@ -24,7 +26,10 @@ const Header = () => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setShowLangMenu(false);
       }
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target)
+      ) {
         setShowMobileMenu(false);
       }
     };
@@ -38,8 +43,28 @@ const Header = () => {
     };
   }, [showLangMenu, showMobileMenu]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        // Pastga scrol qilinganda sticky bo'lsin
+        setIsSticky(true);
+      } else {
+        // Tepaga scrol qilinganda sticky yo'qolsin
+        setIsSticky(false);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <header className="w-full bg-transparent">
+    <header
+      className={`fixedtop-0 left-0 w-full bg-transparent transition-all duration-300 ${
+        isSticky ? 'sticky top-0 shadow-lg backdrop-blur-[10px] z-50 pb-[20px]' : ''
+      }`}
+    >
       <div className="container">
         <div className="flex pt-4 sm:pt-6 lg:pt-9 justify-between items-center">
           {/* MOBILE BURGER BUTTON */}
@@ -149,7 +174,11 @@ const Header = () => {
                         setShowLangMenu(false);
                       }}
                       className={`flex items-center justify-between w-full px-2 sm:px-4 py-1 sm:py-2 text-sm ${
-                        lang === 'En' ? 'rounded-t-lg' : lang === 'Ру' ? 'rounded-b-lg' : ''
+                        lang === 'En'
+                          ? 'rounded-t-lg'
+                          : lang === 'Ру'
+                          ? 'rounded-b-lg'
+                          : ''
                       } hover:bg-gray-700 cursor-pointer`}
                     >
                       {lang}

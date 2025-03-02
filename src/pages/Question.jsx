@@ -82,7 +82,7 @@ const Question = () => {
             boxShadow: '0px 4px 24px 0px rgba(255, 255, 255, 0.08)',
             backdropFilter: 'blur(30px)',
           }}
-          className="text-[#FFFFFF] text-[18px] rounded-[48px] px-[32px] py-[12px] leading-[100%] mx-auto block"
+          className="text-[#FFFFFF] text-[12px]  md:text-[18px] rounded-[48px] px-[32px] py-[12px] leading-[100%] mx-auto block"
         >
           Qiziqarli savollar
         </button>
@@ -99,8 +99,8 @@ const Question = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-[48px]">
           {/* Left Side */}
 
-            <div className="flex flex-col gap-6">
-          <AnimatePresence>
+          <div className="flex flex-col gap-6">
+            <AnimatePresence>
               {questions?.slice(0, show ? questions.length : 3).map((item) => (
                 <motion.div
                   initial={{ opacity: 0, y: -20 }}
@@ -162,8 +162,8 @@ const Question = () => {
                   </motion.div>
                 </motion.div>
               ))}
-          </AnimatePresence>
-            </div>
+            </AnimatePresence>
+          </div>
 
           <button
             className="md:hidden px-[24px] py-[12px] bg-transparent border border-[#61A6FF] text-[#61A6FF] text-[16px] font-medium w-fit rounded-[24px] mx-auto"
