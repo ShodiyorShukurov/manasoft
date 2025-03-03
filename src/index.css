@@ -144,7 +144,7 @@ input:-webkit-autofill:active {
   width: 24px !important; 
   height: 6px !important;
   border-radius: 6px !important;
-  background-color: rgba(97, 146, 208, 0.40) !important;
+  background-color: rgba(97, 146, 208, 0.9) !important;
 }
 
 
