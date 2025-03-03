@@ -119,6 +119,7 @@ const Customers = () => {
                       className="rounded-full w-10 h-10 sm:w-12 sm:h-12"
                       src={item.img}
                       alt="Portfolio"
+                      loading="lazy"
                     />
                     <h3 className="text-base sm:text-lg lg:text-xl font-semibold leading-tight">
                       {item.name}

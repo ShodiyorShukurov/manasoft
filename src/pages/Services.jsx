@@ -179,6 +179,7 @@ const Services = () => {
                 className="mx-auto mt-[46px] w-[450px] h-auto object-cover"
                 src={crm}
                 alt="crm"
+                loading="lazy"
               />
             </li>
 
@@ -200,6 +201,7 @@ const Services = () => {
                 className="mx-auto mt-[46px] w-[450px] h-auto object-cover"
                 src={mobileApp}
                 alt="mobileApp"
+                loading="lazy"
               />
             </li>
 
@@ -222,11 +224,13 @@ const Services = () => {
                   src={telegramBot1}
                   alt="telegram bot"
                   className="w-[140px] h-full max-h-[300px]"
+                  loading="lazy"
                 />
                 <img
                   src={telegramBot2}
                   alt="telegram bot"
                   className="w-[140px] h-full max-h-[300px]"
+                  loading="lazy"
                 />
               </div>
             </li>
@@ -249,6 +253,7 @@ const Services = () => {
                 className="mx-auto mt-[46px] w-[450px] h-auto object-cover"
                 src={VebSayt}
                 alt="VebSayt"
+                loading="lazy"
               />
             </li>
           </ul>

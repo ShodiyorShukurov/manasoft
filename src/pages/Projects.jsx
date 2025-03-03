@@ -190,13 +190,13 @@ const Projects = () => {
                   boxShadow: '0px 4px 24px 0px rgba(255, 255, 255, 0.08)',
                   backdropFilter: 'blur(30px)',
                 }}
-                className="text-[#FFFFFF] text-[18px] rounded-[48px] px-[32px] py-[12px] leading-[100%] cursor-pointer mx-auto block md:mx-0"
+                className="text-[#FFFFFF] text-[12px] md:text-[18px] rounded-[48px] px-[32px] py-[12px] leading-[100%] cursor-pointer mx-auto block md:mx-0"
               >
                 Bizning loyihalar
               </button>
 
               <div className="flex justify-between items-center">
-                <h2 className="text-[32px] md:text-[48px] text-center mx-auto md:text-left font-medium leading-[120%] text-[#fff] mt-[32px] md:mt-[24px]">
+                <h2 className="text-[32px] md:text-[48px] text-center mx-auto md:mx-0 md:text-left font-medium leading-[120%] text-[#fff] mt-[32px] md:mt-[24px]">
                   Bizning loyihalarimiz bilan tanishing
                 </h2>
 
@@ -225,6 +225,7 @@ const Projects = () => {
                 className="mx-auto w-full md:max-w-[280px] lg:max-w-[500px] lg:h-[340px] mt-[24px]"
                 src={project1}
                 alt="project1"
+                loading="lazy"
               />
               <p className="text-[20px] leading-[140%] mt-[24px] text-[#ffffffcc]">
                 IT kompaniya veb sayti
@@ -244,11 +245,13 @@ const Projects = () => {
                   className="w-full max-w-[100px] lg:max-w-[160px] lg:h-[340px]"
                   src={project2}
                   alt="project2"
+                  loading="lazy"
                 />
                 <img
                   className="w-full max-w-[100px] lg:max-w-[160px] lg:h-[340px]"
                   src={project3}
                   alt="project3"
+                  loading="lazy"
                 />
               </div>
               <p className="text-[20px] leading-[140%] mt-[24px] text-[#ffffffcc]">
@@ -271,11 +274,13 @@ const Projects = () => {
                   className="w-full max-w-[100px] lg:max-w-[160px] lg:h-[340px]"
                   src={project4}
                   alt="project4"
+                  loading="lazy"
                 />
                 <img
                   className="w-full max-w-[100px] lg:max-w-[160px] lg:h-[340px]"
                   src={project5}
                   alt="project5"
+                  loading="lazy"
                 />
               </div>
               <p className="text-[20px] leading-[140%] mt-[24px] text-[#ffffffcc]">
@@ -298,11 +303,13 @@ const Projects = () => {
                   className="w-full max-w-[100px] lg:max-w-[160px] lg:h-[340px]"
                   src={project6}
                   alt="project6"
+                  loading="lazy"
                 />
                 <img
                   className="w-full max-w-[100px] lg:max-w-[160px] lg:h-[340px]"
                   src={project7}
                   alt="project7"
+                  loading="lazy"
                 />
               </div>
               <p className="text-[20px] leading-[140%] mt-[24px] text-[#ffffffcc]">
@@ -325,11 +332,13 @@ const Projects = () => {
                   className="w-full max-w-[100px] lg:max-w-[160px] lg:h-[340px]"
                   src={project8}
                   alt="project8"
+                  loading="lazy"
                 />
                 <img
                   className="w-full max-w-[100px] lg:max-w-[160px] lg:h-[340px]"
                   src={project9}
                   alt="project9"
+                  loading="lazy"
                 />
               </div>
               <p className="text-[20px] leading-[140%] mt-[24px] text-[#ffffffcc]">
@@ -364,6 +373,7 @@ const Projects = () => {
                     className="mx-auto sm:w-[400px] h-[200px] sm:h-auto mt-[24px]"
                     src={project1}
                     alt="project1"
+                    loading="lazy"
                   />
                   <p className="text-[20px] leading-[140%] mt-[24px] text-[#ffffffcc]">
                     IT kompaniya veb sayti
@@ -386,11 +396,13 @@ const Projects = () => {
                       className="w-full h-full max-w-[100px]  sm:max-w-[140px] max-h-[290px]"
                       src={project2}
                       alt="project2"
+                      loading="lazy"
                     />
                     <img
                       className="w-full h-full max-w-[100px] sm:max-w-[140px] max-h-[290px]"
                       src={project3}
                       alt="project3"
+                      loading="lazy"
                     />
                   </div>
                   <p className="text-[20px] sm:leading-[140%] mt-[24px] text-[#ffffffcc]">
@@ -414,11 +426,13 @@ const Projects = () => {
                       className="w-full h-full max-w-[100px] sm:max-w-[140px] max-h-[290px]"
                       src={project4}
                       alt="project4"
+                      loading="lazy"
                     />
                     <img
                       className="w-full h-full max-w-[100px] sm:max-w-[140px] max-h-[290px]"
                       src={project5}
                       alt="project5"
+                      loading="lazy"
                     />
                   </div>
                   <p className="text-[20px] sm:leading-[140%] mt-[24px] text-[#ffffffcc]">
@@ -442,11 +456,13 @@ const Projects = () => {
                       className="w-full h-full max-w-[100px] sm:max-w-[140px] min-h-[240px] sm:min-h-[290px]"
                       src={project6}
                       alt="project6"
+                      loading="lazy"
                     />
                     <img
                       className="w-full h-full max-w-[100px] sm:max-w-[140px] min-h-[240px] sm:min-h-[290px]"
                       src={project7}
                       alt="project7"
+                      loading="lazy"
                     />
                   </div>
                   <p className="text-[20px] leading-[140%] mt-[24px] text-[#ffffffcc]">
@@ -470,11 +486,13 @@ const Projects = () => {
                       className="w-full h-full max-w-[100px] sm:max-w-[140px] max-h-[290px]"
                       src={project8}
                       alt="project8"
+                      loading="lazy"
                     />
                     <img
                       className="w-full h-full max-w-[100px] sm:max-w-[140px] max-h-[290px]"
                       src={project9}
                       alt="project9"
+                      loading="lazy"
                     />
                   </div>
                   <p className="text-[20px] leading-[140%] mt-[24px] text-[#ffffffcc]">
@@ -490,7 +508,7 @@ const Projects = () => {
           </div>
           <NavLink
             to={'/portfolio'}
-            className="bg-[transparent] text-[#61A6FF] text-[20px] rounded-[48px] px-[24px] py-[12px] border cursor-pointer block text-center"
+            className="block md:hidden bg-[transparent] text-[#61A6FF] text-[20px] rounded-[48px] px-[24px] py-[12px] border cursor-pointer  text-center"
           >
             Hamma loyihalar
           </NavLink>
