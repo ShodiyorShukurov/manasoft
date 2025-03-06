@@ -14,7 +14,7 @@ const About = () => {
             boxShadow: '0px 4px 24px 0px rgba(255, 255, 255, 0.08)',
             backdropFilter: 'blur(30px)',
           }}
-          className="text-[#FFFFFF] text-[12px] sm:text-[18px]  rounded-[48px] px-[24px] sm:px-[32px] py-[12px] leading-[100%] mx-auto w-auto block"
+          className="text-[#FFFFFF] text-[12px] sm:text-[18px] leading-[100%] sm:leading-[150%] rounded-[48px] px-[24px] sm:px-[32px] py-[12px]  mx-auto w-auto block"
         >
           {t('about.about_text')}
         </button>

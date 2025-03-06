@@ -6,6 +6,7 @@ import Question from '../pages/Question';
 import WorkPage from '../pages/WorkPage';
 import Projects from '../pages/Projects';
 import Customers from '../pages/Customers';
+import Partners from '../pages/Partners';
 
 const Layout = () => {
   return (
@@ -16,8 +17,9 @@ const Layout = () => {
       <Projects />
       <Services />
       <WorkPage />
-        <Question />
-      {/* <ContactForm /> */}
+      <Partners />
+      <Question />
+      <ContactForm />
     </main>
   );
 };

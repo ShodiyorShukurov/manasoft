@@ -7,7 +7,7 @@ const InfiniteCarousel = ({ children }) => {
       <motion.div
         initial={{ x: "0" }}
         animate={{ x: '-100%' }}
-        transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+        transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
         className="flex flex-shrink-0"
       >
         {children}
@@ -16,7 +16,7 @@ const InfiniteCarousel = ({ children }) => {
       <motion.div
         initial={{ x: '0' }}
         animate={{ x: '-100%' }}
-        transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+        transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
         className="flex flex-shrink-0"
       >
         {children}

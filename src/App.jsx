@@ -22,7 +22,7 @@ const App = () => {
         <Route path="/portfolio/details/:id" element={<ProjectDetail />} />
       </Routes>
       <Call/>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

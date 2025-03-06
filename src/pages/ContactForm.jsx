@@ -70,7 +70,7 @@ const ContactForm = () => {
     }
   };
   return (
-    <section className="py-[120px]">
+    <section className="py-[90px] md:py-[120px]">
       <div className="container">
         {location.pathname == '/contact' ? (
           <>
@@ -87,9 +87,9 @@ const ContactForm = () => {
           ''
         )}
 
-        <div className="flex border rounded-[24px] bg-[#ffffff0a]">
+        <div className="flex flex-col xl:flex-row border-[1px] border-[#fff] rounded-[24px] bg-[#ffffff0a]">
           <div
-            className="p-[48px] rounded-[24px] border border-r-[#61A6FF]"
+            className="p-[24px] md:p-[48px] rounded-[24px] border border-r-[#61A6FF]"
             style={{
               background:
                 'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 1.5%, rgba(97, 166, 255, 0.02) 100%)',
@@ -100,18 +100,18 @@ const ContactForm = () => {
               backgroundPosition: 'bottom right, top left',
             }}
           >
-            <h2 className="text-white text-[48px] font-medium leading-[120%] tracking-[0.48px] max-[420px]">
+            <h2 className="text-white text-[32px] md:text-[48px] font-semibold leading-[120%] xl:max-w-[570px]">
               Biznesingizni birga rivojlantiramiz!
             </h2>
-            <p className="text-[#ffffffcc]  text-lg mt-[16px] max-w-[420px]">
+            <p className="text-[#ffffffcc] text-[16px]  md:text-[18px] leading-[140%] md:leading-[150%] mt-[16px] xl:max-w-[420px]">
               Manasoft jamoasi har doim siz bilan bog‘lanishga tayyor! Biz bilan
               bog‘laning va biznesingiz uchun eng yaxshi yechimni tanlang.
               Tezkor va professional javob kafolatlangan!
             </p>
-            <div className="mt-[48px] space-y-4 text-white">
+            <div className="mt-[32px] md:mt-[48px] space-y-4 text-white">
               <a
                 href="mailto:manasoft@gmail.com"
-                className="flex items-center gap-2 text-[20px] leading-[140%]"
+                className="flex items-center gap-2 text-[20px] leading-[100%] md:leading-[140%]"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -141,7 +141,7 @@ const ContactForm = () => {
               </a>
               <a
                 href="tel:+998901112233"
-                className="flex items-center gap-2 text-[20px] leading-[140%]"
+                className="flex items-center gap-2 text-[20px] leading-[100%] md:leading-[140%]"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -159,7 +159,7 @@ const ContactForm = () => {
                 </svg>
                 +998 90 111 22 33
               </a>
-              <p className="flex items-center gap-2 text-[20px] leading-[140%]">
+              <p className="flex items-center gap-2 text-[20px] leading-[100%] md:leading-[140%]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -184,8 +184,8 @@ const ContactForm = () => {
           </div>
 
           {/* O'ng qism */}
-          <div className="p-[48px] w-[100%]">
-            <form onSubmit={handleSubmit} className="flex flex-col">
+          <div className="p-[24px] md:p-[48px]  w-[100%] max-w-[850px]">
+            <form onSubmit={handleSubmit} className="flex flex-col justify-between h-full">
               <div className='space-y-6'>
                 <div>
                   <input
@@ -241,7 +241,7 @@ const ContactForm = () => {
               </div>
               <button
                 type="submit"
-                className="bg-[#61A6FF] text-white py-3 px-6 rounded-[32px] mt-6 cursor-pointer w-fit"
+                className="bg-[#61A6FF] text-white py-3 px-6 rounded-[32px] mt-6 cursor-pointer md:w-fit "
               >
                 Xabarni yuborish
               </button>

@@ -147,7 +147,7 @@ const Services = () => {
               boxShadow: '0px 4px 24px 0px rgba(255, 255, 255, 0.08)',
               backdropFilter: 'blur(30px)',
             }}
-            className="text-[#FFFFFF] text-[12px] sm:text-[18px] rounded-[48px] px-[32px] py-[12px] leading-[150%] mx-auto block mt-[42px] md:mt-[96px]"
+            className="text-[#FFFFFF] text-[12px] sm:text-[18px] rounded-[48px] px-[32px] py-[12px] leading-[100%] sm:leading-[150%] mx-auto block mt-[42px] md:mt-[96px]"
           >
             Bizning xizmatlar
           </button>
