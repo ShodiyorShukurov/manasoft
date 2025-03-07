@@ -17,6 +17,8 @@ import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import servicesPage from '../mock/servicesPage';
+import bgTop from '../assets/image/services_contact_bg1.png';
+import bgBottom from '../assets/image/services_contact_bg2.png';
 
 const titleVariants = {
   hidden: { opacity: 0 },
@@ -44,6 +46,63 @@ const Services = () => {
       window.scrollTo(0, 0);
     }, [location.pathname === '/services']);
 
+    const [formData, setFormData] = React.useState({
+      fullName: '',
+      phone: '',
+    });
+
+    const [errors, setErrors] = React.useState({
+      fullName: '',
+      phone: '',
+    });
+
+    const validateInput = (name, value) => {
+      let error = '';
+
+      if (!value) {
+        error = 'Bu maydon to‘ldirilishi shart!';
+      } else {
+        if (name === 'fullName') {
+          if (value.length < 5) error = 'Kamida 5 ta belgi kiritish kerak.';
+          else if (!/[A-Z]/.test(value))
+            error = 'Kamida bitta KATTA harf bo‘lishi kerak.';
+          else if (!/[a-z]/.test(value))
+            error = 'Kamida bitta kichik harf bo‘lishi kerak.';
+        }
+
+        if (name === 'phone') {
+          const phoneRegex = /^\+998\d{9}$/;
+          if (!phoneRegex.test(value))
+            error =
+              'Telefon raqam +998 bilan boshlanishi va 12 ta raqam bo‘lishi kerak.';
+        }
+      }
+
+      setErrors((prev) => ({ ...prev, [name]: error }));
+    };
+
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+      setFormData((prev) => ({ ...prev, [name]: value }));
+      validateInput(name, value);
+    };
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      let newErrors = {};
+
+      Object.keysacs(formData).forEach((key) => {
+        validateInput(key, formData[key]);
+        if (!formData[key]) newErrors[key] = 'Bu maydon to‘ldirilishi shart!';
+      });
+
+      setErrors(newErrors);
+
+      if (!Object.values(newErrors).some((error) => error)) {
+        console.log('Form jo‘natildi:', formData);
+      }
+    };
+
     return (
       <main>
         <section className="pt-[60px] md:pt-[80px] lg:pt-[120px]  ">
@@ -63,7 +122,7 @@ const Services = () => {
                     item.id % 2 === 0 ? 'md:[direction:rtl]' : ''
                   }`}
                 >
-                  {/* Chap (Matn) */}
+                  
                   <div className="md:[direction:ltr] text-[#ffffffcc] ">
                     <button
                       style={{
@@ -94,9 +153,16 @@ const Services = () => {
                         <li key={index}>{service}</li>
                       ))}
                     </ul>
+
+                    <a
+                      href="#section_contact"
+                      className="px-[24px] py-[16px] bg-[#61A6FF] rounded-[48px] mt-[32px] cursor-pointer text-[16px] text-center leading-[100%] block md:w-fit"
+                    >
+                      Ko'proq ma'lumot olish
+                    </a>
                   </div>
 
-                  {/* O'ng (Rasm) */}
+                 
                   <div
                     style={{
                       borderRadius: '30px',
@@ -105,9 +171,14 @@ const Services = () => {
                         'radial-gradient(70.49% 86.46% at 50.08% 100%, rgba(0, 0, 255, 0.20) 0%, rgba(0, 0, 255, 0.00) 100%), rgba(255, 255, 255, 0.04)',
                       backdropFilter: 'blur(120px)',
                     }}
-                    className="p-[32px]"
+                    className="p-[32px] h-full  flex items-end"
                   >
-                    <img className='w-full max-w-[600px] h-full max-h-[550px] mx-auto' src={item?.img} alt={item.title}/>
+                    <img
+                      className="w-full max-w-[600px] h-full max-h-fit mx-auto"
+                      src={item?.img}
+                      alt={item.title}
+                      loading='lazy'
+                    />
                   </div>
                 </li>
               ))}
@@ -116,6 +187,95 @@ const Services = () => {
         </section>
 
         <WorkPage />
+
+        <section
+          className="pt-[60px] md:pt-[80px] lg:pt-[120px]"
+          id="section_contact"
+        >
+          <div className="container">
+            <div
+              className="flex flex-col  border-[1px] border-[#fff] rounded-[24px] overflow-hidden"
+              style={{
+                background:
+                  'radial-gradient(85.23% 128.42% at 29.08% -17.62%, rgba(0, 0, 255, 0.08) 1.5%, rgba(0, 0, 255, 0.02) 100%)',
+                backdropFilter: 'blur(10px)',
+              }}
+            >
+              <div
+                className="p-[32px] md:p-[64px]"
+                style={{
+                  backdropFilter: 'blur(2px)',
+                  backgroundImage: `url(${bgBottom}), url(${bgTop})`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'bottom right, top left',
+                }}
+              >
+                <h2 className="text-white text-[32px] md:text-[48px] font-semibold leading-[120%]">
+                  Biznesingizni birga rivojlantiramiz!
+                </h2>
+                <p className="text-[#ffffffcc] text-[16px]  md:text-[18px] leading-[140%] md:leading-[150%] mt-[16px] xl:max-w-[800px]">
+                  Manasoft jamoasi har doim siz bilan bog‘lanishga tayyor! Biz
+                  bilan bog‘laning va biznesingiz uchun eng yaxshi yechimni
+                  tanlang. Tezkor va professional javob kafolatlangan!
+                </p>
+                <form
+                  onSubmit={handleSubmit}
+                  className="flex flex-col justify-between h-full max-w-[650px] mt-[20px]"
+                >
+                  <div className="space-y-6">
+                    <div>
+                      <input
+                        type="text"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleChange}
+                        className={`w-full bg-transparent border-b py-3 text-white placeholder:text-white focus:border-blue-400 transition-all outline-none ${
+                          errors.fullName ? 'border-red-500' : 'border-white'
+                        }`}
+                        placeholder="Full Name"
+                      />
+                      {errors.fullName && (
+                        <p className="text-red-400 text-sm mt-1">
+                          {errors.fullName}
+                        </p>
+                      )}
+                    </div>
+
+                    <div>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className={`w-full bg-transparent border-b py-3 text-white placeholder:text-white focus:border-blue-400 transition-all outline-none ${
+                          errors.phone ? 'border-red-500' : 'border-white'
+                        }`}
+                        placeholder="Phone"
+                      />
+                      {errors.phone && (
+                        <p className="text-red-400 text-sm mt-1">
+                          {errors.phone}
+                        </p>
+                      )}
+                    </div>
+
+
+                  </div>
+                  <button
+                    type="submit"
+                    className="bg-[#61A6FF] text-white py-3 px-6 rounded-[48px] mt-[40px] cursor-pointer md:w-fit "
+                  >
+                    Xabarni yuborish
+                  </button>
+                </form>
+              </div>
+
+
+               
+     
+            </div>
+          </div>
+        </section>
         <Customers />
         <Question />
         <Partners />

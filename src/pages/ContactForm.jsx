@@ -241,7 +241,7 @@ const ContactForm = () => {
               </div>
               <button
                 type="submit"
-                className="bg-[#61A6FF] text-white py-3 px-6 rounded-[32px] mt-6 cursor-pointer md:w-fit "
+                className="bg-[#61A6FF] text-white py-3 px-6 rounded-[48px] mt-6 cursor-pointer md:w-fit "
               >
                 Xabarni yuborish
               </button>

@@ -35,7 +35,7 @@ const About = () => {
                  row-start-2 lg:row-start-1"
           >
             <h3 className="text-[32px] sm:text-[48px] font-medium leading-[120%]">
-              <CountUp end={t('about.about_card1_count')} duration={5} />+
+              <CountUp end={t('about.about_card1_count')} duration={10} />+
             </h3>
             <p className="text-[16px] sm:text-[24px] sm:font-semibold leading-[120%] mt-[12px]">
               {t('about.about_card1_text')}
@@ -45,7 +45,7 @@ const About = () => {
           {/* Card 2 */}
           <li className="bg-[#ffffff0a] border border-[#333] rounded-[24px] py-[32px] px-[16px] sm:p-[32px]  text-center col-span-2 row-start-1">
             <h3 className="text-[32px] sm:text-[48px] font-medium leading-[120%]">
-              <CountUp end={t('about.about_card2_count')} duration={5} />
+              <CountUp end={t('about.about_card2_count')} duration={10} />
               M+
             </h3>
             <p className="text-[16px] sm:text-[24px] sm:font-semibold leading-[120%] mt-[12px]">
@@ -59,7 +59,7 @@ const About = () => {
                  row-start-2 lg:row-start-1"
           >
             <h3 className="text-[32px] sm:text-[48px] font-medium leading-[120%]">
-              <CountUp end={t('about.about_card3_count')} duration={5} />+
+              <CountUp end={t('about.about_card3_count')} duration={10} />+
             </h3>
             <p className="text-[16px] sm:text-[24px] sm:font-semibold leading-[120%] mt-[12px]">
               {t('about.about_card3_text')}
@@ -70,7 +70,7 @@ const About = () => {
         <ul className="grid grid-cols-2 lg:grid-cols-3 text-[#fff] gap-[16px] sm:gap-[24px] mt-[16px] sm:mt-[24px]">
           <li className="bg-[#ffffff0a] border border-[#333] rounded-[24px]  p-[16px] sm:p-[32px]  text-center row-start-2 lg:row-start-1">
             <h3 className="text-[32px] sm:text-[48px] font-medium leading-[120%]">
-              <CountUp end={t('about.about_card4_count')} duration={5} />+
+              <CountUp end={t('about.about_card4_count')} duration={10} />+
             </h3>
             <p className="text-[16px] sm:text-[24px] sm:font-semibold leading-[120%] mt-[12px]">
             {t('about.about_card4_text')} 
@@ -79,7 +79,7 @@ const About = () => {
 
           <li className="bg-[#ffffff0a] col-span-2 lg:col-span-1 border border-[#333] rounded-[24px]  p-[16px] sm:p-[32px]  text-center row-start-1">
             <h3 className="text-[32px] sm:text-[48px] font-medium leading-[120%]">
-            <CountUp end={t('about.about_card5_count')} duration={5} />+
+            <CountUp end={t('about.about_card5_count')} duration={10} />+
             </h3>
             <p className="text-[16px] sm:text-[24px] sm:font-semibold leading-[120%] mt-[12px]">
             {t('about.about_card5_text')} 
@@ -88,7 +88,7 @@ const About = () => {
 
           <li className="bg-[#ffffff0a] border border-[#333] rounded-[24px]  p-[16px] sm:p-[32px]  text-center row-start-2 lg:row-start-1">
             <h3 className="text-[32px] sm:text-[48px] font-medium leading-[120%]">
-            <CountUp end={t('about.about_card6_count')} duration={5} />+
+            <CountUp end={t('about.about_card6_count')} duration={10} />+
             </h3>
             <p className="text-[16px] sm:text-[24px] sm:font-semibold leading-[120%] mt-[12px]">
             {t('about.about_card6_text')} 
