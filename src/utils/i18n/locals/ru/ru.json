@@ -30,13 +30,13 @@
         "about_card5_button": "Biz bilan bog'laning"
     },
     "services": {
-        "services_title": "Texnologiya va Tajribani Birlashtiring",
-        "services_text": "Bizning xizmatlar",
-        "services_card1_title": "Telegram botlar",
-        "services_card1_text": "Manasoft Telegram botlar, mobil ilovalar, veb-saytlar hamda CRM va ERP tizimlari orqali biznesingizni avtomatlashtirib, uni keyingi bosqichga olib chiqishga yordam beradi.",
-        "services_card2_title": "Mobil ilovalar",
-        "services_card2_text": "Bizning ishonchli va tezkor IT yechimlarimiz iOS va Android platformalari uchun sifatli ilovalar yaratish, zamonaviy veb-saytlar ishlab chiqish hamda biznes jarayonlarini optimallashtirishga qaratilgan.",
-        "services_card3_title": "Veb-saytlar va tizimlar",
-        "services_card3_text": "Biznesingiz uchun eng optimal IT yechimlarni ishlab chiqamiz. O'ziga xos va qulay interfeyslar yaratish orqali mijozlar ehtiyojini qondiramiz."
+        "services_home_title": "Texnologiya va Tajribani Birlashtiring",
+        "services_home_text": "Bizning xizmatlar",
+        "services_home_card1_title": "Telegram botlar",
+        "services_home_card1_text": "Manasoft Telegram botlar, mobil ilovalar, veb-saytlar hamda CRM va ERP tizimlari orqali biznesingizni avtomatlashtirib, uni keyingi bosqichga olib chiqishga yordam beradi.",
+        "services_home_card2_title": "Mobil ilovalar",
+        "services_home_card2_text": "Bizning ishonchli va tezkor IT yechimlarimiz iOS va Android platformalari uchun sifatli ilovalar yaratish, zamonaviy veb-saytlar ishlab chiqish hamda biznes jarayonlarini optimallashtirishga qaratilgan.",
+        "services_home_card3_title": "Veb-saytlar va tizimlar",
+        "services_home_card3_text": "Biznesingiz uchun eng optimal IT yechimlarni ishlab chiqamiz. O'ziga xos va qulay interfeyslar yaratish orqali mijozlar ehtiyojini qondiramiz."
     }
 }

@@ -78,9 +78,6 @@ const Footer = () => {
                 <NavLink to="/">Xizmatlar</NavLink>
               </li>
               <li>
-                <NavLink to="/">Press</NavLink>
-              </li>
-              <li>
                 <NavLink to="/">Portfolio</NavLink>
               </li>
               <li>

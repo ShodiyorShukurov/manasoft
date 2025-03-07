@@ -74,10 +74,10 @@ const ContactForm = () => {
       <div className="container">
         {location.pathname == '/contact' ? (
           <>
-            <h3 className="font-medium text-center text-[#fff] text-[48px] leading-[120%]">
+            <h3 className="font-semibold text-center text-[#fff] text-[32px] md:text-[48px] leading-[120%]">
               Biz bilan bog&apos;lanish
             </h3>
-            <p className="text-center text-[#fff] text-[20px] leading-[140%] mt-[16px] w-full max-w-[760px] mx-auto mb-[48px]">
+            <p className="text-center text-[#fff] md:text-[20px] leading-[140%] mt-[12px] md:mt-[16px] w-full max-w-[760px] mx-auto mb-[80px] md:mb-[48px]">
               Biznesingizni samarali rivojlantish uchun ishonchli IT hamkor
               kerakmi? Manasoft sizga zamonaviy, tezkor va ishonchli yechimlar
               taqdim etadi!

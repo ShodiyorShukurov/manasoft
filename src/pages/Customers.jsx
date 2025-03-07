@@ -5,50 +5,44 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { motion } from 'framer-motion';
 import img from '../assets/image/card3-img2.jpg';
+import { useTranslation } from 'react-i18next';
 
-const customers = [
-  {
-    name: 'Lola Williams (Creative Designer)',
-    opinion: `"Manasoft team has been amazing to work with! They developed a custom Telegram bot for us, which accelerated
-                      the process of providing services to our clients. Now we
-                      can serve our clients faster and more efficiently."`,
-    img: img,
-  },
-  {
-    name: 'Lola Williams (Creative Designer)',
-    opinion: `"Manasoft team has been amazing to work with! They developed a custom Telegram bot for us, which accelerated
-                      the process of providing services to our clients. Now we
-                      can serve our clients faster and more efficiently."`,
-    img: img,
-  },
-  {
-    name: 'Lola Williams (Creative Designer)',
-    opinion: `"Manasoft team has been amazing to work with! They developed a custom Telegram bot for us, which accelerated
-                      the process of providing services to our clients. Now we
-                      can serve our clients faster and more efficiently."`,
-    img: img,
-  },
-  {
-    name: 'Lola Williams (Creative Designer)',
-    opinion: `"Manasoft team has been amazing to work with! They developed a custom Telegram bot for us, which accelerated
-                      the process of providing services to our clients. Now we
-                      can serve our clients faster and more efficiently."`,
-    img: img,
-  },
-  {
-    name: 'Lola Williams (Creative Designer)',
-    opinion: `"Manasoft team has been amazing to work with! They developed a custom Telegram bot for us, which accelerated
-                      the process of providing services to our clients. Now we
-                      can serve our clients faster and more efficiently."`,
-    img: img,
-  },
-];
 
 const Customers = () => {
   const [isTwoSlides, setIsTwoSlides] = useState(false);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const swiperRef = useRef(null);
+  const {t} = useTranslation()
+
+
+  const customers = [
+    {
+      name: t('customers.customer1_name'),
+      opinion: t('customers.customer1_text'),
+      img: img,
+    },
+    {
+      name: t('customers.customer1_name'),
+      opinion: t('customers.customer1_text'),
+      img: img,
+    },
+    {
+      name: t('customers.customer1_name'),
+      opinion: t('customers.customer1_text'),
+      img: img,
+    },
+    {
+      name: t('customers.customer1_name'),
+      opinion: t('customers.customer1_text'),
+      img: img,
+    },
+    {
+      name: t('customers.customer1_name'),
+      opinion: t('customers.customer1_text'),
+      img: img,
+    },
+  ];
 
   useEffect(() => {
     const handleResize = () => {
@@ -62,7 +56,6 @@ const Customers = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-
   return (
     <section className="pt-16 sm:pt-20 lg:pt-[120px]">
       <div className="container">
@@ -75,16 +68,15 @@ const Customers = () => {
           }}
           className="text-white text-[12px] sm:text-[18px] rounded-[48px] px-[32px] py-3 leading-[100%] sm:leading-[150%] mx-auto block"
         >
-          Mijozlar fikrlari
+         { t('customers.subtitle')}
         </button>
 
         <h2 className="text-center text-white text-[32px] sm:text-[48px] leading-tight font-medium sm:font-semibold mt-[24px] sm:mt-[16px] tracking-tight">
-          Mijozlarimizning fikrlari
+        {t('customers.title')}
         </h2>
 
         <p className="text-center bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent text-sm sm:text-[20px] leading-[140%] mt-3 sm:mt-[16px] w-full max-w-2xl mx-auto">
-          Siz ham Manasoft tajribasidan foydalaning va biznesingizni keyingi
-          bosqichga olib chiqing!
+        {t('customers.text')}
         </p>
       </div>
 
@@ -126,7 +118,7 @@ const Customers = () => {
                     </h3>
                   </div>
                   <p className="text-sm sm:text-base lg:text-lg leading-relaxed mt-3 sm:mt-4 w-full max-w-md mx-auto">
-                    {item.opinion}
+                   "{item.opinion}"
                   </p>
                 </div>
               </motion.div>

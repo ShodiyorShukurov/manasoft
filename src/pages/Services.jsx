@@ -5,6 +5,7 @@ import WorkPage from './WorkPage';
 import Question from './Question';
 import Customers from './Customers';
 import ContactForm from './ContactForm';
+import Partners from './Partners';
 import { useTranslation } from 'react-i18next';
 import crm from '../assets/image/crm.png';
 import mobileApp from '../assets/image/mobile-apps.png';
@@ -15,6 +16,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import servicesPage from '../mock/servicesPage';
 
 const titleVariants = {
   hidden: { opacity: 0 },
@@ -36,38 +38,33 @@ const Services = () => {
   const { t } = useTranslation();
 
   if (location.pathname === '/services') {
+    const servicesData = servicesPage(t);
+
+    React.useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [location.pathname === '/services']);
+
     return (
       <main>
-        <section className="pt-[120px] md:pt-[80px] sm:pt-[60px]">
-          <div className="container px-4 md:px-8">
-            <button
-              style={{
-                background:
-                  'linear-gradient(97deg, rgba(255, 255, 255, 0.08) 46.72%, rgba(153, 153, 153, 0.08) 87.27%)',
-                boxShadow: '0px 4px 24px 0px rgba(255, 255, 255, 0.08)',
-                backdropFilter: 'blur(30px)',
-              }}
-              className="text-[#FFFFFF] text-[16px] sm:text-[20px] rounded-[48px] px-[24px] sm:px-[32px] py-[12px] leading-[100%] mx-auto w-full sm:w-auto block"
-            >
-              Bizning xizmatlar
-            </button>
+        <section className="pt-[60px] md:pt-[80px] lg:pt-[120px]  ">
+          <div className="container">
+            <h2 className="text-[32px] md:text-[48px] font-medium leading-[120%] text-center text-[#fff] max-w-[830px] mx-auto">
+              {t('services.services_page_title')}
+            </h2>
+            <p className="text-[16px] md:text-[20px] leading-[140%] text-center text-[#ffffffcc] max-w-[830px] mx-auto mt-[12px] md:mt-[16px]">
+              {t('services.services_page_text')}
+            </p>
 
-            <ul className="space-y-[40px] sm:space-y-[60px] lg:space-y-[80px] pt-[60px] sm:pt-[90px] lg:pt-[120px]">
-              {portfolioSteps.map((step, index) => (
+            <ul className="mt-[64px] md:mt-[90px] space-y-16 md:space-y-24">
+              {servicesData.map((item) => (
                 <li
-                  key={step.id}
-                  className={`flex flex-col md:flex-row items-center gap-[24px] sm:gap-[48px] ${
-                    index % 2 !== 0 ? 'md:flex-row-reverse' : ''
+                  key={item.id}
+                  className={`grid grid-cols-1 xl:grid-cols-2 gap-6 md:gap-12 items-center ${
+                    item.id % 2 === 0 ? 'md:[direction:rtl]' : ''
                   }`}
                 >
-                  {/* Left Content (Text) */}
-                  <motion.div
-                    initial={{ x: index % 2 === 0 ? -100 : 100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, ease: 'easeOut' }}
-                    viewport={{ once: true }}
-                    className="md:w-1/2 text-white text-center md:text-left"
-                  >
+                  {/* Chap (Matn) */}
+                  <div className="md:[direction:ltr] text-[#ffffffcc] ">
                     <button
                       style={{
                         background:
@@ -75,35 +72,43 @@ const Services = () => {
                         boxShadow: '0px 4px 24px 0px rgba(255, 255, 255, 0.08)',
                         backdropFilter: 'blur(30px)',
                       }}
-                      className="text-[#FFFFFF] text-[18px] sm:text-[20px] rounded-[48px] px-[24px] sm:px-[32px] py-[12px] sm:py-[16px] leading-[100%] mx-auto md:mx-0 cursor-pointer"
+                      className="text-white text-[12px] sm:text-[18px] rounded-[48px] px-[32px] py-3 leading-[100%] sm:leading-[150%]"
                     >
-                      {step.id < 10 ? `0${step.id}` : step.id}
+                      {item.subtitle}
                     </button>
-                    <h3 className="text-[32px] sm:text-[40px] lg:text-[48px] font-bold leading-[120%] mt-[24px] sm:mt-[32px]">
-                      {step.title}
-                    </h3>
-                    <p className="text-[16px] sm:text-lg text-[#ffffff99] mt-[12px] sm:mt-[16px] leading-[140%]">
-                      {step.text}
-                    </p>
-                  </motion.div>
 
-                  {/* Right Image */}
-                  <motion.div
-                    initial={{ x: index % 2 === 0 ? 100 : -100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, ease: 'easeOut' }}
-                    viewport={{ once: true }}
-                    className="md:w-1/2 flex justify-center"
+                    <h3 className="text-[28px] md:text-[36px] font-semibold leading-[110%] md:leading-[120%] text-white mt-[24px] md:mt-[32px] max-w-[560px]">
+                      {item.title}
+                    </h3>
+                    <p className="text-[16px] md:text-[20px] leading-[140%] mt-[12px] md:mt-[16px] max-w-[590px]">
+                      {item.text}
+                    </p>
+                    <p className="text-[16px] md:text-[20px] leading-[140%] mt-[12px] md:mt-[16px]">
+                      {t('services.services')}
+                    </p>
+                    <ul
+                      style={{ listStyle: 'inside' }}
+                      className="text-[16px] md:text-[20px] leading-[140%]"
+                    >
+                      {item.services.split(', ').map((service, index) => (
+                        <li key={index}>{service}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* O'ng (Rasm) */}
+                  <div
+                    style={{
+                      borderRadius: '30px',
+                      border: '2px solid #464850',
+                      background:
+                        'radial-gradient(70.49% 86.46% at 50.08% 100%, rgba(0, 0, 255, 0.20) 0%, rgba(0, 0, 255, 0.00) 100%), rgba(255, 255, 255, 0.04)',
+                      backdropFilter: 'blur(120px)',
+                    }}
+                    className="p-[32px]"
                   >
-                    <div className="w-full max-w-[500px] sm:max-w-[630px]">
-                      <img
-                        src={step.image}
-                        alt="Portfolio Preview"
-                        className="w-full h-auto"
-                        width={630}
-                      />
-                    </div>
-                  </motion.div>
+                    <img className='w-full max-w-[600px] h-full max-h-[550px] mx-auto' src={item?.img} alt={item.title}/>
+                  </div>
                 </li>
               ))}
             </ul>
@@ -113,32 +118,29 @@ const Services = () => {
         <WorkPage />
         <Customers />
         <Question />
+        <Partners />
         <ContactForm />
       </main>
     );
   } else {
     return (
-      <section className="pt-[60px] md:pt-[80px] sm:pt-[120px]">
-        <div className="container px-4 md:px-8">
-          {location.pathname === '/services' ? (
-            ''
-          ) : (
-            <motion.h2
-              initial="hidden"
-              whileInView="visible"
-              variants={titleVariants}
-              viewport={{ once: true }}
-              className="text-center text-[48px] sm:text-[72px] lg:text-[96px] font-semibold leading-[120%] tracking-[0.96px]  lg:max-w-[1200px] mx-auto bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent"
-            >
-              {'Texnologiya va Tajribani Birlashtiring'
-                .split('')
-                .map((letter, index) => (
-                  <motion.span key={index} variants={letterVariants}>
-                    {letter}
-                  </motion.span>
-                ))}
-            </motion.h2>
-          )}
+      <section className="pt-[60px] md:pt-[80px] lg:pt-[120px]">
+        <div className="container">
+          <motion.h2
+            initial="hidden"
+            whileInView="visible"
+            variants={titleVariants}
+            viewport={{ once: true }}
+            className="text-center text-[48px] sm:text-[72px] lg:text-[96px] font-semibold leading-[120%] tracking-[0.96px]  lg:max-w-[1200px] mx-auto bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent"
+          >
+            {t('services.services_home_title1')
+              .split('')
+              .map((letter, index) => (
+                <motion.span key={index} variants={letterVariants}>
+                  {letter}
+                </motion.span>
+              ))}
+          </motion.h2>
 
           <button
             style={{
@@ -149,15 +151,14 @@ const Services = () => {
             }}
             className="text-[#FFFFFF] text-[12px] sm:text-[18px] rounded-[48px] px-[32px] py-[12px] leading-[100%] sm:leading-[150%] mx-auto block mt-[42px] md:mt-[96px]"
           >
-            Bizning xizmatlar
+            {t('services.services_home_text1')}
           </button>
 
           <h3 className="text-center text-[32px] sm:text-[40px] md:text-[48px] text-[#fff] font-medium leading-[120%] mx-auto mt-[16px] sm:mt-[24px]">
-            Biznesingiz uchun mukammal IT yechimlar
+            {t('services.services_home_title2')}
           </h3>
           <p className="text-center text-[16px] sm:text-[20px] text-[#fff] leading-[140%] mx-auto mt-[12px] sm:mt-[16px] w-full max-w-[760px]">
-            Manasoft – IT dunyosida ishonchli hamkoringiz! Biz veb-sayt va mobil
-            ilovalar va boshqa ilg‘or texnologik yechimlarni taklif qilamiz.
+            {t('services.services_home_text2')}
           </p>
 
           <ul className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-6 pt-[48px]">
@@ -168,12 +169,11 @@ const Services = () => {
               }}
               className="p-[32px] sm:p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55]"
             >
-              <h4 className="text-[32px] md:text-[28px] sm:text-[24px] leading-[120%] font-medium">
-                CRM/ERP Tizimlari
+              <h4 className="xl:text-[32px] md:text-[28px] leading-[120%] font-medium">
+                {t('services.services_home_card1_title')}
               </h4>
-              <p className="text-[18px] md:text-[16px] sm:text-[14px] leading-[150%] mt-[16px] w-full max-w-[564px]">
-                CRM va ERP tizimlari orqali jarayonlaringizni optimallashtiring,
-                samaradorlikni oshiring va biznesingizni raqamlashtiring.
+              <p className="text-[18px] leading-[150%] mt-[16px] w-full max-w-[564px]">
+                {t('services.services_home_card1_text')}
               </p>
               <img
                 className="mx-auto mt-[46px] w-[450px] h-auto object-cover"
@@ -190,12 +190,11 @@ const Services = () => {
               }}
               className="p-[32px] sm:p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55]"
             >
-              <h4 className="text-[32px] md:text-[28px] sm:text-[24px] leading-[120%] font-medium">
-                Mobil ilovalar
+              <h4 className="xl:text-[32px] md:text-[28px] leading-[120%] font-medium">
+                {t('services.services_home_card2_title')}
               </h4>
-              <p className="text-[18px] md:text-[16px] sm:text-[14px] leading-[150%] mt-[16px] w-full max-w-[564px]">
-                iOS va Android uchun zamonaviy va tezkor mobil ilovalar
-                yaratamiz. Mahsulotingizni yangi bosqichga olib chiqing!
+              <p className="text-[18px] leading-[150%] mt-[16px] w-full max-w-[564px]">
+                {t('services.services_home_card2_text')}
               </p>
               <img
                 className="mx-auto mt-[46px] w-[450px] h-auto object-cover"
@@ -212,12 +211,11 @@ const Services = () => {
               }}
               className="p-[32px] sm:p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55]"
             >
-              <h4 className="text-[32px] md:text-[28px] sm:text-[24px] leading-[120%] font-medium">
-                Telegram botlar
+              <h4 className="xl:text-[32px] md:text-[28px] leading-[120%] font-medium">
+                {t('services.services_home_card3_title')}
               </h4>
-              <p className="text-[18px] md:text-[16px] sm:text-[14px] leading-[150%] mt-[16px] w-full max-w-[564px]">
-                Telegram botlar orqali mijozlaringiz bilan xizmatlarni
-                avtomatlashtiring va biznesingizni rivojlantiring!
+              <p className="text-[18px] leading-[150%] mt-[16px] w-full max-w-[564px]">
+                {t('services.services_home_card3_text')}
               </p>
               <div className="flex justify-center gap-4 items-center mt-[46px] ">
                 <img
@@ -242,12 +240,11 @@ const Services = () => {
               }}
               className="p-[32px] sm:p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55]"
             >
-              <h4 className="text-[32px] md:text-[28px] sm:text-[24px] leading-[120%] font-medium">
-                Veb saytlar
+              <h4 className="xl:text-[32px] md:text-[28px] leading-[120%] font-medium">
+                {t('services.services_home_card4_title')}
               </h4>
-              <p className="text-[18px] md:text-[16px] sm:text-[14px] leading-[150%] mt-[16px] w-full max-w-[564px]">
-                Biznesingizga mos, tezkor va zamonaviy veb-saytlar yaratamiz.
-                Raqobatchilardan ajralib turish uchun biz bilan bog‘laning!
+              <p className="text-[18px] leading-[150%] mt-[16px] w-full max-w-[564px]">
+                {t('services.services_home_card4_text')}
               </p>
               <img
                 className="mx-auto mt-[46px] w-[450px] h-auto object-cover"
@@ -278,12 +275,10 @@ const Services = () => {
                   className="p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55] max-h-[350px] sm:min-h-[450px] h-full flex flex-col gap-3 sm:gap-6"
                 >
                   <h4 className="text-[24px] sm:text-[28px] leading-[120%] font-medium">
-                    CRM/ERP Tizimlari
+                    {t('services.services_home_card1_title')}
                   </h4>
                   <p className="text-[16px] sm:text-[18px] leading-[150%] w-full">
-                    CRM va ERP tizimlari orqali jarayonlaringizni
-                    optimallashtiring, samaradorlikni oshiring va biznesingizni
-                    raqamlashtiring.
+                    {t('services.services_home_card1_text')}
                   </p>
                   <div className="mx-auto">
                     <img
@@ -303,11 +298,10 @@ const Services = () => {
                   className="p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55] max-h-[350px] sm:min-h-[450px] h-full flex flex-col gap-3 sm:gap-6"
                 >
                   <h4 className="text-[24px] sm:text-[28px] leading-[120%] font-medium">
-                    Mobil ilovalar
+                    {t('services.services_home_card2_title')}
                   </h4>
                   <p className="text-[16px] sm:text-[18px] leading-[150%] w-full">
-                    iOS va Android uchun zamonaviy va tezkor mobil ilovalar
-                    yaratamiz. Mahsulotingizni yangi bosqichga olib chiqing!
+                    {t('services.services_home_card2_text')}
                   </p>
                   <div className="mx-auto">
                     <img
@@ -327,11 +321,10 @@ const Services = () => {
                   className="p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55] max-h-[350px] sm:min-h-[450px] h-full flex flex-col gap-3 sm:gap-6"
                 >
                   <h4 className="text-[24px] sm:text-[28px] leading-[120%] font-medium">
-                    Telegram botlar
+                    {t('services.services_home_card3_title')}
                   </h4>
                   <p className="text-[16px] sm:text-[18px] leading-[150%] w-full">
-                    Telegram botlar orqali mijozlaringiz bilan xizmatlarni
-                    avtomatlashtiring va biznesingizni rivojlantiring!
+                    {t('services.services_home_card3_text')}
                   </p>
                   <div className="flex justify-center gap-4 items-center">
                     <img
@@ -358,12 +351,10 @@ const Services = () => {
                   className="p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55] max-h-[350px] sm:min-h-[450px] h-full flex flex-col gap-3 sm:gap-6"
                 >
                   <h4 className="text-[24px] sm:text-[28px] leading-[120%] font-medium">
-                    Veb saytlar
+                    {t('services.services_home_card4_title')}
                   </h4>
                   <p className="text-[16px] sm:text-[18px] leading-[150%] w-full">
-                    Biznesingizga mos, tezkor va zamonaviy veb-saytlar
-                    yaratamiz. Raqobatchilardan ajralib turish uchun biz bilan
-                    bog‘laning!
+                    {t('services.services_home_card4_text')}
                   </p>
                   <div className="mx-auto">
                     {' '}

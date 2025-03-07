@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import CountUp from 'react-countup';
 
 const About = () => {
   const { t } = useTranslation();
@@ -34,20 +35,21 @@ const About = () => {
                  row-start-2 lg:row-start-1"
           >
             <h3 className="text-[32px] sm:text-[48px] font-medium leading-[120%]">
-              30+
+              <CountUp end={t('about.about_card1_count')} duration={5} />+
             </h3>
             <p className="text-[16px] sm:text-[24px] sm:font-semibold leading-[120%] mt-[12px]">
-              Tugallangan loyihalar
+              {t('about.about_card1_text')}
             </p>
           </li>
 
           {/* Card 2 */}
           <li className="bg-[#ffffff0a] border border-[#333] rounded-[24px] py-[32px] px-[16px] sm:p-[32px]  text-center col-span-2 row-start-1">
             <h3 className="text-[32px] sm:text-[48px] font-medium leading-[120%]">
-              28M+
+              <CountUp end={t('about.about_card2_count')} duration={5} />
+              M+
             </h3>
             <p className="text-[16px] sm:text-[24px] sm:font-semibold leading-[120%] mt-[12px]">
-              Umumiy raqam foydalanuvchilar
+              {t('about.about_card2_text')}
             </p>
           </li>
 
@@ -57,33 +59,39 @@ const About = () => {
                  row-start-2 lg:row-start-1"
           >
             <h3 className="text-[32px] sm:text-[48px] font-medium leading-[120%]">
-              5+
+              <CountUp end={t('about.about_card3_count')} duration={5} />+
             </h3>
             <p className="text-[16px] sm:text-[24px] sm:font-semibold leading-[120%] mt-[12px]">
-              Tajriba yillari dan sohasida
+              {t('about.about_card3_text')}
             </p>
           </li>
         </ul>
 
         <ul className="grid grid-cols-2 lg:grid-cols-3 text-[#fff] gap-[16px] sm:gap-[24px] mt-[16px] sm:mt-[24px]">
           <li className="bg-[#ffffff0a] border border-[#333] rounded-[24px]  p-[16px] sm:p-[32px]  text-center row-start-2 lg:row-start-1">
-            <h3 className="text-[32px] sm:text-[48px] font-medium leading-[120%]">11+</h3>
+            <h3 className="text-[32px] sm:text-[48px] font-medium leading-[120%]">
+              <CountUp end={t('about.about_card4_count')} duration={5} />+
+            </h3>
             <p className="text-[16px] sm:text-[24px] sm:font-semibold leading-[120%] mt-[12px]">
-              Telegramma botlar
+            {t('about.about_card4_text')} 
             </p>
           </li>
 
           <li className="bg-[#ffffff0a] col-span-2 lg:col-span-1 border border-[#333] rounded-[24px]  p-[16px] sm:p-[32px]  text-center row-start-1">
-            <h3 className="text-[32px] sm:text-[48px] font-medium leading-[120%]">16+</h3>
+            <h3 className="text-[32px] sm:text-[48px] font-medium leading-[120%]">
+            <CountUp end={t('about.about_card5_count')} duration={5} />+
+            </h3>
             <p className="text-[16px] sm:text-[24px] sm:font-semibold leading-[120%] mt-[12px]">
-              Mobil ilovalar
+            {t('about.about_card5_text')} 
             </p>
           </li>
 
           <li className="bg-[#ffffff0a] border border-[#333] rounded-[24px]  p-[16px] sm:p-[32px]  text-center row-start-2 lg:row-start-1">
-            <h3 className="text-[32px] sm:text-[48px] font-medium leading-[120%]">4+</h3>
+            <h3 className="text-[32px] sm:text-[48px] font-medium leading-[120%]">
+            <CountUp end={t('about.about_card6_count')} duration={5} />+
+            </h3>
             <p className="text-[16px] sm:text-[24px] sm:font-semibold leading-[120%] mt-[12px]">
-              Veb platformalar
+            {t('about.about_card6_text')} 
             </p>
           </li>
         </ul>

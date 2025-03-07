@@ -44,7 +44,7 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (!showMobileMenu) {
-        setIsSticky(window.scrollY > lastScrollY);
+        setIsSticky(window.scrollY < lastScrollY);
         setLastScrollY(window.scrollY);
       }
     };
