@@ -75,13 +75,13 @@ const Footer = () => {
                 <NavLink to="/">Bosh sahifa </NavLink>
               </li>
               <li>
-                <NavLink to="/">Xizmatlar</NavLink>
+                <NavLink to="/services">Xizmatlar</NavLink>
               </li>
               <li>
-                <NavLink to="/">Portfolio</NavLink>
+                <NavLink to="/portfolio">Portfolio</NavLink>
               </li>
               <li>
-                <NavLink to="/">Bog’lanish</NavLink>
+                <NavLink to="/contact">Bog’lanish</NavLink>
               </li>
             </ul>
           </li>

@@ -16,165 +16,123 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import allButton from '../assets/logo/all.svg';
+import portfolio from '../mock/portfolio';
+import { useTranslation } from 'react-i18next';
 
 const tabs = [
   { id: 1, label: 'Hammasi' },
   { id: 2, label: 'Mobile ilova' },
   { id: 3, label: 'Vebsayt' },
   { id: 4, label: 'CRM' },
+  { id: 5, label: 'UX/UI' },
 ];
 
-// let projects = [
-//   {
-//     id: 1,
-//     title: 'Manasoft',
-//     description: 'IT kompaniya web sayti',
-//     image: project2,
-//     image1: project3,
-//   },
-//   {
-//     id: 2,
-//     title: 'Manasoft',
-//     type: 'Vebsayt',
-//     description: 'IT kompaniya web sayti',
-//     image: project2,
-//     image1: project3,
-//   },
-//   {
-//     id: 3,
-//     title: 'Manasoft',
-//     description: 'IT kompaniya web sayti',
-//     image: project2,
-//     image1: project3,
-//   },
-//   {
-//     id: 4,
-//     title: 'Manasoft',
-//     type: 'Mobile ilova',
-//     description: 'IT kompaniya web sayti',
-//     image: project2,
-//     image1: project3,
-//   },
-//   {
-//     id: 5,
-//     title: 'Manasoft',
-//     type: 'CRM',
-//     description: 'IT kompaniya web sayti',
-//     image: project2,
-//     image1: project3,
-//   },
-//   {
-//     id: 6,
-//     title: 'Manasoft',
-//     type: 'CRM',
-//     description: 'IT kompaniya web sayti',
-//     image: project2,
-//     image1: project3,
-//   },
-// ];
-
 const Projects = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
   const { id } = useParams();
   const [activeTab, setActiveTab] = React.useState(1);
   const [typetab, setTypeTab] = React.useState('Hammasi');
 
-  // let filtredArr =
-  //   typetab !== 'Hammasi'
-  //     ? projects.filter((project) => project.type === typetab)
-  //     : projects;
-
   if (location.pathname == '/portfolio') {
-    return a;
-    // <section className="pt-[80px]">
-    //   <div className="container">
-    //     <div className="flex justify-center items-center group cursor-pointer">
-    //       <div className="flex transition-all duration-1000 ease-in-out">
-    //         {[user1, user2, user3, user2].map((user, index) => (
-    //           <img
-    //             key={index}
-    //             src={user}
-    //             alt={`User ${index + 1}`}
-    //             width={24}
-    //             height={24}
-    //             className="rounded-full transition-all duration-1000 ease-in-out group-hover:ml-1 -ml-4"
-    //           />
-    //         ))}
-    //       </div>
-    //       <span className="text-white text-[16px] font-normal ml-3">
-    //         +100 ortiq loyihalar
-    //       </span>
-    //     </div>
+    const portfolioData = portfolio(t);
 
-    //     <h2 className="text-[48px] font-medium leading-[120%] tracking-[0.48px] bg-gradient-to-b text-white mt-[16px] text-center">
-    //       Bizning loyihalarimiz
-    //     </h2>
+    let filtredArr =
+      typetab !== 'Hammasi'
+        ? portfolioData.filter((project) => project.type === typetab)
+        : portfolioData;
 
-    //     <p className="text-[20px] text-[#ffffffcc] leading-[140%] tracking-[0.2px] mt-[16px] w-full max-w-[750px] mx-auto text-center">
-    //       Biznesingizni samarali rivojlantirish uchun ishonchli IT hamkor
-    //       kerakmi? Manasoft sizga zamonaviy, tezkor va ishonchli yechimlar
-    //       taqdim etadi!
-    //     </p>
+    return (
+      <section className="py-[80px]">
+        <div className="container">
+          <div className="flex justify-center items-center group cursor-pointer">
+            <div className="flex transition-all duration-1000 ease-in-out">
+              {[user1, user2, user3, user2].map((user, index) => (
+                <img
+                  key={index}
+                  src={user}
+                  alt={`User ${index + 1}`}
+                  width={24}
+                  height={24}
+                  className="rounded-full transition-all duration-1000 ease-in-out group-hover:ml-1 -ml-4"
+                />
+              ))}
+            </div>
+            <span className="text-white text-[16px] font-normal ml-3">
+              +100 ortiq loyihalar
+            </span>
+          </div>
 
-    //     <div className="flex items-center gap-[16px] bg-transparent border border-[#4266B1] rounded-[24px] w-fit mx-auto mt-[80px]">
-    //       {tabs.map((tab) => (
-    //         <button
-    //           key={tab.id}
-    //           onClick={() => {
-    //             setActiveTab(tab.id);
-    //             setTypeTab(tab.label);
-    //           }}
-    //           className={`px-[24px] py-[16px] text-sm font-medium rounded-[24px] transition-all duration-300 cursor-pointer
-    //       ${
-    //         activeTab === tab.id
-    //           ? 'bg-[#4266B1] text-white'
-    //           : 'text-gray-300 hover:text-white'
-    //       }`}
-    //         >
-    //           {tab.label}
-    //         </button>
-    //       ))}
-    //     </div>
+          <h2 className="text-[48px] font-medium leading-[120%] bg-gradient-to-b text-white mt-[24px] text-center">
+            Bizning loyihalarimiz
+          </h2>
 
-    //     <div className="mt-[64px] mb-[80px] grid grid-cols-1 md:grid-cols-3 gap-6">
-    //       {filtredArr.map((project) => (
-    //         <div
-    //           key={project.id}
-    //           className="p-[32px] rounded-2xl shadow-lg border border-gray-700 cursor-pointer"
-    //           onClick={() => navigate('/portfolio/details/' + project.id)}
-    //           style={{
-    //             background:
-    //               'linear-gradient(0deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02)), radial-gradient(54.75% 109.5% at 19.8% -3.5%, rgba(0, 0, 255, 0.08) 1.5%, rgba(0, 0, 255, 0.016) 100%) ',
-    //           }}
-    //         >
-    //           <h3 className="text-white text-[32px] font-medium leading-[32px]">
-    //             {project.title}
-    //           </h3>
-    //           <div className="mt-4 rounded-lg flex justify-between overflow-hidden">
-    //             <img
-    //               src={project.image}
-    //               alt={project.title}
-    //               className="object-cover"
-    //               width={160}
-    //               height={350}
-    //             />
-    //             <img
-    //               src={project.image1}
-    //               alt={project.title}
-    //               className="object-cover"
-    //               width={160}
-    //               height={350}
-    //             />
-    //           </div>
-    //           <p className="text-white mt-2 text-[24px] leading-[28px]">
-    //             {project.description}
-    //           </p>
-    //         </div>
-    //       ))}
-    //     </div>
-    //   </div>
-    // </section>
+          <p className="text-[20px] text-[#ffffffcc] leading-[140%] mt-[16px] w-full max-w-[750px] mx-auto text-center">
+            Biznesingizni samarali rivojlantirish uchun ishonchli IT hamkor
+            kerakmi? Manasoft sizga zamonaviy, tezkor va ishonchli yechimlar
+            taqdim etadi!
+          </p>
+
+          <div className="w-full overflow-x-auto scrollbar-hide">
+            <div className="flex items-center gap-[16px] w-fit mx-auto mt-[24px] whitespace-nowrap pb-[20px]">
+              {tabs.map((item) => (
+                <button
+                  key={item.id}
+                  className={`${
+                    item.id == 1 ? 'py-[10px] px-[16px]' : 'py-[12px] px-[20px]'
+                  } border rounded-[24px] cursor-pointer text-[16px] font-medium leading-[100%] text-white hover:border-[#61A6FF] transition-all duration-300 ${
+                    item.id === activeTab
+                      ? 'bg-[#61a6ff33] border-[#61A6FF]'
+                      : 'bg-transparent border-[#1A378E]'
+                  }`}
+                  onClick={() => {
+                    setActiveTab(item.id);
+                    setTypeTab(item.label);
+                  }}
+                >
+                  {item.id == 1 ? (
+                    <img
+                      className="w-auto min-w-[20px] h-auto h-[20px]"
+                      src={allButton}
+                      alt="allButton"
+                    />
+                  ) : (
+                    item.label
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <ul className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mt-[48px]">
+            {filtredArr?.map((project) => (
+              <li
+                key={project.id}
+                style={{
+                  background: 'rgba(255, 255, 255, 0.10)',
+                  backdropFilter: 'blur(2px)',
+                }}
+                className="p-[24px] md:p-[32px] rounded-[24px] flex flex-col gap-6"
+              >
+                <h4 className="text-[24px] sm:text-[28px] lg:text-[32px] font-medium leading-[120%] text-white">
+                  {project.title}
+                </h4>
+                <img
+                  className="w-full max-w-[400px] h-full max-h-[250px] mx-auto"
+                  src={project.img}
+                  alt={project.title}
+                />
+                <p className="text-[16px] sm:text-[18px] leading-[150%] text-[#ffffffcc]">
+                  {project.text}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    );
   } else {
     return (
       <section className="pt-[80px] md:pt-[120px]">
