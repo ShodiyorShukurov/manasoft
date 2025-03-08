@@ -409,6 +409,7 @@ const ProjectDetail = () => {
                         'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 15%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
                     }}
                     className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] lg:col-span-2 border border-[#464850] flex flex-col sm:min-h-[400px]"
+                    onClick={()=> navigate('/portfolio/details/'+ portfolio.id)}
                   >
                     <h3 className="text-[20px] md:text-[32px] font-medium leading-[120%]">
                       {portfolio.title}
