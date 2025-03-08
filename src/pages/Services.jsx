@@ -90,14 +90,14 @@ const Services = () => {
     const handleSubmit = (e) => {
       e.preventDefault();
       let newErrors = {};
-
-      Object.keysacs(formData).forEach((key) => {
+  
+      Object.keys(formData).forEach((key) => {
         validateInput(key, formData[key]);
         if (!formData[key]) newErrors[key] = 'Bu maydon to‘ldirilishi shart!';
       });
-
+    
       setErrors(newErrors);
-
+    
       if (!Object.values(newErrors).some((error) => error)) {
         console.log('Form jo‘natildi:', formData);
       }
@@ -105,7 +105,7 @@ const Services = () => {
 
     return (
       <main>
-        <section className="pt-[60px] md:pt-[80px] lg:pt-[120px]  ">
+        <section className="pt-[150px] md:pt-[230px]">
           <div className="container">
             <h2 className="text-[32px] md:text-[48px] font-medium leading-[120%] text-center text-[#fff] max-w-[830px] mx-auto">
               {t('services.services_page_title')}

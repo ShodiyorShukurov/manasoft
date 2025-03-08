@@ -71,6 +71,63 @@
         "services_page_card4_xizmatlar": "CRM tizimlarini ishlab chiqish va sozlash, ERP tizimlarini yaratish va integratsiya qilish, Mijozlar ma’lumotlarini boshqarish, Tahliliy va hisob-kitob tizimlari"
     },
     "workpage": {
-        "workpage_title": "Bizning ishlash jarayonimiz"
+        "workpage_title": "Bizning ishlash jarayonimiz",
+        "workpage_text": "Manasoft jamoasi har bir loyihani aniqlik va sifat bilan amalga oshiradi. Bizning yondashuv samaradorlik va innovatsiyani ta’minlaydi!",
+        "workpage_subtitle1": "Ishlab chiqilishidan oldin",
+        "workpage_subtitle2": "Ishlab chiqarish",
+        "card1_title": "Ma'lumotlarni yig'ish",
+        "card1_text": "Muvaffaqiyatli loyiha yaratish uchun eng avvalo ehtiyojlaringiz va biznes maqsadlaringizni chuqur o‘rganamiz. Bu bosqichda biz ma’lumot to‘playmiz va strategik yo‘nalishni aniqlaymiz.",
+        "card2_title": "Loyihaning TZ",
+        "card2_text": "Loyiha muvaffaqiyatining kaliti – aniq va puxta ishlab chiqilgan texnik topshiriq (TZ). Biz barcha talablarni hujjatlashtiramiz va loyiha yo‘nalishini belgilaymiz.",
+        "card3_title": "Integratsiya va Tadqiqot",
+        "card3_text": " Loyiha uchun eng mos texnologiyalarni tanlash, imkoniyatlarni tahlil qilish va kerakli integratsiyalarni ishlab chiqish bosqichi. Biz biznesingiz uchun eng optimal yechimni topamiz!",
+        "card4_title": "Dizayn loyihasi",
+        "card4_text": "UX/UI dizayni – foydalanuvchilar bilan o‘zaro aloqani yengillashtirish uchun asosiy omil. Biz loyihangizga mos keladigan jozibali va funksional dizayn yaratamiz.",
+        "card5_title": "Rivojlanish prototipi",
+        "card5_text": "Dastlabki prototip orqali loyiha qanday ishlashini sinovdan o‘tkazamiz. Bu bosqichda asosiy funksiyalar shakllantiriladi va dastlabki testlar o‘tkaziladi.",
+        "card6_title": "Rivojlanish yakuniy ",
+        "card6_text": " Loyiha to‘liq yakunlanadi, barcha funksiyalar sinovdan o‘tkaziladi va optimallashtiriladi. Biz mijozlarimizga tayyor mahsulotni yuqori sifat bilan taqdim etamiz!"
+    },
+    "project1": {
+        "banner_title": "Femmy",
+        "banner_subtitle": "Ayollar uchun maxsus mobil ilova",
+        "banner_text": "Femmy – bu har bir ayol uchun zarur bo‘lgan sog‘liq kalendari va kundalik ilova.",
+        "banner_button1": "Play Market",
+        "banner_button2": "App Store",
+        "project_title": "Loyihaning xususiyatlari",
+        "project_card1_title": "Femmy ilovasi maqsadi",
+        "project_card1_text": "Femmy – ayollar uchun kerak bo‘lgan barcha vositalar homiladorlik maktabi, kundalik kayfiyat kuzatuvchi, ovulyatsiya kalkulyatori, bola parvarishi bo‘yicha maslahatlar va ginekolog tavsiyalari.",
+        "project_card2_title": "Homiladorlik Maktabi ",
+        "project_card2_text": "Homiladorlik haftalari bo‘yicha tavsiyalar, tug‘ruqdan oldin va keyingi parvarish, laktatsiya va emizish bo‘yicha maslahatlar, homiladorlik davrida to‘g‘ri ovqatlanish va salomatlik.",
+        "project_card3_title": "Foydali Maqolalar va Ginekolog Tavsiyalari",
+        "project_card3_text": "Ayollar salomatligi bo‘yicha maqolalar, homiladorlik, tug‘ruq va klimaks haqida batafsil ma’lumot Ginekologlar tomonidan tasdiqlangan ishonchli maslahatlar. "
+    },
+    "project2": {
+        "banner_title": "Imperial Granite",
+        "banner_subtitle": "Imperial Granite zavodi uchun mobil ilova.",
+        "banner_text": "Imperial Granite ilovasi - Mijozlar, sotuvchilar va ishlab chiqaruvchilar uchun rasmiy mobil ilova",
+        "banner_button1": "Play Market",
+        "banner_button2": "App Store",
+        "project_title": "Loyihaning xususiyatlari",
+        "project_card1_title": "Imperial Granite ilovasi maqsadi",
+        "project_card1_text": "Mijozlar, sotuvchilar va ishlab chiqaruvchilarni birlashtiradi, mahsulot tanlashdan tortib ishlab chiqarish va yetkazib berishgacha bo‘lgan barcha bosqichlarda qulay o‘zaro ta’sir jarayonini ta’minlaydi.",
+        "project_card2_title": "Imperial Granite imkoniyatlari",
+        "project_card2_text": "Sifatli suratlar va tavsiflar bilan Imperial Granite mahsulotlarining to‘liq katalogi. Oddiy buyurtma berish tizimi. Mijozlar, sotuvchilar va ishlab chiqaruvchilar o‘rtasidagi tezkor aloqa. Buyurtma holati haqida bildirishnomalar",
+        "project_card3_title": "Ilovadan foydalanuvchilar uchun",
+        "project_card3_text": "Mijozlar granit mahsulotlari katalogini ko‘rib chiqishadi, xususiyatlarini o‘rganishadi, kerakli mahsulotlarni tanlab, bir necha bosqich bilan buyurtma bering."
+    },
+    "project3": {
+        "banner_title": "MedAgent",
+        "banner_subtitle": "Ayollar uchun maxsus mobil ilova",
+        "banner_text": "MedAgent – Tibbiyot vakillariga, marmatsevtika kompaniyalariga, menejer va supervayzerlarga",
+        "banner_button1": "Play Market",
+        "banner_button2": "App Store",
+        "project_title": "Loyihaning xususiyatlari",
+        "project_card1_title": "MedAgent ilovasi maqsadi",
+        "project_card1_text": "MedAgent - bu tibbiyot vakillari ishini avtomatlashtirish, dorixonalarga va shifokorlarga tashriflarni nazorat qilish, shuningdek, hisobotlarni boshqarish uchun innovatsion ERP tizimi.",
+        "project_card2_title": "MedAgent imkoniyatlari",
+        "project_card2_text": "Ilova tufayli siz uchrashuvlarni samarali rejalashtirish, o‘zaro aloqalar hisobini yuritish va natijalarni real vaqt rejimida tahlil qilish imkoniyatiga ega bo‘lasiz.",
+        "project_card3_title": "Tashriflarni rejalashtirish va nazorat qilish",
+        "project_card3_text": "Shifokorlar va dorixonalar ma’lumotlar bazasini boshqarish. Har bir tashrif bo‘yicha batafsil hisobotlar, ish jarayonlarini avtomatlashtirish, jamoa samaradorligini real vaqt rejimida kuzatish"
     }
 }

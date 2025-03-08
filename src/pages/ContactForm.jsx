@@ -58,7 +58,8 @@ const ContactForm = () => {
     e.preventDefault();
     let newErrors = {};
 
-    Object.keysacs(formData).forEach((key) => {
+    // Fixed typo: keysacs -> keys
+    Object.keys(formData).forEach((key) => {
       validateInput(key, formData[key]);
       if (!formData[key]) newErrors[key] = 'Bu maydon to‘ldirilishi shart!';
     });
@@ -69,8 +70,15 @@ const ContactForm = () => {
       console.log('Form jo‘natildi:', formData);
     }
   };
+
   return (
-    <section className="py-[90px] md:py-[120px]">
+    <section
+      className={`${
+        location.pathname == '/contact'
+          ? 'pt-[150px] md:pt-[230px] pb-[80px] md:pb-[120px]'
+          : 'py-[90px] md:py-[120px]'
+      } `}
+    >
       <div className="container">
         {location.pathname == '/contact' ? (
           <>
@@ -183,10 +191,12 @@ const ContactForm = () => {
             </div>
           </div>
 
-          {/* O'ng qism */}
           <div className="p-[24px] md:p-[48px]  w-[100%] max-w-[850px]">
-            <form onSubmit={handleSubmit} className="flex flex-col justify-between h-full">
-              <div className='space-y-6'>
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col justify-between h-full"
+            >
+              <div className="space-y-6">
                 <div>
                   <input
                     type="text"

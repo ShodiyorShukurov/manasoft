@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate, useParams } from 'react-router-dom';
 import user1 from '../assets/logo/Ellipse 2.svg';
 import user2 from '../assets/logo/Ellipse 3.svg';
 import user3 from '../assets/logo/Ellipse 5.svg';
@@ -217,8 +217,7 @@ const Projects = () => {
                 background:
                   'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 15%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
               }}
-              className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] border border-[#464850] cursor-pointer"
-              onClick={() => navigate('/portfolio/details/3')}
+              className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] border border-[#464850]"
             >
               <h3 className="text-[32px] font-medium leading-[120%]">
                 MedAgent
@@ -277,10 +276,10 @@ const Projects = () => {
                   'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 15%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
               }}
               className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] border border-[#464850] cursor-pointer"
-              onClick={() => navigate('/portfolio/details/2')}
+              onClick={() => navigate('/portfolio/details/3')}
             >
               <h3 className="text-[32px] font-medium leading-[120%]">
-                IMPERIAL GRANITE
+                MedAgent
               </h3>
               <div className="flex flex-row gap-4 justify-center items-center mt-[24px]">
                 <img
@@ -297,7 +296,7 @@ const Projects = () => {
                 />
               </div>
               <p className="text-[20px] leading-[140%] mt-[24px] text-[#ffffffcc]">
-                Savdo jarayonlarini avtomatlashtirish 
+                Tibbiyot vakillarining ishini boshqarish
               </p>
             </li>
           </ul>
@@ -434,10 +433,9 @@ const Projects = () => {
                       'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 15%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
                   }}
                   className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] border border-[#464850] flex flex-col  max-h-[330px] sm:min-h-[400px]"
-                  onClick={() => navigate('/portfolio/details/2')}
                 >
                   <h3 className="text-[20px] sm:text-[32px] font-medium sm:leading-[120%]">
-                    IMPERIAL GRANITE
+                    MedAgent
                   </h3>
                   <div className="flex flex-row gap-4 justify-center items-center mt-[24px]">
                     <img
@@ -454,7 +452,7 @@ const Projects = () => {
                     />
                   </div>
                   <p className="text-[20px] leading-[140%] mt-[24px] text-[#ffffffcc]">
-                    Savdo jarayonlarini avtomatlashtirish 
+                    Tibbiyot vakillarining ishini boshqarish
                   </p>
                 </li>
               </SwiperSlide>

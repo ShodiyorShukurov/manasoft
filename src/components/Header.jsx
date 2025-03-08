@@ -8,15 +8,24 @@ import { useTranslation } from 'react-i18next';
 const Header = () => {
   const [showLangMenu, setShowLangMenu] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const [selectedLang, setSelectedLang] = useState('Uz');
+  const [selectedLang, setSelectedLang] = useState(
+    localStorage.getItem('lng') ? localStorage.getItem('lng')  : 'Uz'
+  );
+
   const { t, i18n } = useTranslation();
   const menuRef = useRef(null);
   const mobileMenuRef = useRef(null);
-  const [isSticky, setIsSticky] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    i18n.changeLanguage(selectedLang);
+  }, [selectedLang, i18n]);
 
   const changeValues = (lng) => {
     i18n.changeLanguage(lng);
+    localStorage.setItem('lng', lng);
+    setSelectedLang(lng);
   };
 
   useEffect(() => {
@@ -43,23 +52,28 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!showMobileMenu) {
-        setIsSticky(window.scrollY < lastScrollY);
-        setLastScrollY(window.scrollY);
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY <= 0) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY) {
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY) {
+        setIsVisible(true);
       }
+
+      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY, showMobileMenu]);
+  }, [lastScrollY]);
 
   return (
     <header
-      className={`fixedtop-0 left-0 w-full bg-transparent transition-all duration-300 ${
-        isSticky
-          ? 'sticky top-0 shadow-lg backdrop-blur-[10px] z-50 pb-[20px]'
-          : ''
-      }`}
+      className={`fixed top-0 left-0 w-full bg-transparent transition-transform duration-300 z-50 ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      } ${isVisible ? 'backdrop-blur-[10px] pb-[20px]' : ''}`}
     >
       <div className="container">
         <div className="flex pt-4 sm:pt-6 lg:pt-9 justify-between items-center">
@@ -156,7 +170,7 @@ const Header = () => {
                   alt="global"
                   className="w-5 sm:w-6 h-5 sm:h-6"
                 />
-                <span className="text-base">{selectedLang}</span>
+                <span className="text-base">{selectedLang.slice(0,1).toUpperCase() +selectedLang.slice(1)}</span>
               </button>
 
               {showLangMenu && (
@@ -165,7 +179,7 @@ const Header = () => {
                     <button
                       key={lang}
                       onClick={() => {
-                        setSelectedLang(lang);
+                        setSelectedLang(lang.toLowerCase());
                         changeValues(lang.toLowerCase());
                         setShowLangMenu(false);
                       }}
@@ -178,7 +192,7 @@ const Header = () => {
                       } hover:bg-gray-700 cursor-pointer`}
                     >
                       {lang}
-                      {selectedLang === lang && (
+                      {selectedLang === lang.toLowerCase() && (
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 16 16"
@@ -338,7 +352,11 @@ const Header = () => {
                 </svg>
               </a>
 
-              <a    className="p-2 bg-[#FFFFFF1A] rounded-full hover:bg-gray-700 transition" href="https://x.com/" target="_blank">
+              <a
+                className="p-2 bg-[#FFFFFF1A] rounded-full hover:bg-gray-700 transition"
+                href="https://x.com/"
+                target="_blank"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"

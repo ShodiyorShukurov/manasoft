@@ -6,7 +6,7 @@ const About = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="pt-[80px] sm:pt -[120px]">
+    <section className="pt-[80px] sm:pt-[120px]">
       <div className="container">
         <button
           style={{

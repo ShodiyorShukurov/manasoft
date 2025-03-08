@@ -71,6 +71,63 @@
         "services_page_card4_xizmatlar": "CRM tizimlarini ishlab chiqish va sozlash, ERP tizimlarini yaratish va integratsiya qilish, Mijozlar ma’lumotlarini boshqarish, Tahliliy va hisob-kitob tizimlari"
     },
     "workpage": {
-        "workpage_title": "Bizning ishlash jarayonimiz"
+        "workpage_title": "Bizning ishlash jarayonimiz",
+        "workpage_text": "Manasoft jamoasi har bir loyihani aniqlik va sifat bilan amalga oshiradi. Bizning yondashuv samaradorlik va innovatsiyani ta’minlaydi!",
+        "workpage_subtitle1": "Ishlab chiqilishidan oldin",
+        "workpage_subtitle2": "Ishlab chiqarish",
+        "card1_title": "Ma'lumotlarni yig'ish",
+        "card1_text": "Muvaffaqiyatli loyiha yaratish uchun eng avvalo ehtiyojlaringiz va biznes maqsadlaringizni chuqur o‘rganamiz. Bu bosqichda biz ma’lumot to‘playmiz va strategik yo‘nalishni aniqlaymiz.",
+        "card2_title": "Loyihaning TZ",
+        "card2_text": "Loyiha muvaffaqiyatining kaliti – aniq va puxta ishlab chiqilgan texnik topshiriq (TZ). Biz barcha talablarni hujjatlashtiramiz va loyiha yo‘nalishini belgilaymiz.",
+        "card3_title": "Integratsiya va Tadqiqot",
+        "card3_text": " Loyiha uchun eng mos texnologiyalarni tanlash, imkoniyatlarni tahlil qilish va kerakli integratsiyalarni ishlab chiqish bosqichi. Biz biznesingiz uchun eng optimal yechimni topamiz!",
+        "card4_title": "Dizayn loyihasi",
+        "card4_text": "UX/UI dizayni – foydalanuvchilar bilan o‘zaro aloqani yengillashtirish uchun asosiy omil. Biz loyihangizga mos keladigan jozibali va funksional dizayn yaratamiz.",
+        "card5_title": "Rivojlanish prototipi",
+        "card5_text": "Dastlabki prototip orqali loyiha qanday ishlashini sinovdan o‘tkazamiz. Bu bosqichda asosiy funksiyalar shakllantiriladi va dastlabki testlar o‘tkaziladi.",
+        "card6_title": "Rivojlanish yakuniy ",
+        "card6_text": " Loyiha to‘liq yakunlanadi, barcha funksiyalar sinovdan o‘tkaziladi va optimallashtiriladi. Biz mijozlarimizga tayyor mahsulotni yuqori sifat bilan taqdim etamiz!"
+    },
+    "project1": {
+        "banner_title": "Femmy",
+        "banner_subtitle": "Специальное мобильное приложение для женщин",
+        "banner_text": "Femmy – это необходимый календарь здоровья и ежедневное приложение для каждой женщины.",
+        "banner_button1": "Play Market",
+        "banner_button2": "App Store",
+        "project_title": "Особенности проекта",
+        "project_card1_title": "Цель приложения Femmy",
+        "project_card1_text": "Femmy – это все необходимые инструменты для женщин: школа беременности, трекер настроения, калькулятор овуляции, советы по уходу за ребенком и рекомендации гинеколога.",
+        "project_card2_title": "Школа беременности",
+        "project_card2_text": "Рекомендации по неделям беременности, уход до и после родов, советы по лактации и кормлению, правильное питание и здоровье во время беременности.",
+        "project_card3_title": "Полезные статьи и рекомендации гинеколога",
+        "project_card3_text": "Статьи о здоровье женщин, подробная информация о беременности, родах и климаксе, надежные советы, подтвержденные гинекологами. Рекомендации по восстановлению после родов и уходу за женщинами."
+    },
+    "project2": {
+        "banner_title": "Imperial Granite",
+        "banner_subtitle": "Мобильное приложение для Imperial Granite.",
+        "banner_text": "Приложение Imperial Granite - официальное мобильное приложение для клиентов, продавцов и производителей.",
+        "banner_button1": "Play Market",
+        "banner_button2": "App Store",
+        "project_title": "Особенности проекта",
+        "project_card1_title": "Цель приложения Imperial Granite",
+        "project_card1_text": "Объединяет клиентов, продавцов и производителей, обеспечивая удобное взаимодействие на всех этапах, от выбора продукта до производства и доставки.",
+        "project_card2_title": "Возможности Imperial Granite",
+        "project_card2_text": "Полный каталог продуктов Imperial Granite с качественными фотографиями и описаниями. Удобная система оформления заказов. Быстрая связь между клиентами, продавцами и производителями. Уведомления о статусе заказа.",
+        "project_card3_title": "Для пользователей приложения",
+        "project_card3_text": "Клиенты могут просматривать каталог гранитных изделий, изучать их характеристики, выбирать необходимые продукты и оформлять заказы в несколько этапов."
+    },
+    "project3": {
+        "banner_title": "MedAgent",
+        "banner_subtitle": "Специальное мобильное приложение для женщин",
+        "banner_text": "MedAgent – для медицинских представителей, фармацевтических компаний, менеджеров и супервайзеров",
+        "banner_button1": "Play Market",
+        "banner_button2": "App Store",
+        "project_title": "Особенности проекта",
+        "project_card1_title": "Цель приложения MedAgent",
+        "project_card1_text": "MedAgent – это инновационная ERP-система для автоматизации работы медицинских представителей, контроля визитов в аптеки и к врачам, а также управления отчетами.",
+        "project_card2_title": "Возможности MedAgent",
+        "project_card2_text": "С помощью приложения вы сможете эффективно планировать встречи, вести учет взаимодействий и анализировать результаты в реальном времени.",
+        "project_card3_title": "Планирование и контроль визитов",
+        "project_card3_text": "Управление базой данных врачей и аптек. Подробные отчеты по каждому визиту, автоматизация рабочих процессов, мониторинг эффективности команды в реальном времени."
     }
 }

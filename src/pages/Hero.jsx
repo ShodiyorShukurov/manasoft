@@ -11,11 +11,10 @@ const Hero = () => {
 
   return (
     <section
-      className="pt-[180px] sm:pt-[140px] bg-no-repeat bg-cover bg-bottom"
+      className="pt-[180px] md:pt-[250px] bg-no-repeat bg-cover bg-bottom"
       style={{
         backgroundImage: `url(${bgImage})`,
         backdropFilter: 'blur(20px)',
-        // backgroundSize: 'cover',
       }}
     >
       <div className="container">
