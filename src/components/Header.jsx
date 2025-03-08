@@ -9,7 +9,7 @@ const Header = () => {
   const [showLangMenu, setShowLangMenu] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [selectedLang, setSelectedLang] = useState(
-    localStorage.getItem('lng') ? localStorage.getItem('lng')  : 'Uz'
+    localStorage.getItem('lng') ? localStorage.getItem('lng')  : 'uz'
   );
 
   const { t, i18n } = useTranslation();
