@@ -1,8 +1,12 @@
 import React from 'react';
 import logo from '../assets/logo/manasoft.svg';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+
+  const {t} = useTranslation()
+
   return (
     <footer className="text-white border-t-[2px] border-[#9191b633] py-[30px]">
       <div className="container">
@@ -68,44 +72,44 @@ const Footer = () => {
 
           <li>
             <h4 className="mb-[8px] font-medium md:text-[16px] md:leading-[24px]">
-              Menu
+              {t('footer.link_title1')}
             </h4>
             <ul className="space-y-2 text-[#ffffffb3] text-[12px] md:text-[14px] leading-[100%] md:leading-[20px] font-medium">
               <li>
-                <NavLink to="/">Bosh sahifa </NavLink>
+                <NavLink to="/">{t('footer.link1')}</NavLink>
               </li>
               <li>
-                <NavLink to="/services">Xizmatlar</NavLink>
+                <NavLink to="/services">{t('footer.link2')}</NavLink>
               </li>
               <li>
-                <NavLink to="/portfolio">Portfolio</NavLink>
+                <NavLink to="/portfolio">{t('footer.link3')}</NavLink>
               </li>
               <li>
-                <NavLink to="/contact">Bog’lanish</NavLink>
+                <NavLink to="/contact">{t('footer.link4')}</NavLink>
               </li>
             </ul>
           </li>
 
           <li>
-            <h4 className="mb-[8px] font-medium md:text-[16px] md:leading-[24px]">Xizmatlar</h4>
+            <h4 className="mb-[8px] font-medium md:text-[16px] md:leading-[24px]">{t('footer.link_title2')}</h4>
             <ul className="space-y-2 text-[#ffffffb3] text-[12px] md:text-[14px] leading-[100%] md:leading-[20px] font-medium">
               <li>
-                <NavLink to="/">CRM/ERP</NavLink>
+                <NavLink to="/">{t('footer.link5')}</NavLink>
               </li>
               <li>
-                <NavLink to="/">Mobile ilova</NavLink>
+                <NavLink to="/">{t('footer.link6')}</NavLink>
               </li>
               <li>
-                <NavLink to="/">Veb sayt</NavLink>
+                <NavLink to="/">{t('footer.link7')}</NavLink>
               </li>
               <li>
-                <NavLink to="/">Telegram bot</NavLink>
+                <NavLink to="/">{t('footer.link8')}</NavLink>
               </li>
             </ul>
           </li>
 
           <li>
-            <h4 className="mb-[8px] font-medium md:text-[16px] md:leading-[24px]">Aloqa</h4>
+            <h4 className="mb-[8px] font-medium md:text-[16px] md:leading-[24px]">{t('footer.link_title3')}</h4>
             <ul className="space-y-2 text-[#ffffffb3] text-[12px] md:text-[14px] leading-[100%] md:leading-[20px] font-medium">
               <li>
                 <a href="tel:+998 90 111 22 33">+998 90 111 22 33</a>
@@ -114,7 +118,7 @@ const Footer = () => {
                 <a href="malito:manasoft@gmail.com">manasoft@gmail.com</a>
               </li>
               <li>
-                <p>Toshkent shahar</p>
+                <p>{t('footer.location')}</p>
               </li>
             </ul>
           </li>
@@ -122,7 +126,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="mt-[12px] md:mt-8 text-[#ffffffb3] text-center text-[12px] md:text-[14px] leading-[20px]">
-          © 2025 Manasoft. Barcha huquqlar himoyalangan.
+        {t('footer.text')}
         </div>
       </div>
     </footer>

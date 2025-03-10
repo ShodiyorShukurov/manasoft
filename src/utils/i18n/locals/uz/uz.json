@@ -157,5 +157,20 @@
         "fullName_error3": "Kamida bitta kichik harf bo‘lishi kerak.",
         "phone_error": "Telefon raqam +998 bilan boshlanishi va 12 ta raqam bo‘lishi kerak.",
         "message_error": "Xabar kamida 10 ta belgi bo‘lishi kerak."
+    },
+    "footer": {
+        "link_title1": "Menu",
+        "link_title2": "Xizmatlar",
+        "link_title3": "Aloqa",
+        "link1": "Bosh sahifa",
+        "link2": "Xizmatlar",
+        "link3": "Portfolio",
+        "link4": "Bog’lanish",
+        "link5": "CRM/ERP",
+        "link6": "Mobile ilova",
+        "link7": "Veb sayt",
+        "link8": "Telegram bot",
+        "location": "Toshkent shahar",
+        "text": "© 2025 Manasoft. Barcha huquqlar himoyalangan."
     }
 }

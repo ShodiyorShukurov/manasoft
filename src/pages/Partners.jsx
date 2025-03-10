@@ -1,8 +1,10 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Partners = () => {
   const [show, setShow] = React.useState(null);
+  const {t} = useTranslation()
 
   const partnersData = [
     {
@@ -166,7 +168,7 @@ const Partners = () => {
     <section className="pt-[80px] md:pt-[120px]">
       <div className="container">
         <h2 className="text-[20px] md:text-[32px] font-medium leading-[110%]  md:leading-[120%] text-[#fff] text-center">
-          Bizning Hamkorlarimiz
+          {t('partners.title')}
         </h2>
 
         <AnimatePresence>

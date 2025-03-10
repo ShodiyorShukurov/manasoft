@@ -60,10 +60,10 @@ const Services = () => {
       let error = '';
 
       if (!value) {
-        error =  t('contact_page.error');
+        error = t('contact_page.error');
       } else {
         if (name === 'fullName') {
-          if (value.length < 5) error =  t('contact_page.fullName_error1');
+          if (value.length < 5) error = t('contact_page.fullName_error1');
           else if (!/[A-Z]/.test(value))
             error = t('contact_page.fullName_error2');
           else if (!/[a-z]/.test(value))
@@ -72,9 +72,7 @@ const Services = () => {
 
         if (name === 'phone') {
           const phoneRegex = /^\+998\d{9}$/;
-          if (!phoneRegex.test(value))
-            error =
-          t('contact_page.phone_error');
+          if (!phoneRegex.test(value)) error = t('contact_page.phone_error');
         }
       }
 
@@ -87,7 +85,7 @@ const Services = () => {
       validateInput(name, value);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
       e.preventDefault();
       let newErrors = {};
 
@@ -99,7 +97,31 @@ const Services = () => {
       setErrors(newErrors);
 
       if (!Object.values(newErrors).some((error) => error)) {
-        console.log('Form jo‘natildi:', formData);
+        try {
+          await fetch(
+            'https://script.google.com/macros/s/AKfycbxlI5at1dh7yPcp_u6w3Bf6bxDO2bidw8BAljro2_PtmEmWotusbDY7qJ19hV8rZmSATg/exec',
+            {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(formData),
+              mode: 'no-cors', 
+              redirect: 'follow',
+            }
+          );
+
+          console.log("Ma'lumotlar yuborildi:", formData);
+          setFormData({
+            fullName: '',
+            phone: '',
+            message: '',
+          });
+          alert(t('contact_page.success'));
+        } catch (error) {
+          console.error('Fetch xatosi:', error);
+          alert(t('contact_page.error_message'));
+        }
       }
     };
 
@@ -220,7 +242,7 @@ const Services = () => {
                   {t('contact_page.title')}
                 </h2>
                 <p className="text-[#ffffffcc] text-[16px]  md:text-[18px] leading-[140%] md:leading-[150%] mt-[16px] xl:max-w-[800px]">
-                {t('contact_page.description')}
+                  {t('contact_page.description')}
                 </p>
                 <form
                   onSubmit={handleSubmit}
@@ -236,7 +258,7 @@ const Services = () => {
                         className={`w-full bg-transparent border-b py-3 text-white placeholder:text-white focus:border-blue-400 transition-all outline-none ${
                           errors.fullName ? 'border-red-500' : 'border-white'
                         }`}
-                        placeholder= {t('contact_page.fullName')}
+                        placeholder={t('contact_page.fullName')}
                       />
                       {errors.fullName && (
                         <p className="text-red-400 text-sm mt-1">
@@ -254,7 +276,7 @@ const Services = () => {
                         className={`w-full bg-transparent border-b py-3 text-white placeholder:text-white focus:border-blue-400 transition-all outline-none ${
                           errors.phone ? 'border-red-500' : 'border-white'
                         }`}
-                        placeholder= {t('contact_page.phone')}
+                        placeholder={t('contact_page.phone')}
                       />
                       {errors.phone && (
                         <p className="text-red-400 text-sm mt-1">

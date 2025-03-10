@@ -66,40 +66,33 @@ const ContactForm = () => {
   
     if (!Object.values(newErrors).some((error) => error)) {
       try {
-        // Convert formData to URL-encoded format since Google Apps Script expects parameters
-        const urlEncodedData = new URLSearchParams(formData).toString();
-  
-        const response = await fetch(
-          'https://script.google.com/macros/s/AKfycbzAf8Qr5XHTyoCABvtHockpACd9YsGPt3FVSBsSv_OGHQIhd-DY-XG9850AqlOF2P_PUg/exec',
+        await fetch(
+          'https://script.google.com/macros/s/AKfycbxlI5at1dh7yPcp_u6w3Bf6bxDO2bidw8BAljro2_PtmEmWotusbDY7qJ19hV8rZmSATg/exec',
           {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
+              'Content-Type': 'application/json',
             },
-            body: urlEncodedData,
-            redirect: 'follow',  // Important for Google Apps Script
+            body: JSON.stringify(formData),
+            mode: 'no-cors', // CORS muammosini chetlab o'tish
+            redirect: 'follow',
           }
         );
   
-        const data = await response.json();
-        console.log('Serverdan kelgan javob:', data);
-        
-        if (data.result === 'success') {
-          setFormData({
-            fullName: '',
-            phone: '',
-            message: '',
-          });
-          alert(t('contact_page.success'));
-        } else {
-          alert(t('contact_page.error_message'));
-        }
+        console.log('Ma\'lumotlar yuborildi:', formData);
+        setFormData({
+          fullName: '',
+          phone: '',
+          message: '',
+        });
+        alert(t('contact_page.success'));
       } catch (error) {
         console.error('Fetch xatosi:', error);
         alert(t('contact_page.error_message'));
       }
     }
   };
+  
 
   if (location.pathname == '/contact') {
     React.useEffect(() => {
