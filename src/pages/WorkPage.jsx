@@ -35,7 +35,7 @@ const WorkPage = () => {
             modules={[Pagination]}
             className=" sm:h-[220px]  md:h-[280px] mySwiper"
           >
-            {workPageData.slice(0,3).map((item) => (
+            {workPageData.slice(0, 3).map((item) => (
               <SwiperSlide key={item.id}>
                 <li
                   style={{
@@ -46,6 +46,8 @@ const WorkPage = () => {
                     borderRadius: '24px',
                   }}
                   className="p-[24px] text-white min-h-[170px] md:h-full flex flex-col"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
                 >
                   <h4 className="text-[20px] md:text-[24px] font-semibold md:leading-[120%]">
                     {item.title}
@@ -75,6 +77,8 @@ const WorkPage = () => {
                 borderRadius: '24px',
               }}
               className="p-[32px] text-white"
+              data-aos="fade-up"
+              data-aos-duration="1000"
             >
               <h4 className="text-[24px] font-semibold leading-[120%]">
                 {item.title}
@@ -100,6 +104,8 @@ const WorkPage = () => {
             }}
             modules={[Pagination]}
             className="sm:h-[220px] md:h-[280px]  mySwiper"
+            data-aos="fade-up"
+            data-aos-duration="1000"
           >
             {workPageData.slice(3).map((item) => (
               <SwiperSlide key={item.id}>
@@ -140,6 +146,8 @@ const WorkPage = () => {
                 borderRadius: '24px',
               }}
               className="p-[32px] text-white"
+              data-aos="fade-up"
+              data-aos-duration="1000"
             >
               <h4 className="text-[24px] font-semibold leading-[120%]">
                 {item.title}

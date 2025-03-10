@@ -17,7 +17,7 @@ import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import allButton from '../assets/logo/all.svg';
-import portfolio from '../mock/portfolio';
+import portfolio from './portfolio';
 import { useTranslation } from 'react-i18next';
 
 const tabs = [

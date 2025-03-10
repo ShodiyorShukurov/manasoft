@@ -129,5 +129,32 @@
         "project_card2_text": "Ilova tufayli siz uchrashuvlarni samarali rejalashtirish, o‘zaro aloqalar hisobini yuritish va natijalarni real vaqt rejimida tahlil qilish imkoniyatiga ega bo‘lasiz.",
         "project_card3_title": "Tashriflarni rejalashtirish va nazorat qilish",
         "project_card3_text": "Shifokorlar va dorixonalar ma’lumotlar bazasini boshqarish. Har bir tashrif bo‘yicha batafsil hisobotlar, ish jarayonlarini avtomatlashtirish, jamoa samaradorligini real vaqt rejimida kuzatish"
+    },
+    "partners": {
+        "title": "Bizning Hamkorlarimiz"
+    },
+    "question_page": {
+        "question_title": "Ko‘p so‘raladigan savollar",
+        "question_subtitle": "Qiziqarli savollar",
+        "question_text": "Savollaringiz bo‘lsa, bemalol biz bilan bog‘laning – biz doimo yordam berishga tayyormiz!",
+        "question_card1_text": "IT loyihani ishlab chiqish qancha vaqt oladi?",
+        "question_card1_answer": "Manasoft – bu innovatsion IT kompaniya, biznesingiz uchun Telegram botlar, mobil ilovalar va veb-saytlar yaratish bo‘yicha eng ishonchli hamkoringiz! Bizning jamoamiz texnologiyalarni biznesga joriy etish orqali mijozlarga samarali yechimlar taqdim etadi. Sifat va tezkor xizmat – bizning ustuvor maqsadimiz!"
+    },
+    "contact_page": {
+        "title": "Biz Bilan Bog’lanish",
+        "description": "Biznesingizni samarali rivojlantirish uchun ishonchli IT hamkor kerakmi? Manasoft sizga zamonaviy,  tezkor va ishonchli yechimlar taqdim etadi!",
+        "card_title": "Biznesingizni birga rivojlantiramiz!",
+        "card_text": "Manasoft jamoasi har doim siz bilan bog‘lanishga tayyor! Biz bilan bog‘laning va biznesingiz uchun eng yaxshi yechimni tanlang. Tezkor va professional javob kafolatlangan!",
+        "location": "Toshkent shahar",
+        "fullName": "F.I.O",
+        "phone": "Telefon raqami",
+        "message": "Xabar",
+        "button_text": "Xabarni yuborish",
+        "error": "Bu maydon to‘ldirilishi shart!",
+        "fullName_error1": "Kamida 5 ta belgi kiritish kerak.",
+        "fullName_error2": "Kamida bitta KATTA harf bo‘lishi kerak.",
+        "fullName_error3": "Kamida bitta kichik harf bo‘lishi kerak.",
+        "phone_error": "Telefon raqam +998 bilan boshlanishi va 12 ta raqam bo‘lishi kerak.",
+        "message_error": "Xabar kamida 10 ta belgi bo‘lishi kerak."
     }
 }

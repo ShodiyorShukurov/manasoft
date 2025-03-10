@@ -4,14 +4,10 @@ import user1 from '../assets/logo/Ellipse 2.svg';
 import user2 from '../assets/logo/Ellipse 3.svg';
 import user3 from '../assets/logo/Ellipse 5.svg';
 import project1 from '../assets/image/Mac Studio.png';
-import project2 from '../assets/image/femmi-app1.png';
-import project3 from '../assets/image/femmi-app2.png';
-import project4 from '../assets/image/medAgent1.png';
-import project5 from '../assets/image/medAgent2.png';
-import project6 from '../assets/image/ross1.png';
-import project7 from '../assets/image/ross2.png';
+import project2 from '../assets/image/femmi-app.png';
+import project4 from '../assets/image/medAgent.png';
+import project6 from '../assets/image/ross.png';
 import project8 from '../assets/image/granit.png';
-import project9 from '../assets/image/granit.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -135,7 +131,7 @@ const Projects = () => {
     );
   } else {
     return (
-      <section className="pt-[80px] md:pt-[120px]">
+      <section className="pt-[80px] md:pt-[120px]" id="project">
         <div className="container">
           <button
             style={{
@@ -156,30 +152,30 @@ const Projects = () => {
 
             <NavLink
               to={'/portfolio'}
-              className="hidden md:block bg-[transparent] text-[#61A6FF] text-[16px] rounded-[48px] px-[24px] py-[12px] border cursor-pointer h-fit whitespace-nowrap"
+              className="hidden md:block bg-[transparent] text-[#61A6FF] text-[16px] rounded-[48px] px-[24px] py-[12px] border cursor-pointer h-fit whitespace-nowrap font-[Public_Sans]"
             >
               Hamma loyihalar
             </NavLink>
           </div>
 
-          <ul className="hidden md:grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 mt-[48px]">
+          <ul className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-[48px]">
             <li
               style={{
                 background:
                   'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 15%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
               }}
-              className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] lg:col-span-2 border border-[#464850]"
+              className="p-[24px] xl:p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] lg:col-span-2 flex flex-col justify-between border border-[#464850]"
             >
               <h3 className="text-[32px] font-medium leading-[120%]">
                 Manasoft
               </h3>
               <img
-                className="mx-auto w-full md:max-w-[280px] lg:max-w-[500px] lg:h-[340px] mt-[24px]"
+                className="mx-auto w-full max-w-[700px] h-full max-h-[350px] object-contain"
                 src={project1}
                 alt="project1"
                 loading="lazy"
               />
-              <p className="text-[20px] leading-[140%] mt-[24px] text-[#ffffffcc]">
+              <p className="text-[18px] xl:text-[20px] leading-[140%] text-[#ffffffcc]">
                 IT kompaniya veb sayti
               </p>
             </li>
@@ -189,25 +185,21 @@ const Projects = () => {
                 background:
                   'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 15%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
               }}
-              className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] border border-[#464850] cursor-pointer"
+              className="p-[24px] xl:p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] flex flex-col justify-between border border-[#464850] cursor-pointer"
               onClick={() => navigate('/portfolio/details/1')}
             >
-              <h3 className="text-[32px] font-medium leading-[120%]">Femmi</h3>
+              <h3 className="text-[24px] xl:text-[32px] font-medium leading-[120%]">
+                Femmi
+              </h3>
               <div className="flex flex-row gap-4 justify-center items-center mt-[24px]">
                 <img
-                  className="w-full max-w-[100px] lg:max-w-[160px] lg:h-[340px]"
+                  className="w-full max-w-[340px] h-full max-h-[350px] object-contain"
                   src={project2}
                   alt="project2"
                   loading="lazy"
                 />
-                <img
-                  className="w-full max-w-[100px] lg:max-w-[160px] lg:h-[340px]"
-                  src={project3}
-                  alt="project3"
-                  loading="lazy"
-                />
               </div>
-              <p className="text-[20px] leading-[140%] mt-[24px] text-[#ffffffcc]">
+              <p className="text-[18px] xl:text-[20px] leading-[140%] text-[#ffffffcc] mt-[24px]">
                 Android va iOS
               </p>
             </li>
@@ -217,27 +209,21 @@ const Projects = () => {
                 background:
                   'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 15%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
               }}
-              className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] border border-[#464850] cursor-pointer"
+              className="p-[24px] xl:p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] flex flex-col justify-between border border-[#464850] cursor-pointer"
               onClick={() => navigate('/portfolio/details/3')}
             >
-              <h3 className="text-[32px] font-medium leading-[120%]">
+              <h3 className="text-[24px] xl:text-[32px] font-medium leading-[120%]">
                 MedAgent
               </h3>
               <div className="flex flex-row gap-4 justify-center items-center mt-[24px]">
                 <img
-                  className="w-full max-w-[100px] lg:max-w-[160px] lg:h-[340px]"
+                  className="w-full max-w-[340px] h-full max-h-[300px] object-contain"
                   src={project4}
                   alt="project4"
                   loading="lazy"
                 />
-                <img
-                  className="w-full max-w-[100px] lg:max-w-[160px] lg:h-[340px]"
-                  src={project5}
-                  alt="project5"
-                  loading="lazy"
-                />
               </div>
-              <p className="text-[20px] leading-[140%] mt-[24px] text-[#ffffffcc]">
+              <p className="text-[18px] xl:text-[20px] leading-[140%] text-[#ffffffcc] mt-[24px]">
                 Tibbiyot vakillarining ishini boshqarish
               </p>
             </li>
@@ -247,26 +233,20 @@ const Projects = () => {
                 background:
                   'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 15%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
               }}
-              className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] border border-[#464850]"
+              className="p-[24px] xl:p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] flex flex-col justify-between border border-[#464850] cursor-pointer"
             >
-              <h3 className="text-[32px] font-medium leading-[120%]">
+              <h3 className="text-[24px] xl:text-[32px] font-medium leading-[120%]">
                 Ross & Foundations
               </h3>
               <div className="flex flex-row gap-4 justify-center items-center mt-[24px]">
                 <img
-                  className="w-full max-w-[100px] lg:max-w-[160px] lg:h-[340px]"
+                  className="w-full max-w-[340px] h-full max-h-[300px] object-contain"
                   src={project6}
-                  alt="project6"
-                  loading="lazy"
-                />
-                <img
-                  className="w-full max-w-[100px] lg:max-w-[160px] lg:h-[340px]"
-                  src={project7}
-                  alt="project7"
+                  alt="Ross & Foundations"
                   loading="lazy"
                 />
               </div>
-              <p className="text-[20px] leading-[140%] mt-[24px] text-[#ffffffcc]">
+              <p className="text-[18px] xl:text-[20px] leading-[140%] text-[#ffffffcc] mt-[24px]">
                 Qurilish kompaniya veb sayti
               </p>
             </li>
@@ -276,27 +256,21 @@ const Projects = () => {
                 background:
                   'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 15%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
               }}
-              className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] border border-[#464850] cursor-pointer"
+              className="p-[24px] xl:p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] flex flex-col justify-between border border-[#464850] cursor-pointer"
               onClick={() => navigate('/portfolio/details/2')}
             >
-              <h3 className="text-[32px] font-medium leading-[120%]">
+              <h3 className="text-[24px] xl:text-[32px] font-medium leading-[120%]">
                 IMPERIAL GRANITE
               </h3>
               <div className="flex flex-row gap-4 justify-center items-center mt-[24px]">
                 <img
-                  className="w-full max-w-[100px] lg:max-w-[160px] lg:h-[340px]"
+                  className="w-full max-w-[340px] h-full max-h-[300px] object-contain"
                   src={project8}
-                  alt="project8"
-                  loading="lazy"
-                />
-                <img
-                  className="w-full max-w-[100px] lg:max-w-[160px] lg:h-[340px]"
-                  src={project9}
-                  alt="project9"
+                  alt="IMPERIAL GRANITE"
                   loading="lazy"
                 />
               </div>
-              <p className="text-[20px] leading-[140%] mt-[24px] text-[#ffffffcc]">
+              <p className="text-[18px] xl:text-[20px] leading-[140%] text-[#ffffffcc] mt-[24px]">
                 Savdo jarayonlarini avtomatlashtirish 
               </p>
             </li>
@@ -311,7 +285,7 @@ const Projects = () => {
                 clickable: true,
               }}
               modules={[Pagination]}
-              className="h-[425px] sm:h-[500px] mySwiper"
+              className="h-[390px] sm:h-[500px] mySwiper"
             >
               <SwiperSlide>
                 <li
@@ -319,18 +293,18 @@ const Projects = () => {
                     background:
                       'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 15%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
                   }}
-                  className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] lg:col-span-2 border border-[#464850] flex flex-col min-h-[330px] sm:min-h-[400px]"
+                  className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] lg:col-span-2 border border-[#464850] flex flex-col justify-between min-h-[300px] sm:min-h-[400px] "
                 >
                   <h3 className="text-[20px] sm:text-[32px] font-medium leading-[120%]">
                     Manasoft
                   </h3>
-                  <img
-                    className="mx-auto sm:w-[400px] h-[200px] sm:h-auto mt-[24px]"
-                    src={project1}
-                    alt="project1"
-                    loading="lazy"
-                  />
-                  <p className="text-[20px] leading-[140%] mt-[24px] text-[#ffffffcc]">
+                    <img
+                      className="w-full h-full max-w-[340px] max-h-[210px]  sm:max-h-[290px] object-contain"
+                      src={project1}
+                      alt="project1"
+                      loading="lazy"
+                    />
+                  <p className="text-[18px] sm:text-[20px] leading-[140%] text-[#ffffffcc]">
                     IT kompaniya veb sayti
                   </p>
                 </li>
@@ -341,27 +315,19 @@ const Projects = () => {
                     background:
                       'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 15%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
                   }}
-                  className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] border border-[#464850] flex flex-col min-h-[330px] sm:min-h-[400px]"
+                  className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] border border-[#464850] flex flex-col justify-between min-h-[300px] sm:min-h-[400px]"
                   onClick={() => navigate('/portfolio/details/1')}
                 >
                   <h3 className="text-[20px] sm:text-[32px] font-medium sm:leading-[120%]">
                     Femmi
                   </h3>
-                  <div className="flex flex-row gap-4 justify-center items-center mt-[24px]">
-                    <img
-                      className="w-full h-full max-w-[100px]  sm:max-w-[140px] max-h-[290px]"
-                      src={project2}
-                      alt="project2"
-                      loading="lazy"
-                    />
-                    <img
-                      className="w-full h-full max-w-[100px] sm:max-w-[140px] max-h-[290px]"
-                      src={project3}
-                      alt="project3"
-                      loading="lazy"
-                    />
-                  </div>
-                  <p className="text-[20px] sm:leading-[140%] mt-[24px] text-[#ffffffcc]">
+                  <img
+                    className="w-full h-full max-w-[340px] max-h-[210px]  sm:max-h-[290px] object-contain mx-auto"
+                    src={project2}
+                    alt="project2"
+                    loading="lazy"
+                  />
+                  <p className="text-[16px] sm:text-[20px] sm:leading-[140%] text-[#ffffffcc]">
                     Android va iOS
                   </p>
                 </li>
@@ -372,27 +338,19 @@ const Projects = () => {
                     background:
                       'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 15%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
                   }}
-                  className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] border border-[#464850] flex flex-col max-h-[330px] sm:min-h-[400px]"
+                  className="p-[24px] sm:p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] border border-[#464850] flex flex-col justify-between min-h-[300px] sm:min-h-[400px]"
                   onClick={() => navigate('/portfolio/details/3')}
                 >
                   <h3 className="text-[20px] sm:text-[32px] font-medium sm:leading-[120%]">
                     MedAgent
                   </h3>
-                  <div className="flex flex-row gap-4 justify-center items-center mt-[24px]">
-                    <img
-                      className="w-full h-full max-w-[100px] sm:max-w-[140px] max-h-[290px]"
-                      src={project4}
-                      alt="project4"
-                      loading="lazy"
-                    />
-                    <img
-                      className="w-full h-full max-w-[100px] sm:max-w-[140px] max-h-[290px]"
-                      src={project5}
-                      alt="project5"
-                      loading="lazy"
-                    />
-                  </div>
-                  <p className="text-[20px] sm:leading-[140%] mt-[24px] text-[#ffffffcc]">
+                  <img
+                    className="w-full h-full max-w-[340px]  max-h-[210px] sm:max-h-[290px] object-contain mx-auto"
+                    src={project4}
+                    alt="project4"
+                    loading="lazy"
+                  />
+                  <p className="text-[16px] sm:text-[20px] sm:leading-[140%] text-[#ffffffcc]">
                     Tibbiyot vakillarining ishini boshqarish
                   </p>
                 </li>
@@ -403,26 +361,18 @@ const Projects = () => {
                     background:
                       'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 15%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
                   }}
-                  className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] border border-[#464850] flex flex-col max-h-[330px] sm:min-h-[400px]"
+                  className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] border border-[#464850] flex flex-col justify-between min-h-[300px] sm:min-h-[400px]"
                 >
                   <h3 className="text-[20px] sm:text-[32px] font-medium sm:leading-[120%]">
                     Ross & Foundations
                   </h3>
-                  <div className="flex flex-row gap-4 justify-center items-center mt-[24px]">
-                    <img
-                      className="w-full h-full max-w-[100px] sm:max-w-[140px] min-h-[240px] sm:min-h-[290px]"
-                      src={project6}
-                      alt="project6"
-                      loading="lazy"
-                    />
-                    <img
-                      className="w-full h-full max-w-[100px] sm:max-w-[140px] min-h-[240px] sm:min-h-[290px]"
-                      src={project7}
-                      alt="project7"
-                      loading="lazy"
-                    />
-                  </div>
-                  <p className="text-[20px] leading-[140%] mt-[24px] text-[#ffffffcc]">
+                  <img
+                    className="w-full h-full max-w-[340px]  max-h-[210px]  sm:max-h-[290px] object-contain mx-auto"
+                    src={project6}
+                    alt="project6"
+                    loading="lazy"
+                  />
+                  <p className="text-[16px] sm:text-[20px] leading-[140%] text-[#ffffffcc]">
                     Qurilish kompaniya veb sayti
                   </p>
                 </li>
@@ -433,27 +383,19 @@ const Projects = () => {
                     background:
                       'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 15%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
                   }}
-                  className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] border border-[#464850] flex flex-col  max-h-[330px] sm:min-h-[400px]"
+                  className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] border border-[#464850] flex flex-col justify-between min-h-[300px] sm:min-h-[400px]"
                   onClick={() => navigate('/portfolio/details/2')}
                 >
                   <h3 className="text-[20px] sm:text-[32px] font-medium sm:leading-[120%]">
                     IMPERIAL GRANITE
                   </h3>
-                  <div className="flex flex-row gap-4 justify-center items-center mt-[24px]">
-                    <img
-                      className="w-full h-full max-w-[100px] sm:max-w-[140px] max-h-[290px]"
-                      src={project8}
-                      alt="project8"
-                      loading="lazy"
-                    />
-                    <img
-                      className="w-full h-full max-w-[100px] sm:max-w-[140px] max-h-[290px]"
-                      src={project9}
-                      alt="project9"
-                      loading="lazy"
-                    />
-                  </div>
-                  <p className="text-[20px] leading-[140%] mt-[24px] text-[#ffffffcc]">
+                  <img
+                    className="w-full max-w-[340px]  h-full  max-h-[210px] sm:max-h-[290px] object-contain mx-auto"
+                    src={project8}
+                    alt="IMPERIAL GRANITE"
+                    loading="lazy"
+                  />
+                  <p className="text-[16px] sm:text-[20px] leading-[140%] text-[#ffffffcc]">
                     Savdo jarayonlarini avtomatlashtirish 
                   </p>
                 </li>
@@ -466,7 +408,7 @@ const Projects = () => {
           </div>
           <NavLink
             to={'/portfolio'}
-            className="block md:hidden bg-[transparent] text-[#61A6FF] text-[20px] rounded-[48px] px-[24px] py-[12px] border cursor-pointer  text-center"
+            className="block md:hidden bg-[transparent] text-[#61A6FF] text-[20px] rounded-[48px] px-[24px] py-[12px] border cursor-pointer  text-center font-[Public_Sans]"
           >
             Hamma loyihalar
           </NavLink>

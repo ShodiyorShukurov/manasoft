@@ -47,12 +47,12 @@ const Hero = () => {
 
         {/* Buttons */}
         <div style={{fontFamily:"Public Sans"}} className="flex flex-col-reverse sm:flex-row justify-center items-center flex-wrap gap-4 sm:gap-[32px] mt-[32px] sm:mt-[48px]">
-          <button className="bg-[#61A6FF] text-[#fff] text-[16px] rounded-full px-[32px] py-[16px] font-medium leading-[100%] cursor-pointer w-full sm:w-auto">
+          <a href='tel:+998938883388' className="bg-[#61A6FF] text-[#fff] text-[16px] rounded-full px-[32px] py-[16px] font-medium leading-[100%] cursor-pointer w-full sm:w-auto text-center">
           {t('hero.hero_button1')}
-          </button>
-          <button className="text-[#61A6FF] text-[16px] border-2 border-[#61A6FF] rounded-full px-[32px] py-[16px] font-medium leading-[100%] cursor-pointer w-full sm:w-auto">
+          </a>
+          <a href='#project' className="text-[#61A6FF] text-[16px] border-2 border-[#61A6FF] rounded-full px-[32px] py-[16px] font-medium leading-[100%] cursor-pointer w-full sm:w-auto text-center">
           {t('hero.hero_button2')}
-          </button>
+          </a>
         </div>
 
         <div className="flex justify-center items-center flex-col pt-[84px] sm:pt-[96px] pb-[64px]">

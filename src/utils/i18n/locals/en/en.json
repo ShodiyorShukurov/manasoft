@@ -129,5 +129,29 @@
         "project_card2_text": "Thanks to the app, you will be able to effectively schedule meetings, keep track of interactions, and analyze results in real-time.",
         "project_card3_title": "Planning and monitoring visits",
         "project_card3_text": "Managing the database of doctors and pharmacies. Detailed reports for each visit, automating workflows, and monitoring team efficiency in real-time."
+    },
+    "question_page": {
+        "question_title": "Frequently asked questions",
+        "question_subtitle": "Interesting questions",
+        "question_text": "If you have any questions, feel free to contact us - we are always ready to help!",
+        "question_card1_text": "How long does it take to develop an IT project?",
+        "question_card1_answer": "Manasoft is an innovative IT company, your most reliable partner in creating Telegram bots, mobile applications, and websites for your business! Our team provides clients with effective solutions through the introduction of technologies into business. Quality and prompt service - our priority!"
+    },
+    "contact_page": {
+        "title": "Contact Us",
+        "description": "Do you need a reliable IT partner for the effective development of your business? Manasoft provides you with modern, fast, and reliable solutions!",
+        "card_title": "We will develop your business together!",
+        "card_text": "The Manasoft team is always ready to contact you! Contact us and choose the best solution for your business. A quick and professional response is guaranteed!",
+        "location": "Tashkent city",
+        "fullName": "Full Name",
+        "phone": "Phone number",
+        "message": "Message",
+        "button_text": "Send message",
+        "error": "This field must be filled!",
+        "fullName_error1": "You must enter at least 5 characters.",
+        "fullName_error2": "Must be at least one CAPITAL letter.",
+        "fullName_error3": "Must be at least one lowercase letter.",
+        "phone_error": "The phone number should start with +998 and have 12 digits.",
+        "message_error": "Message must be at least 10 characters long."
     }
 }

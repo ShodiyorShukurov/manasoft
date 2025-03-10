@@ -28,7 +28,8 @@ const About = () => {
           {t('about.about_subtitle')}
         </p>
 
-        <ul className="grid grid-cols-2 lg:grid-cols-4 gap-[16px] sm:gap-[24px] mt-[32px] sm:mt-[48px] cursor-pointer text-[#fff]">
+        <ul className="grid grid-cols-2 lg:grid-cols-4 gap-[16px] sm:gap-[24px] mt-[32px] sm:mt-[48px] cursor-pointer text-[#fff]" data-aos="fade-up"
+            data-aos-duration="1000"  >
           {/* Card 1 */}
           <li
             className="bg-[#ffffff0a] border border-[#333] rounded-[24px] p-[16px] sm:p-[32px] text-center 
@@ -67,31 +68,32 @@ const About = () => {
           </li>
         </ul>
 
-        <ul className="grid grid-cols-2 lg:grid-cols-3 text-[#fff] gap-[16px] sm:gap-[24px] mt-[16px] sm:mt-[24px]">
+        <ul className="grid grid-cols-2 lg:grid-cols-3 text-[#fff] gap-[16px] sm:gap-[24px] mt-[16px] sm:mt-[24px]" data-aos="fade-up"
+            data-aos-duration="1000">
           <li className="bg-[#ffffff0a] border border-[#333] rounded-[24px]  p-[16px] sm:p-[32px]  text-center row-start-2 lg:row-start-1">
             <h3 className="text-[32px] sm:text-[48px] font-medium leading-[120%]">
               <CountUp end={t('about.about_card4_count')} duration={10} />+
             </h3>
             <p className="text-[16px] sm:text-[24px] sm:font-semibold leading-[120%] mt-[12px]">
-            {t('about.about_card4_text')} 
+              {t('about.about_card4_text')}
             </p>
           </li>
 
           <li className="bg-[#ffffff0a] col-span-2 lg:col-span-1 border border-[#333] rounded-[24px]  p-[16px] sm:p-[32px]  text-center row-start-1">
             <h3 className="text-[32px] sm:text-[48px] font-medium leading-[120%]">
-            <CountUp end={t('about.about_card5_count')} duration={10} />+
+              <CountUp end={t('about.about_card5_count')} duration={10} />+
             </h3>
             <p className="text-[16px] sm:text-[24px] sm:font-semibold leading-[120%] mt-[12px]">
-            {t('about.about_card5_text')} 
+              {t('about.about_card5_text')}
             </p>
           </li>
 
           <li className="bg-[#ffffff0a] border border-[#333] rounded-[24px]  p-[16px] sm:p-[32px]  text-center row-start-2 lg:row-start-1">
             <h3 className="text-[32px] sm:text-[48px] font-medium leading-[120%]">
-            <CountUp end={t('about.about_card6_count')} duration={10} />+
+              <CountUp end={t('about.about_card6_count')} duration={10} />+
             </h3>
             <p className="text-[16px] sm:text-[24px] sm:font-semibold leading-[120%] mt-[12px]">
-            {t('about.about_card6_text')} 
+              {t('about.about_card6_text')}
             </p>
           </li>
         </ul>

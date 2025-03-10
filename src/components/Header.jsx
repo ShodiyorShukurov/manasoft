@@ -212,19 +212,20 @@ const Header = () => {
               )}
             </div>
 
-            <button
+            <a
+            href='tel:+998938883388'
               style={{ fontFamily: 'Public Sans' }}
               className="hidden xl:block bg-[#61A6FF] text-white text-[16px] lg:text-base rounded-3xl px-4 lg:px-6 py-2 lg:py-3 cursor-pointer"
             >
               {t('navbar.contact_button')}
-            </button>
+            </a>
           </div>
         </div>
 
         {showMobileMenu && (
           <nav
             ref={mobileMenuRef}
-            className="fixed top-0 left-0 block xl:hidden bg-black w-full h-screen z-50 px-4 sm:px-6"
+            className="fixed top-0 left-0 block xl:hidden bg-black w-full h-screen z-50 px-4 sm:px-6 overflow-y-hidden"
           >
             <button
               className="absolute top-4 left-4 p-2 sm:p-3 rounded-3xl bg-[#FFFFFF1A] cursor-pointer"

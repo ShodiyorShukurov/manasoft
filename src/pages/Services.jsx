@@ -90,14 +90,14 @@ const Services = () => {
     const handleSubmit = (e) => {
       e.preventDefault();
       let newErrors = {};
-  
+
       Object.keys(formData).forEach((key) => {
         validateInput(key, formData[key]);
         if (!formData[key]) newErrors[key] = 'Bu maydon to‘ldirilishi shart!';
       });
-    
+
       setErrors(newErrors);
-    
+
       if (!Object.values(newErrors).some((error) => error)) {
         console.log('Form jo‘natildi:', formData);
       }
@@ -122,7 +122,6 @@ const Services = () => {
                     item.id % 2 === 0 ? 'md:[direction:rtl]' : ''
                   }`}
                 >
-                  
                   <div className="md:[direction:ltr] text-[#ffffffcc] ">
                     <button
                       style={{
@@ -162,7 +161,6 @@ const Services = () => {
                     </a>
                   </div>
 
-                 
                   <div
                     style={{
                       borderRadius: '30px',
@@ -177,7 +175,7 @@ const Services = () => {
                       className="w-full max-w-[600px] h-full max-h-fit mx-auto"
                       src={item?.img}
                       alt={item.title}
-                      loading='lazy'
+                      loading="lazy"
                     />
                   </div>
                 </li>
@@ -258,8 +256,6 @@ const Services = () => {
                         </p>
                       )}
                     </div>
-
-
                   </div>
                   <button
                     type="submit"
@@ -269,10 +265,6 @@ const Services = () => {
                   </button>
                 </form>
               </div>
-
-
-               
-     
             </div>
           </div>
         </section>
@@ -321,7 +313,11 @@ const Services = () => {
             {t('services.services_home_text2')}
           </p>
 
-          <ul className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-6 pt-[48px]">
+          <ul
+            className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-6 pt-[48px]"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             <li
               style={{
                 background:

@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import bgBottom from '../assets/image/contact-bg-right.png';
 import bgTop from '../assets/image/contact-bg-left.png';
+import { useTranslation } from 'react-i18next';
 
 const ContactForm = () => {
   const location = useLocation();
+  const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
     fullName: '',
@@ -22,26 +24,23 @@ const ContactForm = () => {
     let error = '';
 
     if (!value) {
-      error = 'Bu maydon to‘ldirilishi shart!';
+      error = t('contact_page.error');
     } else {
       if (name === 'fullName') {
-        if (value.length < 5) error = 'Kamida 5 ta belgi kiritish kerak.';
+        if (value.length < 5) error = t('contact_page.fullName_error1');
         else if (!/[A-Z]/.test(value))
-          error = 'Kamida bitta KATTA harf bo‘lishi kerak.';
+          error = t('contact_page.fullName_error2');
         else if (!/[a-z]/.test(value))
-          error = 'Kamida bitta kichik harf bo‘lishi kerak.';
+          error = t('contact_page.fullName_error3');
       }
 
       if (name === 'phone') {
         const phoneRegex = /^\+998\d{9}$/;
-        if (!phoneRegex.test(value))
-          error =
-            'Telefon raqam +998 bilan boshlanishi va 12 ta raqam bo‘lishi kerak.';
+        if (!phoneRegex.test(value)) error = t('contact_page.phone_error');
       }
 
       if (name === 'message') {
-        if (value.length < 10)
-          error = 'Xabar kamida 10 ta belgi bo‘lishi kerak.';
+        if (value.length < 10) error = t('contact_page.message_error');
       }
     }
 
@@ -58,10 +57,9 @@ const ContactForm = () => {
     e.preventDefault();
     let newErrors = {};
 
-    // Fixed typo: keysacs -> keys
     Object.keys(formData).forEach((key) => {
       validateInput(key, formData[key]);
-      if (!formData[key]) newErrors[key] = 'Bu maydon to‘ldirilishi shart!';
+      if (!formData[key]) newErrors[key] = t('contact_page.error');
     });
 
     setErrors(newErrors);
@@ -70,6 +68,12 @@ const ContactForm = () => {
       console.log('Form jo‘natildi:', formData);
     }
   };
+
+  if (location.pathname == '/contact') {
+    React.useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [location.pathname]);
+  }
 
   return (
     <section
@@ -83,19 +87,17 @@ const ContactForm = () => {
         {location.pathname == '/contact' ? (
           <>
             <h3 className="font-semibold text-center text-[#fff] text-[32px] md:text-[48px] leading-[120%]">
-              Biz bilan bog&apos;lanish
+              {t('contact_page.title')}
             </h3>
             <p className="text-center text-[#fff] md:text-[20px] leading-[140%] mt-[12px] md:mt-[16px] w-full max-w-[760px] mx-auto mb-[80px] md:mb-[48px]">
-              Biznesingizni samarali rivojlantish uchun ishonchli IT hamkor
-              kerakmi? Manasoft sizga zamonaviy, tezkor va ishonchli yechimlar
-              taqdim etadi!
+              {t('contact_page.description')}
             </p>
           </>
         ) : (
           ''
         )}
 
-        <div className="flex flex-col xl:flex-row border-[1px] border-[#fff] rounded-[24px] bg-[#ffffff0a]">
+        <div className="flex flex-col lg:flex-row border-[1px] border-[#fff] rounded-[24px] bg-[#ffffff0a]">
           <div
             className="p-[24px] md:p-[48px] rounded-[24px] border border-r-[#61A6FF]"
             style={{
@@ -108,13 +110,11 @@ const ContactForm = () => {
               backgroundPosition: 'bottom right, top left',
             }}
           >
-            <h2 className="text-white text-[32px] md:text-[48px] font-semibold leading-[120%] xl:max-w-[570px]">
-              Biznesingizni birga rivojlantiramiz!
+            <h2 className="text-white text-[32px] md:text-[48px] font-medium leading-[120%] lg:max-w-[570px]">
+              {t('contact_page.card_title')}
             </h2>
-            <p className="text-[#ffffffcc] text-[16px]  md:text-[18px] leading-[140%] md:leading-[150%] mt-[16px] xl:max-w-[420px]">
-              Manasoft jamoasi har doim siz bilan bog‘lanishga tayyor! Biz bilan
-              bog‘laning va biznesingiz uchun eng yaxshi yechimni tanlang.
-              Tezkor va professional javob kafolatlangan!
+            <p className="text-[#ffffffcc] text-[16px]  md:text-[18px] leading-[140%] md:leading-[150%] mt-[16px] lg:max-w-[420px]">
+              {t('contact_page.card_text')}
             </p>
             <div className="mt-[32px] md:mt-[48px] space-y-4 text-white">
               <a
@@ -186,12 +186,12 @@ const ContactForm = () => {
                     strokeWidth="1.5"
                   />
                 </svg>
-                Toshkent shahar
+                {t('contact_page.location')}
               </p>
             </div>
           </div>
 
-          <div className="p-[24px] md:p-[48px]  w-[100%] max-w-[850px]">
+          <div className="p-[24px] md:p-[48px]  w-[100%] lg:max-w-[650px] 2xl:max-w-[850px]">
             <form
               onSubmit={handleSubmit}
               className="flex flex-col justify-between h-full"
@@ -206,7 +206,7 @@ const ContactForm = () => {
                     className={`w-full bg-transparent border-b py-3 text-white placeholder:text-white focus:border-blue-400 transition-all outline-none ${
                       errors.fullName ? 'border-red-500' : 'border-white'
                     }`}
-                    placeholder="Full Name"
+                    placeholder={t('contact_page.fullName')}
                   />
                   {errors.fullName && (
                     <p className="text-red-400 text-sm mt-1">
@@ -224,7 +224,7 @@ const ContactForm = () => {
                     className={`w-full bg-transparent border-b py-3 text-white placeholder:text-white focus:border-blue-400 transition-all outline-none ${
                       errors.phone ? 'border-red-500' : 'border-white'
                     }`}
-                    placeholder="Phone"
+                    placeholder={t('contact_page.phone')}
                   />
                   {errors.phone && (
                     <p className="text-red-400 text-sm mt-1">{errors.phone}</p>
@@ -240,7 +240,7 @@ const ContactForm = () => {
                     className={`w-full bg-transparent border-b py-3 text-white placeholder:text-white focus:border-blue-400 transition-all outline-none ${
                       errors.message ? 'border-red-500' : 'border-white'
                     }`}
-                    placeholder="Message"
+                    placeholder={t('contact_page.message')}
                   />
                   {errors.message && (
                     <p className="text-red-400 text-sm mt-1">
@@ -253,7 +253,7 @@ const ContactForm = () => {
                 type="submit"
                 className="bg-[#61A6FF] text-white py-3 px-6 rounded-[48px] mt-6 cursor-pointer md:w-fit "
               >
-                Xabarni yuborish
+                {t('contact_page.button_text')}
               </button>
             </form>
           </div>

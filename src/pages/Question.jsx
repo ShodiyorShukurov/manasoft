@@ -1,76 +1,18 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import questions from '../mock/questions';
+import { useTranslation } from 'react-i18next';
 
 const Question = () => {
   const [openIndex, setOpenIndex] = useState(null);
   const [show, setShow] = useState(null);
+  const {t} = useTranslation()
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const questions = [
-    {
-      id: 1,
-      title: 'IT loyihani ishlab chiqish qancha vaqt oladi?',
-      answer: `Manasoft – bu innovatsion IT kompaniya, biznesingiz uchun
-                  Telegram botlar, mobil ilovalar va veb-saytlar yaratish
-                  bo‘yicha eng ishonchli hamkoringiz! Bizning jamoamiz
-                  texnologiyalarni biznesga joriy etish orqali mijozlarga
-                  samarali yechimlar taqdim etadi. Sifat va tezkor xizmat –
-                  bizning ustuvor maqsadimiz!`,
-    },
-    {
-      id: 2,
-      title: 'IT loyihani ishlab chiqish qancha vaqt oladi?',
-      answer: `Manasoft – bu innovatsion IT kompaniya, biznesingiz uchun
-                  Telegram botlar, mobil ilovalar va veb-saytlar yaratish
-                  bo‘yicha eng ishonchli hamkoringiz! Bizning jamoamiz
-                  texnologiyalarni biznesga joriy etish orqali mijozlarga
-                  samarali yechimlar taqdim etadi. Sifat va tezkor xizmat –
-                  bizning ustuvor maqsadimiz!`,
-    },
-    {
-      id: 3,
-      title: 'IT loyihani ishlab chiqish qancha vaqt oladi?',
-      answer: `Manasoft – bu innovatsion IT kompaniya, biznesingiz uchun
-                  Telegram botlar, mobil ilovalar va veb-saytlar yaratish
-                  bo‘yicha eng ishonchli hamkoringiz! Bizning jamoamiz
-                  texnologiyalarni biznesga joriy etish orqali mijozlarga
-                  samarali yechimlar taqdim etadi. Sifat va tezkor xizmat –
-                  bizning ustuvor maqsadimiz!`,
-    },
-    {
-      id: 4,
-      title: 'IT loyihani ishlab chiqish qancha vaqt oladi?',
-      answer: `Manasoft – bu innovatsion IT kompaniya, biznesingiz uchun
-                  Telegram botlar, mobil ilovalar va veb-saytlar yaratish
-                  bo‘yicha eng ishonchli hamkoringiz! Bizning jamoamiz
-                  texnologiyalarni biznesga joriy etish orqali mijozlarga
-                  samarali yechimlar taqdim etadi. Sifat va tezkor xizmat –
-                  bizning ustuvor maqsadimiz!`,
-    },
-    {
-      id: 5,
-      title: 'IT loyihani ishlab chiqish qancha vaqt oladi?',
-      answer: `Manasoft – bu innovatsion IT kompaniya, biznesingiz uchun
-                  Telegram botlar, mobil ilovalar va veb-saytlar yaratish
-                  bo‘yicha eng ishonchli hamkoringiz! Bizning jamoamiz
-                  texnologiyalarni biznesga joriy etish orqali mijozlarga
-                  samarali yechimlar taqdim etadi. Sifat va tezkor xizmat –
-                  bizning ustuvor maqsadimiz!`,
-    },
-    {
-      id: 6,
-      title: 'IT loyihani ishlab chiqish qancha vaqt oladi?',
-      answer: `Manasoft – bu innovatsion IT kompaniya, biznesingiz uchun
-                  Telegram botlar, mobil ilovalar va veb-saytlar yaratish
-                  bo‘yicha eng ishonchli hamkoringiz! Bizning jamoamiz
-                  texnologiyalarni biznesga joriy etish orqali mijozlarga
-                  samarali yechimlar taqdim etadi. Sifat va tezkor xizmat –
-                  bizning ustuvor maqsadimiz!`,
-    },
-  ];
+const questionsData = questions(t);
 
   return (
     <section className="pt-[80px] md:pt-[120px]">
@@ -84,16 +26,15 @@ const Question = () => {
           }}
           className="text-[#FFFFFF] text-[12px]  md:text-[18px] rounded-[48px] px-[32px] py-[12px] leading-[100%] sm:leading-[150%] mx-auto block"
         >
-          Qiziqarli savollar
+          {t('question_page.question_subtitle')}
         </button>
 
         <h2 className="text-center text-white text-[28px] sm:text-[48px] leading-[100%] font-medium mt-[12px] sm:mt-[24px] tracking-[0.48px]">
-          Ko‘p so‘raladigan savollar
+          {t('question_page.question_title')}
         </h2>
 
         <p className="text-center text-white text-[16px] sm:text-[20px] leading-[140%] mt-[16px] sm:mt-[24px] tracking-[0.20px] w-full max-w-[680px] mx-auto">
-          Savollaringiz bo‘lsa, bemalol biz bilan bog‘laning – biz doimo yordam
-          berishga tayyormiz!
+          {t('question_page.question_text')}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-[48px]">
@@ -101,7 +42,7 @@ const Question = () => {
 
           <div className="flex flex-col gap-4 md:gap-6">
             <AnimatePresence>
-              {questions?.slice(0, show ? questions.length : 3).map((item) => (
+              {questionsData?.slice(0, show ? questions.length : 3).map((item) => (
                 <motion.div
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -174,7 +115,7 @@ const Question = () => {
 
           {/* Right Side */}
           <div className="hidden md:flex flex-col gap-6">
-            {questions?.slice(3).map((item) => (
+            {questionsData?.slice(3).map((item) => (
               <div
                 key={item.id}
                 className="backdrop-blur-[2px] rounded-[24px] p-[24px] md:p-[36px] lg:p-[48px] cursor-pointer border border-[#464850] question"
