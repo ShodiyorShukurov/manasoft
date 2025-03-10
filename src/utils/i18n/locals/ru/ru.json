@@ -7,28 +7,28 @@
         "contact_button": "Bog'lanish"
     },
     "hero": {
-        "hero_text": "+100 ortiq loyihalar",
-        "hero_title": "Texnologiya kelajagini biz bilan yarating!",
-        "hero_subtitle": "Telegram botlar, mobil ilovalar va veb-saytlar yaratamiz",
-        "hero_button1": "Bog'lanish",
-        "hero_button2": "Bizning ishlarimiz"
+        "hero_text": "Более +100 проектов",
+        "hero_title": "Создайте будущее технологий вместе с нами!",
+        "hero_subtitle": "Мы создаем Telegram-боты, мобильные приложения и веб-сайты",
+        "hero_button1": "Связь",
+        "hero_button2": "Наши дела"
     },
     "about": {
-        "about_text": "Nima uchun aynan biz",
-        "about_title": "Nima uchun aynan Manasoft?",
-        "about_subtitle": "Biznesingizni samarali rivojlantirish uchun ishonchli IT hamkor kerakmi? Manasoft sizga zamonaviy, tezkor va ishonchli yechimlar taqdim etadi!",
+        "about_text": "Почему именно мы",
+        "about_title": "Почему именно Manasoft?",
+        "about_subtitle": "Нужен надежный IT-партнер для эффективного развития вашего бизнеса? Manasoft предлагает вам современные, быстрые и надежные решения!",
         "about_card1_count": "30",
-        "about_card1_text": "Tugallangan loyihalar",
+        "about_card1_text": "Завершенные проекты",
         "about_card2_count": "28",
-        "about_card2_text": "Umumiy raqam foydalanuvchilar",
+        "about_card2_text": "Общий номер пользователей",
         "about_card3_count": "5",
-        "about_card3_text": "Tajriba yillari dan sohasida",
+        "about_card3_text": "Годы опыта в области",
         "about_card4_count": "11",
-        "about_card4_text": "Telegramma botlar",
+        "about_card4_text": "Telegram-боты",
         "about_card5_count": "16",
-        "about_card5_text": "Mobil ilovalar",
+        "about_card5_text": "Мобильные приложения",
         "about_card6_count": "4",
-        "about_card6_text": "Veb platformalar"
+        "about_card6_text": "Веб-платформы"
     },
     "customers": {
         "subtitle": "Mijozlar fikrlari",
