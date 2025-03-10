@@ -65,7 +65,19 @@ const ContactForm = () => {
     setErrors(newErrors);
 
     if (!Object.values(newErrors).some((error) => error)) {
-      console.log('Form jo‘natildi:', formData);
+      fetch("https://script.google.com/macros/s/AKfycbzAf8Qr5XHTyoCABvtHockpACd9YsGPt3FVSBsSv_OGHQIhd-DY-XG9850AqlOF2P_PUg/exec",{
+        method: "POST",
+        body: JSON.stringify(formData)
+      }).then(() => {
+        setFormData({
+          fullName: '',
+          phone: '',
+          message: '',
+        });
+        alert(t('contact_page.success'));
+      }).catch(() => {
+        alert(t('contact_page.error_message'));
+      });
     }
   };
 

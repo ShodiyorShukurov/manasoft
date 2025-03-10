@@ -50,7 +50,7 @@ const WorkPage = () => {
                     border: '1px solid #6F727C',
                     borderRadius: '24px',
                   }}
-                  className="p-[24px] text-white min-h-[170px] md:h-fit flex flex-col"
+                  className="p-[24px] text-white min-h-[170px] h-full md:h-fit flex flex-col"
                   data-aos="fade-up"
                   data-aos-duration="1000"
                 >
@@ -127,7 +127,7 @@ const WorkPage = () => {
                     border: '1px solid #6F727C',
                     borderRadius: '24px',
                   }}
-                  className="p-[24px] text-white min-h-[170px] md:h-fit flex flex-col"
+                  className="p-[24px] text-white min-h-[170px] h-full md:h-fit flex flex-col"
                 >
                   <h4 className="text-[20px] md:text-[24px] font-semibold md:leading-[120%]">
                     {item.title}

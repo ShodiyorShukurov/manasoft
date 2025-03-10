@@ -114,7 +114,7 @@ const Services = () => {
               {t('services.services_page_text')}
             </p>
 
-            <ul className="mt-[64px] md:mt-[90px] space-y-16 md:space-y-24">
+            {/* <ul className="mt-[64px] md:mt-[90px] space-y-16 md:space-y-24">
               {servicesData.map((item) => (
                 <li
                   key={item.id}
@@ -188,7 +188,7 @@ const Services = () => {
                   </div>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
         </section>
 
