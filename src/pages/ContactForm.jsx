@@ -65,19 +65,34 @@ const ContactForm = () => {
     setErrors(newErrors);
 
     if (!Object.values(newErrors).some((error) => error)) {
-      fetch("https://script.google.com/macros/s/AKfycbzAf8Qr5XHTyoCABvtHockpACd9YsGPt3FVSBsSv_OGHQIhd-DY-XG9850AqlOF2P_PUg/exec",{
-        method: "POST",
-        body: JSON.stringify(formData)
-      }).then(() => {
-        setFormData({
-          fullName: '',
-          phone: '',
-          message: '',
+      fetch(
+        'https://script.google.com/macros/s/AKfycbzAf8Qr5XHTyoCABvtHockpACd9YsGPt3FVSBsSv_OGHQIhd-DY-XG9850AqlOF2P_PUg/exec',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        }
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log('Serverdan kelgan javob:', data);
+          if (data.result === 'success') {
+            setFormData({
+              fullName: '',
+              phone: '',
+              message: '',
+            });
+            alert(t('contact_page.success'));
+          } else {
+            alert(t('contact_page.error_message'));
+          }
+        })
+        .catch((error) => {
+          console.error('Fetch xatosi:', error);
+          alert(t('contact_page.error_message'));
         });
-        alert(t('contact_page.success'));
-      }).catch(() => {
-        alert(t('contact_page.error_message'));
-      });
     }
   };
 
