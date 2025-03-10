@@ -60,21 +60,21 @@ const Services = () => {
       let error = '';
 
       if (!value) {
-        error = 'Bu maydon to‘ldirilishi shart!';
+        error =  t('contact_page.error');
       } else {
         if (name === 'fullName') {
-          if (value.length < 5) error = 'Kamida 5 ta belgi kiritish kerak.';
+          if (value.length < 5) error =  t('contact_page.fullName_error1');
           else if (!/[A-Z]/.test(value))
-            error = 'Kamida bitta KATTA harf bo‘lishi kerak.';
+            error = t('contact_page.fullName_error2');
           else if (!/[a-z]/.test(value))
-            error = 'Kamida bitta kichik harf bo‘lishi kerak.';
+            error = t('contact_page.fullName_error3');
         }
 
         if (name === 'phone') {
           const phoneRegex = /^\+998\d{9}$/;
           if (!phoneRegex.test(value))
             error =
-              'Telefon raqam +998 bilan boshlanishi va 12 ta raqam bo‘lishi kerak.';
+          t('contact_page.phone_error');
         }
       }
 
@@ -93,7 +93,7 @@ const Services = () => {
 
       Object.keys(formData).forEach((key) => {
         validateInput(key, formData[key]);
-        if (!formData[key]) newErrors[key] = 'Bu maydon to‘ldirilishi shart!';
+        if (!formData[key]) newErrors[key] = t('contact_page.error');
       });
 
       setErrors(newErrors);
@@ -118,11 +118,16 @@ const Services = () => {
               {servicesData.map((item) => (
                 <li
                   key={item.id}
-                  className={`grid grid-cols-1 xl:grid-cols-2 gap-6 md:gap-12 items-center ${
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center ${
                     item.id % 2 === 0 ? 'md:[direction:rtl]' : ''
                   }`}
                 >
-                  <div className="md:[direction:ltr] text-[#ffffffcc] ">
+                  <div
+                    className="md:[direction:ltr] text-[#ffffffcc]"
+                    data-aos="fade-right"
+                    data-aos-offset="500"
+                    data-aos-easing="ease-in-sine"
+                  >
                     <button
                       style={{
                         background:
@@ -157,7 +162,7 @@ const Services = () => {
                       href="#section_contact"
                       className="px-[24px] py-[16px] bg-[#61A6FF] rounded-[48px] mt-[32px] cursor-pointer text-[16px] text-center leading-[100%] block md:w-fit"
                     >
-                      Ko'proq ma'lumot olish
+                      {t('services.services_button_text')}
                     </a>
                   </div>
 
@@ -170,9 +175,12 @@ const Services = () => {
                       backdropFilter: 'blur(120px)',
                     }}
                     className="p-[32px] h-full  flex items-end"
+                    data-aos="fade-left"
+                    data-aos-offset="500"
+                    data-aos-easing="ease-in-sine"
                   >
                     <img
-                      className="w-full max-w-[600px] h-full max-h-fit mx-auto"
+                      className="w-full max-w-[600px] h-full max-h-fit mx-auto my-auto"
                       src={item?.img}
                       alt={item.title}
                       loading="lazy"
@@ -209,12 +217,10 @@ const Services = () => {
                 }}
               >
                 <h2 className="text-white text-[32px] md:text-[48px] font-semibold leading-[120%]">
-                  Biznesingizni birga rivojlantiramiz!
+                  {t('contact_page.title')}
                 </h2>
                 <p className="text-[#ffffffcc] text-[16px]  md:text-[18px] leading-[140%] md:leading-[150%] mt-[16px] xl:max-w-[800px]">
-                  Manasoft jamoasi har doim siz bilan bog‘lanishga tayyor! Biz
-                  bilan bog‘laning va biznesingiz uchun eng yaxshi yechimni
-                  tanlang. Tezkor va professional javob kafolatlangan!
+                {t('contact_page.description')}
                 </p>
                 <form
                   onSubmit={handleSubmit}
@@ -230,7 +236,7 @@ const Services = () => {
                         className={`w-full bg-transparent border-b py-3 text-white placeholder:text-white focus:border-blue-400 transition-all outline-none ${
                           errors.fullName ? 'border-red-500' : 'border-white'
                         }`}
-                        placeholder="Full Name"
+                        placeholder= {t('contact_page.fullName')}
                       />
                       {errors.fullName && (
                         <p className="text-red-400 text-sm mt-1">
@@ -248,7 +254,7 @@ const Services = () => {
                         className={`w-full bg-transparent border-b py-3 text-white placeholder:text-white focus:border-blue-400 transition-all outline-none ${
                           errors.phone ? 'border-red-500' : 'border-white'
                         }`}
-                        placeholder="Phone"
+                        placeholder= {t('contact_page.phone')}
                       />
                       {errors.phone && (
                         <p className="text-red-400 text-sm mt-1">
@@ -261,7 +267,7 @@ const Services = () => {
                     type="submit"
                     className="bg-[#61A6FF] text-white py-3 px-6 rounded-[48px] mt-[40px] cursor-pointer md:w-fit "
                   >
-                    Xabarni yuborish
+                    {t('contact_page.button_text')}
                   </button>
                 </form>
               </div>

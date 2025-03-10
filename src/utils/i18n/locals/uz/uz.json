@@ -53,6 +53,7 @@
         "services_page_title": "Innovatsion IT yechimlar – Biznesingiz uchun eng yaxshi xizmatlar",
         "services_page_text": "Manasoft IT kompaniyasi sifatli va innovatsion IT xizmatlarini taqdim etadi. CRM/ERP tizimlari, Telegram botlar, mobil ilovalar va veb-sayt yaratishgacha bo‘lgan keng ko‘lamli yechimlar bilan sizning biznesingizni rivojlantirishga yordam beramiz.",
         "services": "Xizmatlar",
+        "services_button_text": "Ko'proq ma’lumot olish",
         "services_page_card1_subtitle": "Mobil ilova",
         "services_page_card1_title": "IOS va Android uchun zamonaviy mobil ilovalar",
         "services_page_card1_text": "Mobil ilovalar biznesingizga mijozlar bilan yanada qulay aloqada bo‘lish imkonini beradi. Biz sizga tezkor, samarali va zamonaviy mobil ilovalar yaratib beramiz.",
@@ -80,13 +81,13 @@
         "card2_title": "Loyihaning TZ",
         "card2_text": "Loyiha muvaffaqiyatining kaliti – aniq va puxta ishlab chiqilgan texnik topshiriq (TZ). Biz barcha talablarni hujjatlashtiramiz va loyiha yo‘nalishini belgilaymiz.",
         "card3_title": "Integratsiya va Tadqiqot",
-        "card3_text": " Loyiha uchun eng mos texnologiyalarni tanlash, imkoniyatlarni tahlil qilish va kerakli integratsiyalarni ishlab chiqish bosqichi. Biz biznesingiz uchun eng optimal yechimni topamiz!",
+        "card3_text": "Loyiha uchun eng mos texnologiyalarni tanlash, imkoniyatlarni tahlil qilish va kerakli integratsiyalarni ishlab chiqish bosqichi. Biz biznesingiz uchun eng optimal yechimni topamiz!",
         "card4_title": "Dizayn loyihasi",
         "card4_text": "UX/UI dizayni – foydalanuvchilar bilan o‘zaro aloqani yengillashtirish uchun asosiy omil. Biz loyihangizga mos keladigan jozibali va funksional dizayn yaratamiz.",
         "card5_title": "Rivojlanish prototipi",
         "card5_text": "Dastlabki prototip orqali loyiha qanday ishlashini sinovdan o‘tkazamiz. Bu bosqichda asosiy funksiyalar shakllantiriladi va dastlabki testlar o‘tkaziladi.",
-        "card6_title": "Rivojlanish yakuniy ",
-        "card6_text": " Loyiha to‘liq yakunlanadi, barcha funksiyalar sinovdan o‘tkaziladi va optimallashtiriladi. Biz mijozlarimizga tayyor mahsulotni yuqori sifat bilan taqdim etamiz!"
+        "card6_title": "Rivojlanish yakuniy",
+        "card6_text": "Loyiha to‘liq yakunlanadi, barcha funksiyalar sinovdan o‘tkaziladi va optimallashtiriladi. Biz mijozlarimizga tayyor mahsulotni yuqori sifat bilan taqdim etamiz!"
     },
     "project1": {
         "banner_title": "Femmy",

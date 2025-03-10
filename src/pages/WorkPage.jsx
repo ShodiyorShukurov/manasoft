@@ -24,7 +24,7 @@ const WorkPage = () => {
           {t('workpage.workpage_subtitle1')}
         </h3>
 
-        <div className="md:hidden block mt-[16px] relative">
+        <div className="lg:hidden block mt-[16px] relative">
           <Swiper
             spaceBetween={50}
             loop={true}
@@ -34,6 +34,11 @@ const WorkPage = () => {
             }}
             modules={[Pagination]}
             className=" sm:h-[220px]  md:h-[280px] mySwiper"
+            breakpoints={{
+              0: { slidesPerView: 1, spaceBetween: 10 },
+              640: { slidesPerView: 1, spaceBetween: 20 },
+              768: { slidesPerView: 2, spaceBetween: 20 },
+            }}
           >
             {workPageData.slice(0, 3).map((item) => (
               <SwiperSlide key={item.id}>
@@ -45,7 +50,7 @@ const WorkPage = () => {
                     border: '1px solid #6F727C',
                     borderRadius: '24px',
                   }}
-                  className="p-[24px] text-white min-h-[170px] md:h-full flex flex-col"
+                  className="p-[24px] text-white min-h-[170px] md:h-fit flex flex-col"
                   data-aos="fade-up"
                   data-aos-duration="1000"
                 >
@@ -65,7 +70,7 @@ const WorkPage = () => {
           </div>
         </div>
 
-        <ul className="hidden md:grid grid-cols-3 gap-[24px] mt-[24px]">
+        <ul className="hidden lg:grid grid-cols-3 gap-[24px] mt-[24px]">
           {workPageData.slice(0, 3).map((item) => (
             <li
               key={item.id}
@@ -94,7 +99,7 @@ const WorkPage = () => {
           {t('workpage.workpage_subtitle2')}
         </h3>
 
-        <div className="md:hidden block mt-[16px] relative">
+        <div className="lg:hidden block mt-[16px] relative">
           <Swiper
             spaceBetween={30}
             loop={true}
@@ -106,6 +111,11 @@ const WorkPage = () => {
             className="sm:h-[220px] md:h-[280px]  mySwiper"
             data-aos="fade-up"
             data-aos-duration="1000"
+            breakpoints={{
+              0: { slidesPerView: 1, spaceBetween: 10 },
+              640: { slidesPerView: 1, spaceBetween: 20 },
+              768: { slidesPerView: 2, spaceBetween: 20 },
+            }}
           >
             {workPageData.slice(3).map((item) => (
               <SwiperSlide key={item.id}>
@@ -117,7 +127,7 @@ const WorkPage = () => {
                     border: '1px solid #6F727C',
                     borderRadius: '24px',
                   }}
-                  className="p-[24px] text-white min-h-[170px] md:h-full flex flex-col"
+                  className="p-[24px] text-white min-h-[170px] md:h-fit flex flex-col"
                 >
                   <h4 className="text-[20px] md:text-[24px] font-semibold md:leading-[120%]">
                     {item.title}
@@ -134,7 +144,7 @@ const WorkPage = () => {
           </div>
         </div>
 
-        <ul className="hidden md:grid grid-cols-3 gap-[24px] mt-[24px]">
+        <ul className="hidden lg:grid grid-cols-3 gap-[24px] mt-[24px]">
           {workPageData.slice(3, 7).map((item) => (
             <li
               key={item.id}
