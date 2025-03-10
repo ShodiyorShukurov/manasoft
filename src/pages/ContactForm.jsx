@@ -53,46 +53,51 @@ const ContactForm = () => {
     validateInput(name, value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     let newErrors = {};
-
+  
     Object.keys(formData).forEach((key) => {
       validateInput(key, formData[key]);
       if (!formData[key]) newErrors[key] = t('contact_page.error');
     });
-
+  
     setErrors(newErrors);
-
+  
     if (!Object.values(newErrors).some((error) => error)) {
-      fetch(
-        'https://script.google.com/macros/s/AKfycbzAf8Qr5XHTyoCABvtHockpACd9YsGPt3FVSBsSv_OGHQIhd-DY-XG9850AqlOF2P_PUg/exec',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        }
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          console.log('Serverdan kelgan javob:', data);
-          if (data.result === 'success') {
-            setFormData({
-              fullName: '',
-              phone: '',
-              message: '',
-            });
-            alert(t('contact_page.success'));
-          } else {
-            alert(t('contact_page.error_message'));
+      try {
+        // Convert formData to URL-encoded format since Google Apps Script expects parameters
+        const urlEncodedData = new URLSearchParams(formData).toString();
+  
+        const response = await fetch(
+          'https://script.google.com/macros/s/AKfycbzAf8Qr5XHTyoCABvtHockpACd9YsGPt3FVSBsSv_OGHQIhd-DY-XG9850AqlOF2P_PUg/exec',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: urlEncodedData,
+            redirect: 'follow',  // Important for Google Apps Script
           }
-        })
-        .catch((error) => {
-          console.error('Fetch xatosi:', error);
+        );
+  
+        const data = await response.json();
+        console.log('Serverdan kelgan javob:', data);
+        
+        if (data.result === 'success') {
+          setFormData({
+            fullName: '',
+            phone: '',
+            message: '',
+          });
+          alert(t('contact_page.success'));
+        } else {
           alert(t('contact_page.error_message'));
-        });
+        }
+      } catch (error) {
+        console.error('Fetch xatosi:', error);
+        alert(t('contact_page.error_message'));
+      }
     }
   };
 
