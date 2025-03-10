@@ -42,7 +42,7 @@ const questionsData = questions(t);
 
           <div className="flex flex-col gap-4 md:gap-6">
             <AnimatePresence>
-              {questionsData?.slice(0, show ? questions.length : 3).map((item) => (
+              {questionsData?.slice(0, show ? questionsData.length : 3).map((item) => (
                 <motion.div
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
