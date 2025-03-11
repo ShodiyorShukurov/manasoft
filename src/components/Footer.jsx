@@ -115,7 +115,7 @@ const Footer = () => {
                 <a href="tel:+998 90 111 22 33">+998 90 111 22 33</a>
               </li>
               <li>
-                <a href="malito:manasoft@gmail.com">manasoft@gmail.com</a>
+                <a className='text-wrap' href="malito:manasoft@gmail.com">manasoft@gmail.com</a>
               </li>
               <li>
                 <p>{t('footer.location')}</p>

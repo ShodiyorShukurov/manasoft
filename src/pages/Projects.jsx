@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import user1 from '../assets/logo/Ellipse 2.svg';
 import user2 from '../assets/logo/Ellipse 3.svg';
@@ -16,26 +16,34 @@ import allButton from '../assets/logo/all.svg';
 import portfolio from '../mock/portfolio';
 import { useTranslation } from 'react-i18next';
 
-const tabs = [
-  { id: 1, label: 'Hammasi' },
-  { id: 2, label: 'Mobile ilova' },
-  { id: 3, label: 'Vebsayt' },
-  { id: 4, label: 'CRM' },
-  { id: 5, label: 'UX/UI' },
-];
-
 const Projects = () => {
   const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = React.useState(1);
-  const [typetab, setTypeTab] = React.useState('Hammasi');
+  const [typetab, setTypeTab] = React.useState(t('project_page.button_text'));
+
+  useEffect(() => {
+    setTypeTab(t('project_page.button_text'));
+  }, [localStorage.getItem('lng')]);
+
+  const tabs = [
+    { id: 1, label: t('project_page.button_text') },
+    { id: 2, label: t('project_page.button_text1') },
+    { id: 3, label: t('project_page.button_text2') },
+    { id: 4, label: t('project_page.button_text3') },
+    { id: 5, label: t('project_page.button_text4') },
+  ];
 
   if (location.pathname == '/portfolio') {
+    React.useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [location.pathname == '/portfolio']);
+
     const portfolioData = portfolio(t);
 
     let filtredArr =
-      typetab !== 'Hammasi'
+      typetab !== t('project_page.button_text')
         ? portfolioData.filter((project) => project.type === typetab)
         : portfolioData;
 
@@ -56,18 +64,16 @@ const Projects = () => {
               ))}
             </div>
             <span className="text-white text-[16px] font-normal ml-3">
-              +100 ortiq loyihalar
+              {t('project_page.subtitle')}
             </span>
           </div>
 
           <h2 className="text-[48px] font-medium leading-[120%] bg-gradient-to-b text-white mt-[24px] text-center">
-            Bizning loyihalarimiz
+            {t('project_page.title')}
           </h2>
 
           <p className="text-[20px] text-[#ffffffcc] leading-[140%] mt-[16px] w-full max-w-[750px] mx-auto text-center">
-            Biznesingizni samarali rivojlantirish uchun ishonchli IT hamkor
-            kerakmi? Manasoft sizga zamonaviy, tezkor va ishonchli yechimlar
-            taqdim etadi!
+            {t('project_page.text')}
           </p>
 
           <div className="w-full overflow-x-auto scrollbar-hide">
@@ -140,21 +146,21 @@ const Projects = () => {
               boxShadow: '0px 4px 24px 0px rgba(255, 255, 255, 0.08)',
               backdropFilter: 'blur(30px)',
             }}
-            className="text-[#FFFFFF] text-[12px] md:text-[18px] leading-[100%] sm:leading-[150%] rounded-[48px] px-[32px] py-[12px] cursor-pointer mx-auto block md:mx-0"
+            className="text-[#FFFFFF] text-[12px] sm:text-[18px] leading-[100%] sm:leading-[150%] rounded-[48px] px-[32px] py-[12px] cursor-pointer mx-auto block md:mx-0"
           >
-            Bizning loyihalar
+            {t('project_home_page.subtitle_home')}
           </button>
 
           <div className="flex justify-between items-center">
             <h2 className="text-[32px] md:text-[48px] text-center mx-auto md:mx-0 md:text-left font-medium leading-[120%] text-[#fff] mt-[32px] md:mt-[24px]">
-              Bizning loyihalarimiz bilan tanishing
+              {t('project_home_page.title_home')}
             </h2>
 
             <NavLink
               to={'/portfolio'}
               className="hidden md:block bg-[transparent] text-[#61A6FF] text-[16px] rounded-[48px] px-[24px] py-[12px] border cursor-pointer h-fit whitespace-nowrap font-[Public_Sans]"
             >
-              Hamma loyihalar
+              {t('project_home_page.button_text')}
             </NavLink>
           </div>
 
@@ -167,7 +173,7 @@ const Projects = () => {
               className="p-[24px] xl:p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] lg:col-span-2 flex flex-col justify-between border border-[#464850]"
             >
               <h3 className="text-[32px] font-medium leading-[120%]">
-                Manasoft
+                {t('project_home_page.card1_title')}
               </h3>
               <img
                 className="mx-auto w-full max-w-[700px] h-full max-h-[350px] object-contain"
@@ -176,7 +182,7 @@ const Projects = () => {
                 loading="lazy"
               />
               <p className="text-[18px] xl:text-[20px] leading-[140%] text-[#ffffffcc]">
-                IT kompaniya veb sayti
+                {t('project_home_page.card1_text')}
               </p>
             </li>
 
@@ -189,7 +195,7 @@ const Projects = () => {
               onClick={() => navigate('/portfolio/details/1')}
             >
               <h3 className="text-[24px] xl:text-[32px] font-medium leading-[120%]">
-                Femmi
+                {t('project_home_page.card2_title')}
               </h3>
               <div className="flex flex-row gap-4 justify-center items-center mt-[24px]">
                 <img
@@ -200,7 +206,7 @@ const Projects = () => {
                 />
               </div>
               <p className="text-[18px] xl:text-[20px] leading-[140%] text-[#ffffffcc] mt-[24px]">
-                Android va iOS
+                {t('project_home_page.card2_text')}
               </p>
             </li>
 
@@ -213,7 +219,7 @@ const Projects = () => {
               onClick={() => navigate('/portfolio/details/3')}
             >
               <h3 className="text-[24px] xl:text-[32px] font-medium leading-[120%]">
-                MedAgent
+                {t('project_home_page.card3_title')}
               </h3>
               <div className="flex flex-row gap-4 justify-center items-center mt-[24px]">
                 <img
@@ -224,7 +230,7 @@ const Projects = () => {
                 />
               </div>
               <p className="text-[18px] xl:text-[20px] leading-[140%] text-[#ffffffcc] mt-[24px]">
-                Tibbiyot vakillarining ishini boshqarish
+                {t('project_home_page.card3_text')}
               </p>
             </li>
 
@@ -236,7 +242,7 @@ const Projects = () => {
               className="p-[24px] xl:p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] flex flex-col justify-between border border-[#464850] cursor-pointer"
             >
               <h3 className="text-[24px] xl:text-[32px] font-medium leading-[120%]">
-                Ross & Foundations
+                {t('project_home_page.card5_title')}
               </h3>
               <div className="flex flex-row gap-4 justify-center items-center mt-[24px]">
                 <img
@@ -247,7 +253,7 @@ const Projects = () => {
                 />
               </div>
               <p className="text-[18px] xl:text-[20px] leading-[140%] text-[#ffffffcc] mt-[24px]">
-                Qurilish kompaniya veb sayti
+                {t('project_home_page.card5_text')}
               </p>
             </li>
 
@@ -260,7 +266,7 @@ const Projects = () => {
               onClick={() => navigate('/portfolio/details/2')}
             >
               <h3 className="text-[24px] xl:text-[32px] font-medium leading-[120%]">
-                IMPERIAL GRANITE
+                {t('project_home_page.card5_title')}
               </h3>
               <div className="flex flex-row gap-4 justify-center items-center mt-[24px]">
                 <img
@@ -271,7 +277,7 @@ const Projects = () => {
                 />
               </div>
               <p className="text-[18px] xl:text-[20px] leading-[140%] text-[#ffffffcc] mt-[24px]">
-                Savdo jarayonlarini avtomatlashtirish 
+                {t('project_home_page.card5_text')}
               </p>
             </li>
           </ul>
@@ -296,16 +302,16 @@ const Projects = () => {
                   className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] lg:col-span-2 border border-[#464850] flex flex-col justify-between min-h-[300px] sm:min-h-[400px] "
                 >
                   <h3 className="text-[20px] sm:text-[32px] font-medium leading-[120%]">
-                    Manasoft
+                    {t('project_home_page.card1_title')}
                   </h3>
-                    <img
-                      className="w-full h-full max-w-[340px] max-h-[210px]  sm:max-h-[290px] object-contain"
-                      src={project1}
-                      alt="project1"
-                      loading="lazy"
-                    />
+                  <img
+                    className="w-full h-full max-w-[340px] max-h-[210px]  sm:max-h-[290px] object-contain mx-auto"
+                    src={project1}
+                    alt="veb sayt"
+                    loading="lazy"
+                  />
                   <p className="text-[18px] sm:text-[20px] leading-[140%] text-[#ffffffcc]">
-                    IT kompaniya veb sayti
+                    {t('project_home_page.card1_text')}
                   </p>
                 </li>
               </SwiperSlide>
@@ -319,7 +325,7 @@ const Projects = () => {
                   onClick={() => navigate('/portfolio/details/1')}
                 >
                   <h3 className="text-[20px] sm:text-[32px] font-medium sm:leading-[120%]">
-                    Femmi
+                    {t('project_home_page.card2_title')}
                   </h3>
                   <img
                     className="w-full h-full max-w-[340px] max-h-[210px]  sm:max-h-[290px] object-contain mx-auto"
@@ -328,7 +334,7 @@ const Projects = () => {
                     loading="lazy"
                   />
                   <p className="text-[16px] sm:text-[20px] sm:leading-[140%] text-[#ffffffcc]">
-                    Android va iOS
+                    {t('project_home_page.card2_text')}
                   </p>
                 </li>
               </SwiperSlide>
@@ -342,7 +348,7 @@ const Projects = () => {
                   onClick={() => navigate('/portfolio/details/3')}
                 >
                   <h3 className="text-[20px] sm:text-[32px] font-medium sm:leading-[120%]">
-                    MedAgent
+                    {t('project_home_page.card3_title')}
                   </h3>
                   <img
                     className="w-full h-full max-w-[340px]  max-h-[210px] sm:max-h-[290px] object-contain mx-auto"
@@ -351,7 +357,7 @@ const Projects = () => {
                     loading="lazy"
                   />
                   <p className="text-[16px] sm:text-[20px] sm:leading-[140%] text-[#ffffffcc]">
-                    Tibbiyot vakillarining ishini boshqarish
+                    {t('project_home_page.card3_text')}
                   </p>
                 </li>
               </SwiperSlide>
@@ -364,7 +370,7 @@ const Projects = () => {
                   className="p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] border border-[#464850] flex flex-col justify-between min-h-[300px] sm:min-h-[400px]"
                 >
                   <h3 className="text-[20px] sm:text-[32px] font-medium sm:leading-[120%]">
-                    Ross & Foundations
+                    {t('project_home_page.card4_title')}
                   </h3>
                   <img
                     className="w-full h-full max-w-[340px]  max-h-[210px]  sm:max-h-[290px] object-contain mx-auto"
@@ -373,7 +379,7 @@ const Projects = () => {
                     loading="lazy"
                   />
                   <p className="text-[16px] sm:text-[20px] leading-[140%] text-[#ffffffcc]">
-                    Qurilish kompaniya veb sayti
+                    {t('project_home_page.card4_text')}
                   </p>
                 </li>
               </SwiperSlide>
@@ -387,7 +393,7 @@ const Projects = () => {
                   onClick={() => navigate('/portfolio/details/2')}
                 >
                   <h3 className="text-[20px] sm:text-[32px] font-medium sm:leading-[120%]">
-                    IMPERIAL GRANITE
+                    {t('project_home_page.card5_title')}
                   </h3>
                   <img
                     className="w-full max-w-[340px]  h-full  max-h-[210px] sm:max-h-[290px] object-contain mx-auto"
@@ -396,7 +402,7 @@ const Projects = () => {
                     loading="lazy"
                   />
                   <p className="text-[16px] sm:text-[20px] leading-[140%] text-[#ffffffcc]">
-                    Savdo jarayonlarini avtomatlashtirish 
+                    {t('project_home_page.card5_text')}
                   </p>
                 </li>
               </SwiperSlide>

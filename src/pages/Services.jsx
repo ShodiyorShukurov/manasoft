@@ -7,11 +7,6 @@ import Customers from './Customers';
 import ContactForm from './ContactForm';
 import Partners from './Partners';
 import { useTranslation } from 'react-i18next';
-import crm from '../assets/image/crm.png';
-import mobileApp from '../assets/image/mobile-apps.png';
-import VebSayt from '../assets/image/veb-sayt.png';
-import telegramBot1 from '../assets/image/telegram_bot1.png';
-import telegramBot2 from '../assets/image/telegram_bot2.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -19,6 +14,7 @@ import 'swiper/css/pagination';
 import servicesPage from '../mock/servicesPage';
 import bgTop from '../assets/image/services_contact_bg1.png';
 import bgBottom from '../assets/image/services_contact_bg2.png';
+import servicesHome from '../mock/servicesHome';
 
 const titleVariants = {
   hidden: { opacity: 0 },
@@ -38,7 +34,9 @@ const letterVariants = {
 const Services = () => {
   const location = useLocation();
   const { t } = useTranslation();
+  const servicesData = servicesHome(t);
 
+  console.log(servicesData);
   if (location.pathname === '/services') {
     const servicesData = servicesPage(t);
 
@@ -106,7 +104,7 @@ const Services = () => {
                 'Content-Type': 'application/json',
               },
               body: JSON.stringify(formData),
-              mode: 'no-cors', 
+              mode: 'no-cors',
               redirect: 'follow',
             }
           );
@@ -136,7 +134,7 @@ const Services = () => {
               {t('services.services_page_text')}
             </p>
 
-            <ul className="mt-[64px] md:mt-[90px] space-y-16 md:space-y-24">
+            <ul className="mt-[64px] md:mt-[90px] space-y-16 md:space-y-24 overflow-x-hidden">
               {servicesData.map((item) => (
                 <li
                   key={item.id}
@@ -147,8 +145,7 @@ const Services = () => {
                   <div
                     className="md:[direction:ltr] text-[#ffffffcc]"
                     data-aos="fade-right"
-                    data-aos-offset="500"
-                    data-aos-easing="ease-in-sine"
+                    data-aos-duration="1000"
                   >
                     <button
                       style={{
@@ -198,8 +195,7 @@ const Services = () => {
                     }}
                     className="p-[32px] h-full  flex items-end"
                     data-aos="fade-left"
-                    data-aos-offset="500"
-                    data-aos-easing="ease-in-sine"
+                    data-aos-duration="1000"
                   >
                     <img
                       className="w-full max-w-[600px] h-full max-h-fit mx-auto my-auto"
@@ -219,6 +215,8 @@ const Services = () => {
         <section
           className="pt-[60px] md:pt-[80px] lg:pt-[120px]"
           id="section_contact"
+          data-aos="fade-up"
+          data-aos-duration="1000"
         >
           <div className="container">
             <div
@@ -346,97 +344,29 @@ const Services = () => {
             data-aos="fade-up"
             data-aos-duration="1000"
           >
-            <li
-              style={{
-                background:
-                  'radial-gradient(70.49% 86.46% at 50.08% 100%, rgba(97, 166, 255, 0.20) 15%, rgba(97, 166, 255, 0.00) 100%), rgba(255, 255, 255, 0.04)',
-              }}
-              className="p-[32px] sm:p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55]"
-            >
-              <h4 className="xl:text-[32px] md:text-[28px] leading-[120%] font-medium">
-                {t('services.services_home_card1_title')}
-              </h4>
-              <p className="text-[18px] leading-[150%] mt-[16px] w-full max-w-[564px]">
-                {t('services.services_home_card1_text')}
-              </p>
-              <img
-                className="mx-auto mt-[46px] w-[450px] h-auto object-cover"
-                src={crm}
-                alt="crm"
-                loading="lazy"
-              />
-            </li>
-
-            <li
-              style={{
-                background:
-                  'radial-gradient(70.49% 86.46% at 50.08% 100%, rgba(97, 166, 255, 0.20) 15%, rgba(97, 166, 255, 0.00) 100%), rgba(255, 255, 255, 0.04)',
-              }}
-              className="p-[32px] sm:p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55]"
-            >
-              <h4 className="xl:text-[32px] md:text-[28px] leading-[120%] font-medium">
-                {t('services.services_home_card2_title')}
-              </h4>
-              <p className="text-[18px] leading-[150%] mt-[16px] w-full max-w-[564px]">
-                {t('services.services_home_card2_text')}
-              </p>
-              <img
-                className="mx-auto mt-[46px] w-[450px] h-auto object-cover"
-                src={mobileApp}
-                alt="mobileApp"
-                loading="lazy"
-              />
-            </li>
-
-            <li
-              style={{
-                background:
-                  'radial-gradient(70.49% 86.46% at 50.08% 100%, rgba(97, 166, 255, 0.20) 15%, rgba(97, 166, 255, 0.00) 100%), rgba(255, 255, 255, 0.04)',
-              }}
-              className="p-[32px] sm:p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55]"
-            >
-              <h4 className="xl:text-[32px] md:text-[28px] leading-[120%] font-medium">
-                {t('services.services_home_card3_title')}
-              </h4>
-              <p className="text-[18px] leading-[150%] mt-[16px] w-full max-w-[564px]">
-                {t('services.services_home_card3_text')}
-              </p>
-              <div className="flex justify-center gap-4 items-center mt-[46px] ">
+            {servicesData?.map((item) => (
+              <li
+                style={{
+                  background:
+                    'radial-gradient(70.49% 86.46% at 50.08% 100%, rgba(97, 166, 255, 0.20) 15%, rgba(97, 166, 255, 0.00) 100%), rgba(255, 255, 255, 0.04)',
+                }}
+                className="p-[32px] sm:p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55]"
+                key={item.id}
+              >
+                <h4 className="xl:text-[32px] md:text-[28px] leading-[120%] font-medium">
+                  {item.title}
+                </h4>
+                <p className="text-[18px] leading-[150%] mt-[16px] w-full max-w-[564px]">
+                  {item.text}
+                </p>
                 <img
-                  src={telegramBot1}
-                  alt="telegram bot"
-                  className="w-[140px] h-full max-h-[300px]"
+                  className="mx-auto mt-[46px] w-full max-w-[450px] h-auto object-cover"
+                  src={item.img}
+                  alt={item.title}
                   loading="lazy"
                 />
-                <img
-                  src={telegramBot2}
-                  alt="telegram bot"
-                  className="w-[140px] h-full max-h-[300px]"
-                  loading="lazy"
-                />
-              </div>
-            </li>
-
-            <li
-              style={{
-                background:
-                  'radial-gradient(70.49% 86.46% at 50.08% 100%, rgba(97, 166, 255, 0.20) 15%, rgba(97, 166, 255, 0.00) 100%), rgba(255, 255, 255, 0.04)',
-              }}
-              className="p-[32px] sm:p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55]"
-            >
-              <h4 className="xl:text-[32px] md:text-[28px] leading-[120%] font-medium">
-                {t('services.services_home_card4_title')}
-              </h4>
-              <p className="text-[18px] leading-[150%] mt-[16px] w-full max-w-[564px]">
-                {t('services.services_home_card4_text')}
-              </p>
-              <img
-                className="mx-auto mt-[46px] w-[450px] h-auto object-cover"
-                src={VebSayt}
-                alt="VebSayt"
-                loading="lazy"
-              />
-            </li>
+              </li>
+            ))}
           </ul>
 
           <div className="md:hidden block mt-[32px] relative">
@@ -448,108 +378,33 @@ const Services = () => {
                 clickable: true,
               }}
               modules={[Pagination]}
-              className="h-[420px] sm:h-[540px] mySwiper"
+              className="h-[410px] sm:h-[450px] mySwiper"
             >
-              <SwiperSlide>
-                <li
-                  style={{
-                    background:
-                      'radial-gradient(70.49% 86.46% at 50.08% 100%, rgba(97, 166, 255, 0.20) 15%, rgba(97, 166, 255, 0.00) 100%), rgba(255, 255, 255, 0.04)',
-                  }}
-                  className="p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55] max-h-[350px] sm:min-h-[450px] h-full flex flex-col gap-3 sm:gap-6"
-                >
-                  <h4 className="text-[24px] sm:text-[28px] leading-[120%] font-medium">
-                    {t('services.services_home_card1_title')}
-                  </h4>
-                  <p className="text-[16px] sm:text-[18px] leading-[150%] w-full">
-                    {t('services.services_home_card1_text')}
-                  </p>
-                  <div className="mx-auto">
-                    <img
-                      className="w-[350px] sm:w-[400px]"
-                      src={crm}
-                      alt="crm"
-                    />
-                  </div>
-                </li>
-              </SwiperSlide>
-              <SwiperSlide>
-                <li
-                  style={{
-                    background:
-                      'radial-gradient(70.49% 86.46% at 50.08% 100%, rgba(97, 166, 255, 0.20) 15%, rgba(97, 166, 255, 0.00) 100%), rgba(255, 255, 255, 0.04)',
-                  }}
-                  className="p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55] max-h-[350px] sm:min-h-[450px] h-full flex flex-col gap-3 sm:gap-6"
-                >
-                  <h4 className="text-[24px] sm:text-[28px] leading-[120%] font-medium">
-                    {t('services.services_home_card2_title')}
-                  </h4>
-                  <p className="text-[16px] sm:text-[18px] leading-[150%] w-full">
-                    {t('services.services_home_card2_text')}
-                  </p>
-                  <div className="mx-auto">
-                    <img
-                      className=" w-[350px] sm:w-[400px]"
-                      src={mobileApp}
-                      alt="mobileApp"
-                    />
-                  </div>
-                </li>
-              </SwiperSlide>
-              <SwiperSlide>
-                <li
-                  style={{
-                    background:
-                      'radial-gradient(70.49% 86.46% at 50.08% 100%, rgba(97, 166, 255, 0.20) 15%, rgba(97, 166, 255, 0.00) 100%), rgba(255, 255, 255, 0.04)',
-                  }}
-                  className="p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55] max-h-[350px] sm:min-h-[450px] h-full flex flex-col gap-3 sm:gap-6"
-                >
-                  <h4 className="text-[24px] sm:text-[28px] leading-[120%] font-medium">
-                    {t('services.services_home_card3_title')}
-                  </h4>
-                  <p className="text-[16px] sm:text-[18px] leading-[150%] w-full">
-                    {t('services.services_home_card3_text')}
-                  </p>
-                  <div className="flex justify-center gap-4 items-center">
-                    <img
-                      // style={{ height: '180px' }}
-                      src={telegramBot1}
-                      alt="telegram bot"
-                      className="w-[100px] sm:w-[140px] object-cover "
-                    />
-                    <img
-                      // style={{ height: '180px' }}
-                      src={telegramBot2}
-                      alt="telegram bot"
-                      className="w-[100px] sm:w-[140px] object-cover "
-                    />
-                  </div>
-                </li>
-              </SwiperSlide>
-              <SwiperSlide>
-                <li
-                  style={{
-                    background:
-                      'radial-gradient(70.49% 86.46% at 50.08% 100%, rgba(97, 166, 255, 0.20) 15%, rgba(97, 166, 255, 0.00) 100%), rgba(255, 255, 255, 0.04)',
-                  }}
-                  className="p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55] max-h-[350px] sm:min-h-[450px] h-full flex flex-col gap-3 sm:gap-6"
-                >
-                  <h4 className="text-[24px] sm:text-[28px] leading-[120%] font-medium">
-                    {t('services.services_home_card4_title')}
-                  </h4>
-                  <p className="text-[16px] sm:text-[18px] leading-[150%] w-full">
-                    {t('services.services_home_card4_text')}
-                  </p>
-                  <div className="mx-auto">
-                    {' '}
-                    <img
-                      className=" w-[350px] sm:w-[400px]"
-                      src={VebSayt}
-                      alt="VebSayt"
-                    />
-                  </div>
-                </li>
-              </SwiperSlide>
+              {servicesData?.map((item) => (
+                <SwiperSlide key={item.id}>
+                  <li
+                    style={{
+                      background:
+                        'radial-gradient(70.49% 86.46% at 50.08% 100%, rgba(97, 166, 255, 0.20) 15%, rgba(97, 166, 255, 0.00) 100%), rgba(255, 255, 255, 0.04)',
+                    }}
+                    className="p-[24px] rounded-[30px] backdrop-blur-[120px] text-white border-2 border-[#4D4D55] max-h-[330px] sm:min-h-[370px] h-full flex flex-col justify-between"
+                  >
+                    <h4 className="text-[24px] sm:text-[28px] leading-[120%] font-medium">
+                      {item.title}
+                    </h4>
+                    <p className="text-[16px] sm:text-[18px] leading-[150%] w-full">
+                      {item.text}
+                    </p>
+                    <div className="mx-auto">
+                      <img
+                        className="mt-[5px] ms:mt-0 w-[350px] sm:w-[400px]"
+                        src={item.img}
+                        alt={item.title}
+                      />
+                    </div>
+                  </li>
+                </SwiperSlide>
+              ))}
             </Swiper>
 
             <div className="md:mt-0 flex justify-center">

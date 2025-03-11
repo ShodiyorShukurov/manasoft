@@ -89,6 +89,37 @@
         "card6_title": "Окончательная разработка",
         "card6_text": "Проект полностью завершается, все функции тестируются и оптимизируются. Мы предоставляем нашим клиентам готовый продукт высокого качества!"
     },
+    "project_home_page": {
+        "subtitle_home": "Наши проекты",
+        "title_home": "Ознакомьтесь с нашими проектами",
+        "button_text": "Все проекты",
+        "card1_title": "Manasoft",
+        "card1_text": "Веб-сайт IT-компании",
+        "card2_title": "Femmi",
+        "card2_text": "Android и iOS",
+        "card3_title": "MedAgent",
+        "card3_text": "Управление работой медицинских представителей",
+        "card4_title": "Ross & Foundations",
+        "card4_text": "Веб-сайт строительной компании",
+        "card5_title": "IMPERIAL GRANITE",
+        "card5_text": "Автоматизация торговых процессов"
+    },
+    "project_page": {
+        "subtitle": "+100 реализованных проектов",
+        "title": "Наши проекты",
+        "text": "Ищете надежного IT-партнера для эффективного развития вашего бизнеса? Manasoft предлагает вам современные, быстрые и надежные решения!",
+        "button_text": "Все",
+        "button_text1": "Мобильное приложение",
+        "button_text2": "Веб-сайт",
+        "button_text3": "CRM",
+        "button_text4": "UX/UI",
+        "card1_title": "Femmi",
+        "card1_text": "Приложение для мобильных устройств",
+        "card2_title": "IMPERIAL GRANITE",
+        "card2_text": "Приложение для мобильных устройств",
+        "card3_title": "MedAgent",
+        "card3_text": "Приложение для мобильных устройств"
+    },
     "project1": {
         "banner_title": "Femmy",
         "banner_subtitle": "Специальное мобильное приложение для женщин",
