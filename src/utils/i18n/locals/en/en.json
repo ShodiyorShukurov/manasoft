@@ -189,6 +189,8 @@
         "phone_error": "The phone number must start with +998 and contain 12 digits.",
         "message_error": "The message must contain at least 10 characters."
     },
+    "more_info": "More",
+    "small_info": "Less",
     "footer": {
         "link_title1": "Menu",
         "link_title2": "Services",

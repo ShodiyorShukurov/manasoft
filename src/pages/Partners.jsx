@@ -200,7 +200,7 @@ const Partners = () => {
           className="block md:hidden px-[24px] py-[12px] bg-transparent border border-[#61A6FF] text-[#61A6FF] text-[16px] font-medium w-fit rounded-[24px] mx-auto mt-[32px]"
           onClick={() => setShow(!show)}
         >
-          {show ? 'Kamroq' : "Ko'proq"}
+          {show ? t('small_info') : t('more_info')}
         </button>
       </div>
     </section>

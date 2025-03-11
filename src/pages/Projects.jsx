@@ -416,7 +416,7 @@ const Projects = () => {
             to={'/portfolio'}
             className="block md:hidden bg-[transparent] text-[#61A6FF] text-[20px] rounded-[48px] px-[24px] py-[12px] border cursor-pointer  text-center font-[Public_Sans]"
           >
-            Hamma loyihalar
+            {t('project_home_page.button_text')}
           </NavLink>
         </div>
       </section>
