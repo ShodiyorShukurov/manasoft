@@ -187,7 +187,10 @@
         "fullName_error2": "At least one UPPERCASE letter is required.",
         "fullName_error3": "At least one lowercase letter is required.",
         "phone_error": "The phone number must start with +998 and contain 12 digits.",
-        "message_error": "The message must contain at least 10 characters."
+        "message_error": "The message must contain at least 10 characters.",
+        "success": "Your message has been successfully sent!",
+        "error_message": "Something went wrong while sending the message, please try again.",
+        "sending": "Sending..."
     },
     "more_info": "More",
     "small_info": "Less",

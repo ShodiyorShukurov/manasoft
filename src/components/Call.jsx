@@ -32,7 +32,7 @@ const Call = () => {
             '2px 4px 8px 0px rgba(255, 255, 255, 0.25) inset, -2px -4px 8px 0px rgba(0, 0, 0, 0.25) inset, 0px 4px 10px 0px rgba(255, 255, 255, 0.10)',
         }}
         className="fixed bottom-4 right-4 z-40 transition-opacity duration-300 w-[48px] h-[48px] rounded-full p-[12px] flex items-center justify-center"
-        href="tel:+998975597666"
+        href="tel:+998938883388"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -112,7 +112,7 @@ const Footer = () => {
             <h4 className="mb-[8px] font-medium md:text-[16px] md:leading-[24px]">{t('footer.link_title3')}</h4>
             <ul className="space-y-2 text-[#ffffffb3] text-[12px] md:text-[14px] leading-[100%] md:leading-[20px] font-medium">
               <li>
-                <a href="tel:+998 90 111 22 33">+998 90 111 22 33</a>
+                <a href="tel:+998938883388">+998 93 888 33 88</a>
               </li>
               <li>
                 <a className='text-wrap' href="malito:manasoft@gmail.com">manasoft@gmail.com</a>

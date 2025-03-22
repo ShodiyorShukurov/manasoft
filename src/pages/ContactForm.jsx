@@ -3,10 +3,12 @@ import { useLocation } from 'react-router-dom';
 import bgBottom from '../assets/image/contact-bg-right.png';
 import bgTop from '../assets/image/contact-bg-left.png';
 import { useTranslation } from 'react-i18next';
+import toast from 'react-hot-toast';
 
 const ContactForm = () => {
   const location = useLocation();
   const { t } = useTranslation();
+  const [isLoading, setIsLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     fullName: '',
@@ -56,43 +58,51 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let newErrors = {};
-  
+
     Object.keys(formData).forEach((key) => {
       validateInput(key, formData[key]);
       if (!formData[key]) newErrors[key] = t('contact_page.error');
     });
-  
+
     setErrors(newErrors);
-  
+
     if (!Object.values(newErrors).some((error) => error)) {
+      setIsLoading(true);
       try {
         await fetch(
-          'https://script.google.com/macros/s/AKfycbxlI5at1dh7yPcp_u6w3Bf6bxDO2bidw8BAljro2_PtmEmWotusbDY7qJ19hV8rZmSATg/exec',
+          'https://script.google.com/macros/s/AKfycbwKU2KM0xUF8wvEGYXYkxaEV15EimX8MgTpZsFMcoRuYpKcT6B9yf3TkD8i-56tpTS88Q/exec',
           {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify(formData),
-            mode: 'no-cors', // CORS muammosini chetlab o'tish
+            mode: 'no-cors',
             redirect: 'follow',
           }
         );
-  
-        console.log('Ma\'lumotlar yuborildi:', formData);
+
         setFormData({
           fullName: '',
           phone: '',
           message: '',
         });
-        alert(t('contact_page.success'));
+
+        toast.success(t('contact_page.success'), {
+          duration: 4000,
+          position: 'top-center',
+        });
       } catch (error) {
         console.error('Fetch xatosi:', error);
-        alert(t('contact_page.error_message'));
+        toast.error(t('contact_page.error_message'), {
+          duration: 4000,
+          position: 'top-center',
+        });
+      } finally {
+        setIsLoading(false);
       }
     }
   };
-  
 
   if (location.pathname == '/contact') {
     React.useEffect(() => {
@@ -173,7 +183,7 @@ const ContactForm = () => {
                 manasoft@gmail.com
               </a>
               <a
-                href="tel:+998901112233"
+                href="tel:+998938883388"
                 className="flex items-center gap-2 text-[20px] leading-[100%] md:leading-[140%]"
               >
                 <svg
@@ -190,7 +200,7 @@ const ContactForm = () => {
                     strokeMiterlimit="10"
                   />
                 </svg>
-                +998 90 111 22 33
+                +998 93 888 33 88
               </a>
               <p className="flex items-center gap-2 text-[20px] leading-[100%] md:leading-[140%]">
                 <svg
@@ -276,9 +286,12 @@ const ContactForm = () => {
               </div>
               <button
                 type="submit"
-                className="bg-[#61A6FF] text-white py-3 px-6 rounded-[48px] mt-6 cursor-pointer md:w-fit "
+                className="bg-[#61A6FF] text-white py-3 px-6 rounded-[48px] mt-6 cursor-pointer md:w-fit"
+                disabled={isLoading}
               >
-                {t('contact_page.button_text')}
+                {isLoading
+                  ? t('contact_page.sending')
+                  : t('contact_page.button_text')}
               </button>
             </form>
           </div>

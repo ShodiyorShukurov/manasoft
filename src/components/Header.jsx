@@ -330,7 +330,7 @@ const Header = () => {
           </ul>
 
           <a
-            href="tel:+998912345678"
+            href="tel:+998938883388"
             style={{ fontFamily: 'Public Sans' }}
             className="absolute bottom-27 sm:bottom-32 left-1/2 transform -translate-x-1/2 text-white bg-[#61A6FF] text-base rounded-3xl px-4 sm:px-6 py-2 sm:py-3 cursor-pointer"
           >

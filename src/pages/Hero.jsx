@@ -12,10 +12,10 @@ const Hero = () => {
   return (
     <section
       className="pt-[180px] md:pt-[250px] bg-no-repeat bg-cover bg-bottom"
-      style={{
-        backgroundImage: `url(${bgImage})`,
-        backdropFilter: 'blur(20px)',
-      }}
+      // style={{
+      //   backgroundImage: `url(${bgImage})`,
+      //   backdropFilter: 'blur(20px)',
+      // }}
     >
       <div className="container">
         {/* User group */}
@@ -55,7 +55,7 @@ const Hero = () => {
           </a>
         </div>
 
-        <div className="flex justify-center items-center flex-col pt-[84px] sm:pt-[96px] pb-[64px]">
+        {/* <div className="flex justify-center items-center flex-col pt-[84px] sm:pt-[96px] pb-[64px]">
           <div className="w-full max-w-[930px] rounded-[48px]">
             <iframe
               width="100%"
@@ -67,18 +67,18 @@ const Hero = () => {
               allowFullScreen
             ></iframe>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Infinite carousel */}
 
-      <InfiniteCarousel>
+      {/* <InfiniteCarousel>
         {[...items, ...items].map((image, index) => (
           <p className="h-40 w-56 pr-20 text-white" key={index}>
             {image}
           </p>
         ))}
-      </InfiniteCarousel>
+      </InfiniteCarousel> */}
 
     </section>
   );

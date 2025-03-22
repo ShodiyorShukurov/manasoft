@@ -8,6 +8,7 @@ import Services from './pages/Services';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import Call from './components/Call';
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
   return (
@@ -21,8 +22,9 @@ const App = () => {
         <Route path="/portfolio" element={<Projects />} />
         <Route path="/portfolio/details/:id" element={<ProjectDetail />} />
       </Routes>
-      <Call/>
+      <Call />
       <Footer />
+      <Toaster />
     </>
   );
 };

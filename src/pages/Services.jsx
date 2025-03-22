@@ -15,6 +15,7 @@ import servicesPage from '../mock/servicesPage';
 import bgTop from '../assets/image/services_contact_bg1.png';
 import bgBottom from '../assets/image/services_contact_bg2.png';
 import servicesHome from '../mock/servicesHome';
+import toast from 'react-hot-toast';
 
 const titleVariants = {
   hidden: { opacity: 0 },
@@ -35,8 +36,9 @@ const Services = () => {
   const location = useLocation();
   const { t } = useTranslation();
   const servicesData = servicesHome(t);
+  const [isLoading, setIsLoading] = React.useState(false);
 
-  console.log(servicesData);
+
   if (location.pathname === '/services') {
     const servicesData = servicesPage(t);
 
@@ -95,9 +97,10 @@ const Services = () => {
       setErrors(newErrors);
 
       if (!Object.values(newErrors).some((error) => error)) {
+        setIsLoading(true)
         try {
           await fetch(
-            'https://script.google.com/macros/s/AKfycbxlI5at1dh7yPcp_u6w3Bf6bxDO2bidw8BAljro2_PtmEmWotusbDY7qJ19hV8rZmSATg/exec',
+            'https://script.google.com/macros/s/AKfycbwKU2KM0xUF8wvEGYXYkxaEV15EimX8MgTpZsFMcoRuYpKcT6B9yf3TkD8i-56tpTS88Q/exec',
             {
               method: 'POST',
               headers: {
@@ -109,16 +112,23 @@ const Services = () => {
             }
           );
 
-          console.log("Ma'lumotlar yuborildi:", formData);
           setFormData({
             fullName: '',
             phone: '',
             message: '',
           });
-          alert(t('contact_page.success'));
+          toast.success(t('contact_page.success'), {
+            duration: 4000,
+            position: 'top-center',
+          });
         } catch (error) {
           console.error('Fetch xatosi:', error);
-          alert(t('contact_page.error_message'));
+          toast.error(t('contact_page.error_message'), {
+            duration: 4000,
+            position: 'top-center',
+          });
+        } finally {
+          setIsLoading(false);
         }
       }
     };
@@ -286,8 +296,11 @@ const Services = () => {
                   <button
                     type="submit"
                     className="bg-[#61A6FF] text-white py-3 px-6 rounded-[48px] mt-[40px] cursor-pointer md:w-fit "
+                    disabled={isLoading}
                   >
-                    {t('contact_page.button_text')}
+                    {isLoading
+                      ? t('contact_page.sending')
+                      : t('contact_page.button_text')}
                   </button>
                 </form>
               </div>

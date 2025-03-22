@@ -187,7 +187,10 @@
         "fullName_error2": "Kamida bitta KATTA harf bo‘lishi kerak.",
         "fullName_error3": "Kamida bitta kichik harf bo‘lishi kerak.",
         "phone_error": "Telefon raqam +998 bilan boshlanishi va 12 ta raqam bo‘lishi kerak.",
-        "message_error": "Xabar kamida 10 ta belgi bo‘lishi kerak."
+        "message_error": "Xabar kamida 10 ta belgi bo‘lishi kerak.",
+        "success": "Xabaringiz muvaffaqiyatli yuborildi!",
+        "error_message": "Xabarni yuborishda nimadir xatolik yuz berdi, iltimos qayta urinib ko'ring",
+        "sending": "Yuborilmoqda..."
     },
     "more_info": "Ko'proq",
     "small_info": "Kamroq",
