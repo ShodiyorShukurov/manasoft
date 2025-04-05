@@ -13,7 +13,8 @@ const portfolio1 = (t) => ({
     banner_subtitle: t('project1.banner_subtitle'),
     banner_text: t('project1.banner_text'),
     banner_button1: t('project1.banner_button1'),
-    banner_button1_link: '',
+    banner_button1_link:
+      'https://play.google.com/store/apps/details?id=app.femmy.ai.behad&pcampaignid=web_share',
     banner_button2: t('project1.banner_button2'),
     banner_button2_link:
       'https://apps.apple.com/app/femmy-ayollar-kalendari/id6739880529',
