@@ -242,18 +242,18 @@ const Projects = () => {
               className="p-[24px] xl:p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] flex flex-col justify-between border border-[#464850] cursor-pointer"
             >
               <h3 className="text-[24px] xl:text-[32px] font-medium leading-[120%]">
-                {t('project_home_page.card5_title')}
+                {t('project_home_page.card4_title')}
               </h3>
               <div className="flex flex-row gap-4 justify-center items-center mt-[24px]">
                 <img
                   className="w-full max-w-[340px] h-full max-h-[300px] object-contain"
                   src={project6}
-                  alt="Ross & Foundations"
+                  alt="Ross Foundation"
                   loading="lazy"
                 />
               </div>
               <p className="text-[18px] xl:text-[20px] leading-[140%] text-[#ffffffcc] mt-[24px]">
-                {t('project_home_page.card5_text')}
+                {t('project_home_page.card4_text')}
               </p>
             </li>
 

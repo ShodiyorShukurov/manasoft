@@ -309,7 +309,7 @@ const Services = () => {
         </section>
         <Customers />
         <Question />
-        <Partners />
+        {/* <Partners /> */}
         <ContactForm />
       </main>
     );

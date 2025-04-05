@@ -297,7 +297,6 @@ const ProjectDetail = () => {
               className="w-full max-w-[650px] h-full max-h-[370px] object-cover"
               src={portfolioDetails?.banner_image}
               alt="Img"
-              loading='lazy'
             />
           </div>
 
