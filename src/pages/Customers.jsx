@@ -1,45 +1,48 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { motion } from 'framer-motion';
-import img from '../assets/image/card3-img2.jpg';
-import { useTranslation } from 'react-i18next';
-
+import { useState, useEffect, useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import { motion } from "framer-motion";
+import img from "../assets/image/card3-img2.jpg";
+import { useTranslation } from "react-i18next";
 
 const Customers = () => {
   const [isTwoSlides, setIsTwoSlides] = useState(false);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const swiperRef = useRef(null);
-  const {t} = useTranslation()
-
+  const { t } = useTranslation();
 
   const customers = [
     {
-      name: t('customers.customer1_name'),
-      opinion: t('customers.customer1_text'),
+      name: t("customers.customer1_name"),
+      opinion: t("customers.customer1_text"),
       img: img,
     },
     {
-      name: t('customers.customer1_name'),
-      opinion: t('customers.customer1_text'),
+      name: t("customers.customer2_name"),
+      opinion: t("customers.customer2_text"),
       img: img,
     },
     {
-      name: t('customers.customer1_name'),
-      opinion: t('customers.customer1_text'),
+      name: t("customers.customer3_name"),
+      opinion: t("customers.customer3_text"),
       img: img,
     },
     {
-      name: t('customers.customer1_name'),
-      opinion: t('customers.customer1_text'),
+      name: t("customers.customer4_name"),
+      opinion: t("customers.customer4_text"),
       img: img,
     },
     {
-      name: t('customers.customer1_name'),
-      opinion: t('customers.customer1_text'),
+      name: t("customers.customer5_name"),
+      opinion: t("customers.customer5_text"),
+      img: img,
+    },
+    {
+      name: t("customers.customer6_name"),
+      opinion: t("customers.customer6_text"),
       img: img,
     },
   ];
@@ -52,8 +55,8 @@ const Customers = () => {
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -62,26 +65,26 @@ const Customers = () => {
         <button
           style={{
             background:
-              'linear-gradient(97deg, rgba(255, 255, 255, 0.08) 46.72%, rgba(153, 153, 153, 0.08) 87.27%)',
-            boxShadow: '0px 4px 24px 0px rgba(255, 255, 255, 0.08)',
-            backdropFilter: 'blur(30px)',
+              "linear-gradient(97deg, rgba(255, 255, 255, 0.08) 46.72%, rgba(153, 153, 153, 0.08) 87.27%)",
+            boxShadow: "0px 4px 24px 0px rgba(255, 255, 255, 0.08)",
+            backdropFilter: "blur(30px)",
           }}
           className="text-white text-[12px] sm:text-[18px] rounded-[48px] px-[32px] py-3 leading-[100%] sm:leading-[150%] mx-auto block"
         >
-         { t('customers.subtitle')}
+          {t("customers.subtitle")}
         </button>
 
         <h2 className="text-center text-white text-[32px] sm:text-[48px] leading-tight font-medium sm:font-semibold mt-[24px] sm:mt-[16px] tracking-tight">
-        {t('customers.title')}
+          {t("customers.title")}
         </h2>
 
         <p className="text-center bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent text-sm sm:text-[20px] leading-[140%] mt-3 sm:mt-[16px] w-full max-w-2xl mx-auto">
-        {t('customers.text')}
+          {t("customers.text")}
         </p>
       </div>
 
       <div
-        className={`mt-8 sm:mt-12 ${isTwoSlides ? 'container' : 'my-gradient'}`}
+        className={`mt-8 sm:mt-12 ${isTwoSlides ? "container" : "my-gradient"}`}
       >
         <Swiper
           slidesPerView={3}
@@ -92,7 +95,11 @@ const Customers = () => {
             prevEl: prevRef.current,
             nextEl: nextRef.current,
           }}
-          modules={[Navigation]}
+          autoplay={{
+            delay: 2000, // har 3 soniyada almashadi
+            disableOnInteraction: false, // foydalanuvchi o‘zi bosganida to‘xtamaydi
+          }}
+          modules={[Navigation, Autoplay]}
           breakpoints={{
             0: { slidesPerView: 1, spaceBetween: 10 },
             640: { slidesPerView: 1, spaceBetween: 20 },
@@ -105,7 +112,7 @@ const Customers = () => {
           {customers.map((item, index) => (
             <SwiperSlide key={index}>
               <motion.div>
-                <div className="w-fit p-4 sm:p-6 lg:p-8 border border-[#333] rounded-2xl sm:rounded-3xl bg-[#ffffff0a] text-white mx-auto">
+                <div className="w-fit p-4 sm:p-6 lg:p-8 border border-[#333] rounded-2xl sm:rounded-3xl bg-[#ffffff0a] text-white mx-auto h-[180px]">
                   <div className="flex items-center gap-2 sm:gap-3">
                     <img
                       className="rounded-full w-10 h-10 sm:w-12 sm:h-12"
@@ -118,7 +125,7 @@ const Customers = () => {
                     </h3>
                   </div>
                   <p className="text-sm sm:text-base lg:text-lg leading-relaxed mt-3 sm:mt-4 w-full max-w-md mx-auto">
-                   "{item.opinion}"
+                    &quot;{item.opinion}&quot;
                   </p>
                 </div>
               </motion.div>

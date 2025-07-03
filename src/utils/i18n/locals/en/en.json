@@ -113,6 +113,7 @@
     "button_text2": "Website",
     "button_text3": "CRM",
     "button_text4": "UX/UI",
+    "button_text5": "Telegram bot",
     "card1_title": "Femmy",
     "card1_text": "Mobile Application",
     "card2_title": "IMPERIAL GRANITE",
@@ -175,6 +176,27 @@
     "project_card1_text": "To help children sleep in a calm and peaceful environment, while providing mothers with a convenient and quality tool for this process. Each piece of content is selected according to the child's age and needs.",
     "project_card2_title": "Features of the app:",
     "project_card2_text": "Helping children fall asleep in a calm and peaceful environment, while providing mothers with a convenient and high-quality tool. The app offers age-appropriate and trusted audio content, including Quranic verses, classic lullabies, stories, and animal sounds. Features like voice recording, a favorites list, and a clean, child-friendly interface make it easy to use."
+  },
+  "project6": {
+    "banner_title": "Mohinur Rahimjonova Bot",
+    "banner_subtitle": "Telegram bot for accounting webinar",
+    "banner_text": "The Telegram bot automates registration for accounting webinars: users join via a link, register with their phone number, and are automatically added to the channel. The organizer can communicate directly with clients through the bot.",
+    "banner_button1": "Play Market",
+    "banner_button2": "App Store",
+    "project_title": "Project Features",
+    "project_card1_title": "Bot Capabilities:",
+    "project_card1_text": "The bot enables automatic registration, connects users to the webinar channel, builds a user base for the organizer, and ensures maximum conversion with minimal interaction."
+  },
+  "project7": {
+    "banner_title": "Hisobchi AI Bot",
+    "banner_subtitle": "Hisobchi AI — an AI-powered personal finance bot",
+    "banner_text": "Hisobchi AI is a Telegram bot that accepts income, expenses, and debts via text or voice, then automatically analyzes and categorizes them using artificial intelligence. It generates reports and sends reminders.",
+    "banner_button3": "Telegram Bot",
+    "project_title": "Project Features",
+    "project_card1_title": "Description:",
+    "project_card1_text": "Hisobchi AI is an AI-powered financial assistant that helps users easily and quickly track their income, expenses, and debts. It works via Telegram: the user sends their financial data in text or voice, and the bot automatically categorizes the data, generates statistics, and sends reminders.",
+    "project_card2_title": "Key Features:",
+    "project_card2_text": "AI-based recognition of income and expenses Debt tracking and reminders Daily, weekly, monthly, and yearly statistics Understanding of text and voice commands"
   },
   "partners": {
     "title": "Our Partners"

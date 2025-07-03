@@ -34,8 +34,24 @@
     "subtitle": "Mijozlar fikrlari",
     "title": "Mijozlarimizning fikrlari",
     "text": "Siz ham Manasoft tajribasidan foydalaning va biznesingizni keyingi bosqichga olib chiqing!",
-    "customer1_name": "Max Thompson (Creative Designer)",
-    "customer1_text": "Manasoft team has been amazing to work with! They developed a custom Telegram bot for us, which accelerated the process of providing services to our clients. Now we can serve our clients faster and more efficiently."
+
+    "customer1_name": "Aziza Karimova (Onlayn do‘kon egasi)",
+    "customer1_text": "Manasoft jamoasi biz uchun maxsus Telegram bot ishlab chiqdi. Endi buyurtmalar avtomatik qabul qilinadi va mijozlarga xizmat ko‘rsatish ancha tezlashdi.",
+
+    "customer2_name": "Kamoliddin Usmonov (Moliyachi)",
+    "customer2_text": "Ular ishlab bergan moliyaviy hisobot tizimi orqali xarajat va daromadlar ustidan nazorat qilish juda osonlashdi. Ish sifati yuqori darajada.",
+
+    "customer3_name": "Dilnoza Yuldasheva (Marketing mutaxassisi)",
+    "customer3_text": "Manasoft bilan ishlash jarayoni juda oson va qulay bo‘ldi. Har bir detalga e’tibor berishadi va doimo aloqada bo‘lishadi.",
+
+    "customer4_name": "Shavkat Anvarov (Startap asoschisi)",
+    "customer4_text": "Bizning g‘oyamizni real platformaga aylantirishda Manasoft jamoasi katta yordam berdi. Tez, sifatli va natijaviy yechimlar!",
+
+    "customer5_name": "Malika Rasulova (Psixolog)",
+    "customer5_text": "Telegram orqali mijozlarim bilan ishlash uchun maxsus bot tayyorlashdi. Hamyonbop narx va zo‘r texnik ko‘mak!",
+
+    "customer6_name": "Javlon Eshquvvatov (Freelancer dasturchi)",
+    "customer6_text": "Texnik jihatdan saviyali jamoa. Tizimni to‘g‘ri arxitektura asosida qurishdi va ishni belgilangan vaqtda topshirishdi."
   },
   "services": {
     "services_home_title1": "Texnologiya va Tajribani Birlashtiring",
@@ -113,6 +129,7 @@
     "button_text2": "Veb sayt",
     "button_text3": "CRM",
     "button_text4": "UX/UI",
+    "button_text5": "Telegram bot",
     "card1_title": "Femmy",
     "card1_text": "Mobil qurilmalar uchun ilova",
     "card2_title": "IMPERIAL GRANITE",
@@ -122,7 +139,11 @@
     "card4_title": "Alla",
     "card4_text": "Mobil qurilmalar uchun ilova",
     "card5_title": "Rai Group",
-    "card5_text": "Veb sayt"
+    "card5_text": "Veb sayt",
+    "card6_title": "Mohinur Rahimjonova Bot",
+    "card6_text": "Bot",
+    "card7_title": "Hisobchi AI Bot",
+    "card7_text": "Bot"
   },
   "project1": {
     "banner_title": "Femmy",
@@ -190,6 +211,26 @@
     "project_card2_text": "Ilova tufayli siz uchrashuvlarni samarali rejalashtirish, o‘zaro aloqalar hisobini yuritish va natijalarni real vaqt rejimida tahlil qilish imkoniyatiga ega bo‘lasiz.",
     "project_card3_title": "Tashriflarni rejalashtirish va nazorat qilish",
     "project_card3_text": "Shifokorlar va dorixonalar ma’lumotlar bazasini boshqarish. Har bir tashrif bo‘yicha batafsil hisobotlar, ish jarayonlarini avtomatlashtirish, jamoa samaradorligini real vaqt rejimida kuzatish"
+  },
+  "project6": {
+    "banner_title": "Mohinur Rahimjonova Bot",
+    "banner_subtitle": "Buxgalteriya vebinari uchun Telegram bot",
+    "banner_text": "Telegram bot buxgalteriya vebinarlariga ro‘yxatni avtomatlashtiradi: foydalanuvchi havola orqali kiradi, ro‘yxatdan o‘tadi va kanalga qo‘shiladi. Tashkilotchi esa bot orqali mijozlar bilan muloqot qiladi.",
+    "banner_button3": "Telegram bot",
+    "project_title": "Loyihaning xususiyatlari",
+    "project_card1_title": "Bot imkoniyatlari:",
+    "project_card1_text": "Bot avtomatik ro‘yxatdan o‘tishni ta’minlaydi, vebinar kanaliga ulanadi, tashkilotchi uchun foydalanuvchilar bazasini shakllantiradi va minimal aloqa orqali maksimal konversiyani ta’minlaydi."
+  },
+  "project7": {
+    "banner_title": "Hisobchi Ai bot",
+    "banner_subtitle": "Hisobchi AI — shaxsiy moliyani boshqarish uchun AI bot",
+    "banner_text": "Hisobchi AI — Telegram bot bo‘lib, daromad, xarajat va qarzlarni matn yoki ovoz orqali qabul qilib, sun’iy intellekt yordamida avtomatik tahlil va toifalaydi. Statistikalar shakllantiriladi, eslatmalar yuboriladi.",
+    "banner_button3": "Telegram bot",
+    "project_title": "Loyihaning xususiyatlari",
+    "project_card1_title": "Tavsif:",
+    "project_card1_text": "Hisobchi AI — bu foydalanuvchilarga daromad, xarajat va qarzlarini oson va tez tarzda nazorat qilish imkonini beruvchi sun'iy intellekt yordamidagi moliyaviy yordamchi. Telegram orqali ishlaydi: foydalanuvchi oddiy matn yoki ovoz orqali o‘z moliyaviy holatini botga bildiradi, bot esa avtomatik ravishda toifalab, statistikani shakllantiradi va eslatmalar yuboradi.",
+    "project_card2_title": "Asosiy funksiyalar:",
+    "project_card2_text": "Xarajat va daromadlarni AI asosida tanib olishQarzdorlik nazorati va eslatmalar Kunlik, haftalik, oylik va yillik statistika Matn va ovozli buyruqlarni tushunish"
   },
   "partners": {
     "title": "Bizning Hamkorlarimiz"

@@ -33,6 +33,7 @@ const Projects = () => {
     { id: 3, label: t('project_page.button_text2') },
     { id: 4, label: t('project_page.button_text3') },
     { id: 5, label: t('project_page.button_text4') },
+    { id: 6, label: t('project_page.button_text5') },
   ];
 
   if (location.pathname == '/portfolio') {

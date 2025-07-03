@@ -1,4 +1,4 @@
-import banner from '../assets/raiGroup/banner.jpg';
+import banner from '../assets/raiGroup/banner.png';
 import card1smallImg from '../assets/alla/card1-imgsmall.png';
 import card1BigImg from '../assets/alla/card1-imgbig.png';
 import card2smallImg from '../assets/alla/card2-imgsmall.png';
@@ -12,6 +12,7 @@ const portfolio5 = (t) => ({
     banner_subtitle: t('project5.banner_subtitle'),
     // banner_button1: t('project4.banner_button1'),
     // banner_button1_link: 'https://play.google.com/store/apps/details?id=com.evosoft_solutions.medagent',
+    // banner_button: t('project4.banner_button2'),
     banner_image: banner,
     title: t('project4.project_title'),
     cards: [
