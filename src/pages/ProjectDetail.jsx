@@ -294,7 +294,7 @@ const ProjectDetail = () => {
               </div>
             </div>
             <img
-              className="w-full max-w-[650px] h-full max-h-[370px] object-cover"
+              className="w-full max-w-[650px] h-full max-h-[370px] object-cover rounded-[16px]"
               src={portfolioDetails?.banner_image}
               alt="Img"
             />
@@ -359,7 +359,7 @@ const ProjectDetail = () => {
       <section className="pt-[60px] md:pt-[120px]">
         <div className="container">
           <h3 className="text-[32px] md:text-[48px] font-medium leading-[120%] text-white">
-            Bizning loyihalarimiz
+            {t('project_page.title')}
           </h3>
 
           <ul className="hidden md:grid md:grid-cols-2 xl:grid-cols-3 gap-6 mt-[32px]">

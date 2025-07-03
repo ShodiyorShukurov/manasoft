@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import questions from '../mock/questions';
 import { useTranslation } from 'react-i18next';

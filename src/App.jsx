@@ -1,4 +1,3 @@
-import React from 'react';
 import Layout from './components/Layout';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import ContactForm from './pages/ContactForm';
