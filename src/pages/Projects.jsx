@@ -241,6 +241,7 @@ const Projects = () => {
                   'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 15%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
               }}
               className="p-[24px] xl:p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] flex flex-col justify-between border border-[#464850] cursor-pointer"
+              onClick={() => navigate('/portfolio/details/5')}
             >
               <h3 className="text-[24px] xl:text-[32px] font-medium leading-[120%]">
                 {t('project_home_page.card4_title')}
@@ -249,7 +250,7 @@ const Projects = () => {
                 <img
                   className="w-full max-w-[340px] h-full max-h-[300px] object-contain"
                   src={project6}
-                  alt="Ross Foundation"
+                  alt="Rai Group"
                   loading="lazy"
                 />
               </div>
