@@ -56,8 +56,8 @@ const ProjectDetail = () => {
                   {portfolioDetails?.banner_text}
                 </p>
 
-                <div className="flex">
-                  {portfolioDetails?.banner_button2 ? (
+                <div className="flex mb-4">
+                  {portfolioDetails?.banner_button2 && (
                     <a
                       href={portfolioDetails?.banner_button2_link}
                       target="_blanck"
@@ -66,7 +66,8 @@ const ProjectDetail = () => {
                       <IosIcon />
                       {portfolioDetails?.banner_button2}
                     </a>
-                  ) : portfolioDetails?.banner_button1 ? (
+                  )}
+                  {portfolioDetails?.banner_button1 && (
                     <a
                       href={portfolioDetails?.banner_button1_link}
                       target="_blanck"
@@ -75,7 +76,8 @@ const ProjectDetail = () => {
                       <PlayMarketIcon />
                       {portfolioDetails?.banner_button1}
                     </a>
-                  ) : (
+                  )}
+                  {portfolioDetails?.banner_button3 && (
                     <a
                       href={portfolioDetails?.banner_button3_link}
                       target="_blanck"
@@ -88,15 +90,16 @@ const ProjectDetail = () => {
               </div>
 
               <div className="flex items-center gap-4 lg:gap-[32px] mt-[30px] xl:mt-0 ">
-                <button className="text-[#FFFFFF] text-[16px] rounded-[24px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] leading-[100%] border border-[#4266B1]">
-                  UX/Ui
-                </button>
-                <button className="text-[#FFFFFF] text-[16px] rounded-[24px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]  leading-[100%] border border-[#4266B1]">
-                  Branding
-                </button>
-                <button className="text-[#FFFFFF] text-[16px] rounded-[24px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]  leading-[100%] border border-[#4266B1]">
-                  Vebsayt
-                </button>
+                {portfolioDetails?.banner_property1 && (
+                  <button className="text-[#FFFFFF] text-[16px] rounded-[24px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] leading-[100%] border border-[#4266B1]">
+                    {portfolioDetails?.banner_property1}
+                  </button>
+                )}
+                {portfolioDetails?.banner_property2 && (
+                  <button className="text-[#FFFFFF] text-[16px] rounded-[24px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]  leading-[100%] border border-[#4266B1]">
+                    {portfolioDetails?.banner_property2}
+                  </button>
+                )}
               </div>
             </div>
             <img
@@ -169,30 +172,33 @@ const ProjectDetail = () => {
           </h3>
 
           <ul className="hidden md:grid md:grid-cols-2 xl:grid-cols-3 gap-6 mt-[32px]">
-            {portfoliosData?.map((project) => (
-              <li
-                onClick={() => navigate("/portfolio/details/" + project.id)}
-                key={project.id}
-                style={{
-                  background: "rgba(255, 255, 255, 0.10)",
-                  backdropFilter: "blur(2px)",
-                }}
-                className="p-[24px] md:p-[32px] rounded-[24px] flex flex-col gap-6 cursor-pointer"
-              >
-                <h4 className="text-[24px] sm:text-[28px] lg:text-[32px] font-medium leading-[120%] text-white">
-                  {project.title}
-                </h4>
-                <img
-                  className="w-full max-w-[400px] h-full max-h-[250px] mx-auto"
-                  src={project.img}
-                  alt={project.title}
-                  loading="lazy"
-                />
-                <p className="text-[16px] sm:text-[18px] leading-[150%] text-[#ffffffcc]">
-                  {project.text}
-                </p>
-              </li>
-            ))}
+            {portfoliosData?.map(
+              (project) =>
+                project.id !== id && (
+                  <li
+                    onClick={() => navigate("/portfolio/details/" + project.id)}
+                    key={project.id}
+                    style={{
+                      background: "rgba(255, 255, 255, 0.10)",
+                      backdropFilter: "blur(2px)",
+                    }}
+                    className="p-[24px] md:p-[32px] rounded-[24px] flex flex-col gap-6 cursor-pointer"
+                  >
+                    <h4 className="text-[24px] sm:text-[28px] lg:text-[32px] font-medium leading-[120%] text-white">
+                      {project.title}
+                    </h4>
+                    <img
+                      className="w-full max-w-[400px] h-full max-h-[250px] mx-auto"
+                      src={project.img}
+                      alt={project.title}
+                      loading="lazy"
+                    />
+                    <p className="text-[16px] sm:text-[18px] leading-[150%] text-[#ffffffcc]">
+                      {project.text}
+                    </p>
+                  </li>
+                )
+            )}
           </ul>
 
           <div className="md:hidden block my-[32px] relative">

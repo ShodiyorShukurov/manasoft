@@ -31,11 +31,27 @@
     "about_card6_text": "Web Platforms"
   },
   "customers": {
-    "subtitle": "Customer Reviews",
+    "subtitle": "Customer Feedback",
     "title": "What Our Clients Say",
-    "text": "Take advantage of Manasoft’s expertise and elevate your business to the next level!",
-    "customer1_name": "Max Thompson (Creative Designer)",
-    "customer1_text": "The Manasoft team has been amazing to work with! They developed a custom Telegram bot for us, which accelerated the service process for our clients. Now we can serve customers faster and more efficiently."
+    "text": "Take advantage of Manasoft’s expertise and bring your business to the next level!",
+
+    "customer1_name": "Aziza Karimova (Online Store Owner)",
+    "customer1_text": "The Manasoft team developed a custom Telegram bot for us. Now orders are processed automatically and customer service has become much faster.",
+
+    "customer2_name": "Kamoliddin Usmonov (Financial Expert)",
+    "customer2_text": "Their financial reporting system made it much easier to track income and expenses. The quality of work is excellent.",
+
+    "customer3_name": "Dilnoza Yuldasheva (Marketing Specialist)",
+    "customer3_text": "Working with Manasoft was easy and convenient. They pay attention to every detail and stay in touch throughout the process.",
+
+    "customer4_name": "Shavkat Anvarov (Startup Founder)",
+    "customer4_text": "The Manasoft team helped turn our idea into a real platform. Fast, high-quality, and effective solutions!",
+
+    "customer5_name": "Malika Rasulova (Psychologist)",
+    "customer5_text": "They created a custom bot to manage my clients via Telegram. Affordable price and excellent technical support!",
+
+    "customer6_name": "Javlon Eshquvvatov (Freelance Developer)",
+    "customer6_text": "Technically skilled team. They built the system with the right architecture and delivered it on time."
   },
   "services": {
     "services_home_title1": "Combine Technology and Expertise",
@@ -105,23 +121,29 @@
     "card5_text": "Sales Process Automation"
   },
   "project_page": {
-    "subtitle": "+100 Completed Projects",
+    "subtitle": "100+ projects",
     "title": "Our Projects",
-    "text": "Looking for a reliable IT partner to efficiently grow your business? Manasoft provides you with modern, fast, and reliable solutions!",
+    "text": "Looking for a reliable IT partner to grow your business effectively? Manasoft offers modern, fast, and trustworthy solutions!",
     "button_text": "All",
-    "button_text1": "Mobile Application",
+    "button_text1": "Mobile App",
     "button_text2": "Website",
     "button_text3": "CRM",
     "button_text4": "UX/UI",
-    "button_text5": "Telegram bot",
+    "button_text5": "Telegram Bot",
     "card1_title": "Femmy",
-    "card1_text": "Mobile Application",
+    "card1_text": "Mobile application",
     "card2_title": "IMPERIAL GRANITE",
-    "card2_text": "Mobile Application",
+    "card2_text": "Mobile application",
     "card3_title": "MedAgent",
-    "card3_text": "Mobile Application",
+    "card3_text": "Mobile application",
     "card4_title": "Alla",
-    "card4_text": "Mobile Application"
+    "card4_text": "Mobile application",
+    "card5_title": "Rai Group",
+    "card5_text": "Website",
+    "card6_title": "Mohinur Rahimjonova Bot",
+    "card6_text": "Bot",
+    "card7_title": "Hisobchi AI Bot",
+    "card7_text": "Bot"
   },
   "project1": {
     "banner_title": "Femmy",
@@ -129,13 +151,17 @@
     "banner_text": "Femmy is a health calendar and daily app essential for every woman.",
     "banner_button1": "Play Market",
     "banner_button2": "App Store",
+    "banner_property1": "UX/UI",
+    "banner_property2": "Mobile App",
     "project_title": "Project Features",
     "project_card1_title": "Purpose of the Femmy App",
     "project_card1_text": "Femmy provides all the essential tools for women, including a pregnancy school, mood tracker, ovulation calculator, baby care tips, and gynecologist recommendations.",
     "project_card2_title": "Pregnancy School",
     "project_card2_text": "Weekly pregnancy recommendations, prenatal and postnatal care, lactation and breastfeeding advice, proper nutrition, and health tips during pregnancy.",
     "project_card3_title": "Useful Articles and Gynecologist Advice",
-    "project_card3_text": "Articles on women's health, detailed information about pregnancy, childbirth, and menopause. Reliable advice verified by gynecologists."
+    "project_card3_text": "Articles on women's health, detailed information about pregnancy, childbirth, and menopause. Reliable advice verified by gynecologists.",
+    "project_card4_title": "Landing Page Features:",
+    "project_card4_text": "Femmy is a mobile app designed to help women manage their menstrual cycle, pregnancy, and other physiological conditions. For this project, we created a modern and intuitive landing page design. The design is tailored to women's needs, using soft colors and interface elements that inspire trust."
   },
   "project2": {
     "banner_title": "Imperial Granite",
@@ -143,6 +169,8 @@
     "banner_text": "Imperial Granite is the official mobile app for customers, sellers, and manufacturers.",
     "banner_button1": "Play Market",
     "banner_button2": "App Store",
+    "banner_property1": "UX/UI",
+    "banner_property2": "Mobile App",
     "project_title": "Project Features",
     "project_card1_title": "Purpose of the Imperial Granite App",
     "project_card1_text": "It connects customers, sellers, and manufacturers, ensuring a seamless interaction process at every stage—from product selection to production and delivery.",
@@ -157,6 +185,8 @@
     "banner_text": "MedAgent – designed for medical representatives, pharmaceutical companies, managers, and supervisors.",
     "banner_button1": "Play Market",
     "banner_button2": "App Store",
+    "banner_property1": "UX/UI",
+    "banner_property2": "Mobile App",
     "project_title": "Project Features",
     "project_card1_title": "Purpose of the MedAgent App",
     "project_card1_text": "MedAgent is an innovative ERP system designed to automate the work of medical representatives, monitor visits to pharmacies and doctors, and manage reports.",
@@ -167,53 +197,72 @@
   },
   "project4": {
     "banner_title": "Alla",
-    "banner_subtitle": "Alla — A calming audio app for children",
-    "banner_text": "Alla is a mobile app designed for peaceful sleep of children aged 0–6, featuring trusted audio content and an intuitive interface tailored to mothers' needs.",
+    "banner_subtitle": "Alla — Soothing Audio App for Children",
+    "banner_text": "Alla is a mobile app designed for children aged 0–6 to sleep peacefully, offering reliable audio content and a user-friendly interface tailored to mothers' needs.",
     "banner_button1": "Play Market",
     "banner_button2": "App Store",
+    "banner_property1": "UX/UI",
+    "banner_property2": "Mobile App",
     "project_title": "Project Features",
-    "project_card1_title": "Purpose of the Alla app",
-    "project_card1_text": "To help children sleep in a calm and peaceful environment, while providing mothers with a convenient and quality tool for this process. Each piece of content is selected according to the child's age and needs.",
-    "project_card2_title": "Features of the app:",
-    "project_card2_text": "Helping children fall asleep in a calm and peaceful environment, while providing mothers with a convenient and high-quality tool. The app offers age-appropriate and trusted audio content, including Quranic verses, classic lullabies, stories, and animal sounds. Features like voice recording, a favorites list, and a clean, child-friendly interface make it easy to use."
+    "project_card1_title": "Purpose of the Alla App",
+    "project_card1_text": "To help children sleep in a calm environment and provide mothers with a convenient and quality tool. Each piece of content is selected based on the child’s age and needs.",
+    "project_card2_title": "App Capabilities:",
+    "project_card2_text": "Includes Qur’an verses, classic lullabies, fairy tales, animal sounds, and more. Features like voice recording, favorites list, and a simple child-friendly interface make it easy to use."
+  },
+  "project5": {
+    "banner_title": "Rai Group",
+    "banner_subtitle": "Rai Group — corporate website of a construction company",
+    "banner_text": "The Rai Group website provides information about the company's services, projects, and news. It features a modern design, user-friendly navigation, and essential information for users.",
+    "banner_button3": "View full project",
+    "banner_property1": "UX/UI",
+    "banner_property2": "Website",
+    "project_title": "Project Features",
+    "project_card1_title": "Description:",
+    "project_card1_text": "Rai Group is a modern construction company. Through the website, users can learn about its projects, services, and news, as well as contact the company directly.",
+    "project_card2_title": "Website Features:",
+    "project_card2_text": "The website includes company advantages, a gallery of completed projects, key approaches (quality, reliability, etc.), news updates, construction videos, partner logos, and a contact form for users."
   },
   "project6": {
     "banner_title": "Mohinur Rahimjonova Bot",
-    "banner_subtitle": "Telegram bot for accounting webinar",
-    "banner_text": "The Telegram bot automates registration for accounting webinars: users join via a link, register with their phone number, and are automatically added to the channel. The organizer can communicate directly with clients through the bot.",
-    "banner_button1": "Play Market",
-    "banner_button2": "App Store",
+    "banner_subtitle": "Telegram Bot for Accounting Webinars",
+    "banner_text": "The Telegram bot automates webinar registration: the user follows a link, registers, and joins the channel. The organizer communicates with clients through the bot.",
+    "banner_button3": "Telegram Bot",
+    "banner_property1": "Telegram Bot",
     "project_title": "Project Features",
-    "project_card1_title": "Bot Capabilities:",
-    "project_card1_text": "The bot enables automatic registration, connects users to the webinar channel, builds a user base for the organizer, and ensures maximum conversion with minimal interaction."
+    "project_card1_title": "Bot Features:",
+    "project_card1_text": "Provides automatic registration, connects users to the webinar channel, builds a user database, and ensures maximum conversion with minimal effort."
   },
   "project7": {
     "banner_title": "Hisobchi AI Bot",
-    "banner_subtitle": "Hisobchi AI — an AI-powered personal finance bot",
-    "banner_text": "Hisobchi AI is a Telegram bot that accepts income, expenses, and debts via text or voice, then automatically analyzes and categorizes them using artificial intelligence. It generates reports and sends reminders.",
+    "banner_subtitle": "Hisobchi AI — AI-powered Personal Finance Bot",
+    "banner_text": "Hisobchi AI is a Telegram bot that accepts income, expenses, and debts via text or voice, analyzes and classifies them using AI. It generates statistics and sends reminders.",
     "banner_button3": "Telegram Bot",
+    "banner_property1": "Telegram Bot",
     "project_title": "Project Features",
     "project_card1_title": "Description:",
-    "project_card1_text": "Hisobchi AI is an AI-powered financial assistant that helps users easily and quickly track their income, expenses, and debts. It works via Telegram: the user sends their financial data in text or voice, and the bot automatically categorizes the data, generates statistics, and sends reminders.",
+    "project_card1_text": "Hisobchi AI is an AI-powered financial assistant that helps users manage income, expenses, and debts easily and quickly. Works via Telegram: users send their data in text or voice, and the bot classifies, analyzes, and provides statistics and reminders.",
     "project_card2_title": "Key Features:",
-    "project_card2_text": "AI-based recognition of income and expenses Debt tracking and reminders Daily, weekly, monthly, and yearly statistics Understanding of text and voice commands"
+    "project_card2_text": "AI-based income and expense recognition Debt control and reminders Daily, weekly, monthly, and yearly statistics Understanding text and voice commands"
   },
   "partners": {
     "title": "Our Partners"
   },
   "question_page": {
+    "question_title": "Frequently Asked Questions",
+    "question_subtitle": "Interesting Questions",
+    "question_text": "If you have any questions, feel free to contact us – we are always ready to help!",
     "question_card1_text": "How long does it take to develop an IT project?",
-    "question_card1_answer": "Manasoft is an innovative IT company and your most reliable partner for creating Telegram bots, mobile applications, and websites for your business. ...",
-    "question_card2_text": "What information is needed to build a Telegram bot?",
-    "question_card2_answer": "To create a Telegram bot, we need a list of required features, the expected functionality, and optional payment system details. ...",
+    "question_card1_answer": "Manasoft is an innovative IT company and your most reliable partner in creating Telegram bots, mobile applications, and websites for your business! Our team implements technologies to deliver efficient solutions. Quality and speed are our top priorities!",
+    "question_card2_text": "What information is needed to create a Telegram bot?",
+    "question_card2_answer": "To create a Telegram bot, we need a list of required features, the tasks expected from the bot, and information about the payment system if necessary. Based on this, Manasoft will develop a customized bot for you.",
     "question_card3_text": "How is the cost of a mobile app determined?",
-    "question_card3_answer": "The price depends on the features you select, the design complexity, and the platforms (iOS/Android). ...",
-    "question_card4_text": "Do you provide SEO optimization for websites?",
-    "question_card4_answer": "Absolutely! The websites built by Manasoft fully meet SEO requirements. ...",
+    "question_card3_answer": "The price depends on the features you choose, the complexity of the design, and the platforms (iOS/Android). Manasoft prepares individual commercial offers for each client with a transparent pricing policy.",
+    "question_card4_text": "Do you also offer SEO optimization for websites?",
+    "question_card4_answer": "Absolutely! Websites developed by Manasoft fully meet SEO requirements. We perform all the necessary technical and content optimizations to rank your website higher on Google and other search engines.",
     "question_card5_text": "What are the benefits of using a CRM system?",
-    "question_card5_answer": "A CRM system helps manage client relationships, streamline sales processes, and increase marketing effectiveness. ...",
-    "question_card6_text": "How do you communicate during the project?",
-    "question_card6_answer": "We maintain regular communication with each client. We provide status updates via Telegram, email, or calls. ..."
+    "question_card5_answer": "A CRM system helps manage customer relationships, streamline sales processes, and improve marketing efficiency. Manasoft develops CRM solutions tailored to your business processes.",
+    "question_card6_text": "How often will we be in touch during the project?",
+    "question_card6_answer": "We maintain regular communication with each client. We provide updates via Telegram, email, or phone calls, and implement required changes. Transparent and effective communication is a top priority at Manasoft."
   },
   "contact_page": {
     "title": "Contact Us",

@@ -5,6 +5,8 @@ import card2smallImg from '../assets/femmi/card2-imgsmall.png';
 import card2BigImg from '../assets/femmi/card2-imgbig.png';
 import card3smallImg from '../assets/femmi/card3-imgsmall.png';
 import card3BigImg from '../assets/femmi/card3-imgbig.png';
+import card4smallImg from '../assets/femmi/card4-imgsmall.png';
+import card4BigImg from '../assets/femmi/card4-imgbig.png';
 
 const portfolio1 = (t) => ({
   portfolioData: {
@@ -19,6 +21,8 @@ const portfolio1 = (t) => ({
     banner_button2_link:
       'https://apps.apple.com/app/femmy-ayollar-kalendari/id6739880529',
     banner_image: banner,
+    banner_property1: t('project1.banner_property1'),
+    banner_property2: t('project1.banner_property2'),
     title: t('project1.project_title'),
     cards: [
       {
@@ -41,6 +45,13 @@ const portfolio1 = (t) => ({
         text: t('project1.project_card3_text'),
         smallImg: card3smallImg,
         bigImg: card3BigImg,
+      },
+       {
+        id: 3,
+        title: t('project1.project_card4_title'),
+        text: t('project1.project_card4_text'),
+        smallImg: card4smallImg,
+        bigImg: card4BigImg,
       },
     ],
   },

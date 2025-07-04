@@ -17,6 +17,8 @@ const portfolio4 = (t) => ({
     banner_button2_link:
       'https://apps.apple.com/app/allalar-alla-qoshiqlari-mp3/id6742346987',
     banner_image: banner,
+    banner_property1: t('project4.banner_property1'),
+    banner_property2: t('project4.banner_property2'),
     title: t('project4.project_title'),
     cards: [
       {

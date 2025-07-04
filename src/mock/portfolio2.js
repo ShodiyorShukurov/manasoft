@@ -19,6 +19,8 @@ const portfolio2 = (t) => ({
     banner_button2_link:
       'https://apps.apple.com/uz/app/imperial-granite-mobile/id6740770667',
     banner_image: banner,
+    banner_property1: t('project2.banner_property1'),
+    banner_property2: t('project2.banner_property2'),
     title: t('project2.project_title'),
     cards: [
       {

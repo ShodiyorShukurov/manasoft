@@ -13,6 +13,7 @@ const portfolio6 = (t) => ({
     banner_button3: t('project6.banner_button3'),
     banner_button3_link: 'https://t.me/mohinurrahimjonova_bot',
     banner_image: banner,
+    banner_property1: t('project6.banner_property1'),
     title: t('project6.project_title'),
     cards: [
       {

@@ -15,6 +15,7 @@ const portfolio7 = (t) => ({
     banner_button3: t('project7.banner_button3'),
     banner_button3_link: 'https://t.me/Hisobchi_ai_bot',
     banner_image: banner,
+    banner_property1: t('project7.banner_property1'),
     title: t('project7.project_title'),
     cards: [
       {
