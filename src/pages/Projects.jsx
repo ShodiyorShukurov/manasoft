@@ -31,8 +31,6 @@ const Projects = () => {
     { id: 1, label: t('project_page.button_text') },
     { id: 2, label: t('project_page.button_text1') },
     { id: 3, label: t('project_page.button_text2') },
-    { id: 4, label: t('project_page.button_text3') },
-    { id: 5, label: t('project_page.button_text4') },
     { id: 6, label: t('project_page.button_text5') },
   ];
 
@@ -108,7 +106,7 @@ const Projects = () => {
             </div>
           </div>
 
-          <ul className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mt-[48px]">
+          <ul className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mt-[48px">
             {filtredArr?.map((project) => (
               <li
                 onClick={() => navigate('/portfolio/details/' + project.id)}
@@ -117,7 +115,7 @@ const Projects = () => {
                   background: 'rgba(255, 255, 255, 0.10)',
                   backdropFilter: 'blur(2px)',
                 }}
-                className="p-[24px] md:p-[32px] rounded-[24px] flex flex-col gap-6 cursor-pointer"
+                className="p-[24px] md:p-[32px] rounded-[24px] flex flex-col gap-6 cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
               >
                 <h4 className="text-[24px] sm:text-[28px] lg:text-[32px] font-medium leading-[120%] text-white">
                   {project.title}
@@ -171,7 +169,8 @@ const Projects = () => {
                 background:
                   'radial-gradient(105.25% 118.03% at 19.8% -3.5%, rgba(97, 166, 255, 0.08) 15%, rgba(97, 166, 255, 0.02) 100%), rgba(255, 255, 255, 0.02)',
               }}
-              className="p-[24px] xl:p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] lg:col-span-2 flex flex-col justify-between border border-[#464850]"
+              className="p-[24px] xl:p-[32px] rounded-[24px] backdrop-blur-[2px] text-[#fff] lg:col-span-2 flex flex-col justify-between border border-[#464850] cursor-pointer"
+              onClick={() => navigate('/portfolio/details/10')}
             >
               <h3 className="text-[32px] font-medium leading-[120%]">
                 {t('project_home_page.card1_title')}

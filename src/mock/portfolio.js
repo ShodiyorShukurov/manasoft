@@ -5,6 +5,8 @@ import allaPortfolio from "../assets/image/alla-portfolio.png";
 import raiGroupPortfolio from "../assets/image/rai-portfolio.png";
 import mohinur from "../assets/image/mohinur.png";
 import hisobchi from "../assets/image/hisobchi-portfolio.png";
+import fullContact from "../assets/image/full-contact-portfolio.png";
+import planner from "../assets/image/planner-portfolio.png";
 
 const portfolio = (t) => [
   {
@@ -54,6 +56,20 @@ const portfolio = (t) => [
     title: t("project_page.card7_title"),
     text: t("project_page.card7_text"),
     img: hisobchi,
+    type: t("project_page.button_text5"),
+  },
+  {
+    id: 8,
+    title: t("project_page.card8_title"),
+    text: t("project_page.card8_text"),
+    img: fullContact,
+    type: t("project_page.button_text5"),
+  },
+  {
+    id: 9,
+    title: t("project_page.card9_title"),
+    text: t("project_page.card9_text"),
+    img: planner,
     type: t("project_page.button_text5"),
   },
 ];
